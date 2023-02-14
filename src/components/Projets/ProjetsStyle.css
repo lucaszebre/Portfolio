@@ -1,0 +1,120 @@
+.ImageProjets{
+    width: 33vw;
+    height: 23vw;
+}
+
+.ProjetsRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    width: 100%;
+}
+
+.ProjetsEnTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.ProjetsEnTitle h1{
+    font-size: 6vw;
+    font-weight: 600;
+    color: white;
+}
+
+.Contactme{
+    color: white;
+    text-decoration: underline #07ff6a;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.ProjetsWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+    .ProjetsContainer{
+        margin-top: 5vw;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ProjetsCard{
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        align-items: start;
+
+    }
+
+    .ProjetsName{
+        font-size: 1.7vw;
+        font-weight: 600;
+        color: white;
+        margin-top: 0.5em;
+    }
+
+    .ProjetsTechno{
+        font-size: 1vw;
+        font-weight: 300;
+        color: white;
+        margin-top: 0.5em;
+    }
+
+@media (max-width:1024px) and (min-width: 768px){
+    .ImageProjets{
+        width: 39vw;
+        height: 28vw;
+    }
+
+    .ProjetsEnTitle h1{
+        font-size: 10vw;
+    }
+    .ProjetsName{
+        font-size: 2.5vw;
+    }
+    .ProjetsTechno{
+        font-size: 2.5vw;
+    }
+}
+
+@media (max-width:768px){
+
+    .ProjetsRow{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .ImageProjets{
+        width: 100%;
+        height: unset;
+    }
+
+    .ProjetsName{
+        font-size: 5vw;
+    }
+
+    .ProjetsTechno{
+        font-size: 4vw;
+    font-weight: 300;
+    color: white;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    }
+
+    .Contactme{
+        font-size: 1rem;
+        
+    }
+}
