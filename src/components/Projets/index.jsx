@@ -21,7 +21,7 @@ const Projets = (props) => {
             </div>
                 <div className="ProjetsRow">
                 <div className="ProjetsCard">
-                        <a href="https://kanban-eosin.vercel.app/" target="_blank"><img  className="ImageProjets" src={Entertainnement} alt="EntertainnementWeb-app" /></a>
+                        <a href="https://kanban-eosin.vercel.app/" target="_blank"><img  className="ImageProjets" src={Kanban} alt="EntertainnementWeb-app" /></a>
                         <div className="ProjetsName">KANBAN TASK MANAGER</div>
                         <div className="ProjetsTechno">NEXT.JS FIREBASE TYPESCRIPT MATERIAL UI </div>
                     </div>
