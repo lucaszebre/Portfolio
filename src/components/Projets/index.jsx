@@ -1,6 +1,6 @@
 import React from 'react'
 import galleria from '../../../public/assets/images/thumbnail-project-6-large.webp'
-import MyTeam from '../../../public/assets/Myteam.jpg'
+import LinkDev from '../../../public/assets/LinkDev.jpg'
 import Kanban from '../../../public/assets/Kanban.jpg'
 import Invoice from '../../../public/assets/Invoice.jpg'
 import Audiophile from '../../../public/assets/Audiophile.jpg'
@@ -21,7 +21,7 @@ const Projets = (props) => {
             </div>
                 <div className="ProjetsRow">
                 <div className="ProjetsCard">
-                        <a href="https://linkdev2.vercel.app/" target="_blank"><img  className="ImageProjets" src={Kanban} alt="EntertainnementWeb-app" /></a>
+                        <a href="https://linkdev2.vercel.app/" target="_blank"><img  className="ImageProjets" src={LinkDev} alt="EntertainnementWeb-app" /></a>
                         <div className="ProjetsName">LINK DEV </div>
                         <div className="ProjetsTechno">REACT.JS SUPABASE POSTGRESQL MATERIAL UI </div>
                     </div>
