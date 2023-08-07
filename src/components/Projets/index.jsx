@@ -21,38 +21,40 @@ const Projets = (props) => {
             </div>
                 <div className="ProjetsRow">
                 <div className="ProjetsCard">
-                        <a href="https://kanban-eosin.vercel.app/" target="_blank"><img  className="ImageProjets" src={Kanban} alt="EntertainnementWeb-app" /></a>
-                        <div className="ProjetsName">KANBAN TASK MANAGER</div>
-                        <div className="ProjetsTechno">NEXT.JS FIREBASE TYPESCRIPT MATERIAL UI </div>
+                        <a href="https://linkdev2.vercel.app/" target="_blank"><img  className="ImageProjets" src={Kanban} alt="EntertainnementWeb-app" /></a>
+                        <div className="ProjetsName">LINK DEV </div>
+                        <div className="ProjetsTechno">REACT.JS SUPABASE POSTGRESQL MATERIAL UI </div>
                     </div>
                     <div className="ProjetsCard">
-                        <a href="https://invoice-lovat.vercel.app/" target="_blank"><img className="ImageProjets"src={Invoice} alt="Invoice-App" /></a>
-                        <div className="ProjetsName">Invoice App </div>
-                        <div className="ProjetsTechno">NEXT.JS FIREBASE TYPESCRIPT MATERIAL UI</div>
+                        <a href="https://kanban-eosin.vercel.app/" target="_blank"><img  className="ImageProjets" src={Kanban} alt="EntertainnementWeb-app" /></a>
+                        <div className="ProjetsName">KANBAN TASK MANAGER</div>
+                        <div className="ProjetsTechno">REACT.JS FIREBASE TYPESCRIPT MATERIAL UI </div>
                     </div>
+                    
                     
                     </div>
                     
                     <div className="ProjetsRow">
                     <div className="ProjetsCard">
+                        <a href="https://invoice-lovat.vercel.app/" target="_blank"><img className="ImageProjets"src={Invoice} alt="Invoice-App" /></a>
+                        <div className="ProjetsName">Invoice App </div>
+                        <div className="ProjetsTechno">REACT.JS FIREBASE TYPESCRIPT MATERIAL UI</div>
+                    </div>
+                    <div className="ProjetsCard">
                         <a href="https://lucaszebre.github.io/AudiophileEcommerce/#/" target="_blank"><img className="ImageProjets"src={Audiophile} alt="AudioPhile-website" /></a>
                         <div className="ProjetsName">Audiophile E-Commerce Website</div>
                         <div className="ProjetsTechno">React.js JAVASCRIPT </div>
                     </div>
+                    
+                    
+            </div>
+            <div className="ProjetsRow">
                     <div className="ProjetsCard">
                         <a href="https://lucaszebre.github.io/Designo/#/" target="_blank"><img  className="ImageProjets" src={Designo} alt="EntertainnementWeb-app" /></a>
                         <div className="ProjetsName">Designo MultiPage Website</div>
                         <div className="ProjetsTechno">React.js JAVASCRIPT </div>
                     </div>
-                    
-            </div>
-            <div className="ProjetsRow">
-            
-                    <div className="ProjetsCard">
-                        <a href="https://myteam-lucaszebre.vercel.app/" target="_blank"><img  className="ImageProjets" src={MyTeam} alt="MYTEAM-WEBSITE" /></a>
-                        <div className="ProjetsName">MYTEAM-WEBSITE</div>
-                        <div className="ProjetsTechno">Next.js Tailwind Css </div>
-                    </div>
+                
 
                     <div className="ProjetsCard">
                         <a href="https://lucaszebre.github.io/Galleria-App/" target="_blank"><img className="ImageProjets"src={galleria} alt="galleria-app" /></a>
