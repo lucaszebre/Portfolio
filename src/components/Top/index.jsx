@@ -35,7 +35,7 @@ const Top = (props) => {
                             I'm <span className='underline'>Lucas Zebre.</span>
                     </div>
                     <div className="ContentDescription">
-                        Based in Paris , I'm a Front-End Developer.
+                        Based in Paris , I'm a Web Developer.
                         passionate about building accessible web apps that user love.
                     </div>
                     <div onClick={props.onClick}  className="ContentButton">
