@@ -5,6 +5,7 @@ import Kanban from '../../../public/assets/Kanban.jpg'
 import Invoice from '../../../public/assets/Invoice.jpg'
 import Audiophile from '../../../public/assets/Audiophile.jpg'
 import Designo from '../../../public/assets/Designo.jpg'
+import API from '../../../public/assets/API.png'
 
 import './ProjetsStyle.css'
 
@@ -26,15 +27,43 @@ const Projets = (props) => {
                         <div className="ProjetsTechno">REACT.JS SUPABASE POSTGRESQL MATERIAL UI </div>
                     </div>
                     <div className="ProjetsCard">
-                        <a href="https://kanban-eosin.vercel.app/" target="_blank"><img  className="ImageProjets" src={Kanban} alt="EntertainnementWeb-app" /></a>
-                        <div className="ProjetsName">KANBAN TASK MANAGER</div>
-                        <div className="ProjetsTechno">REACT.JS FIREBASE TYPESCRIPT MATERIAL UI </div>
+                        <a href="https://github.com/lucaszebre/kanbanwithapi" target="_blank"><img  className="ImageProjets" src={Kanban} alt="KanbanTask-app" /></a>
+                        <div className="ProjetsName">KANBAN TASK MANAGER V2</div>
+                        <div className="ProjetsTechno">REACT.JS MONGODB EXPRESS.JS TYPESCRIPT MATERIAL UI </div>
                     </div>
                     
                     
                     </div>
                     
                     <div className="ProjetsRow">
+                    <div className="ProjetsCard">
+                        <a href="https://kanban-eosin.vercel.app/" target="_blank"><img  className="ImageProjets" src={Kanban} alt="KanbanTask-app" /></a>
+                        <div className="ProjetsName">KANBAN TASK MANAGER V1</div>
+                        <div className="ProjetsTechno">REACT.JS FIREBASE TYPESCRIPT MATERIAL UI </div>
+                    </div>
+                    <div className="ProjetsCard">
+                        <a href="https://github.com/lucaszebre/BlogApi" target="_blank"><img className="ImageProjets"src={API} alt="Blogpost-api" /></a>
+                        <div className="ProjetsName">BLOGPOST API </div>
+                        <div className="ProjetsTechno">EXPRESS.JS NODE.JS POSTGRESQL </div>
+                    </div>
+                    
+                    
+            </div>
+            <div className="ProjetsRow">
+                    <div className="ProjetsCard">
+                        <a href="https://github.com/lucaszebre/KanbanTaskApi" target="_blank"><img className="ImageProjets"src={API} alt="KanbanTask-APi" /></a>
+                        <div className="ProjetsName">KANBANTASK API  </div>
+                        <div className="ProjetsTechno">EXPRESS.JS MONGODB NODE.JS</div>
+                    </div>
+                    <div className="ProjetsCard">
+                        <a href="https://github.com/lucaszebre/OnlineFoodApi" target="_blank"><img className="ImageProjets"src={API} alt="Online-food-API" /></a>
+                        <div className="ProjetsName">ONLINE FOOD SYSTEM API </div>
+                        <div className="ProjetsTechno">NEST.JS POSTGRESQL NODE.JS </div>
+                    </div>
+                    
+                    
+            </div>
+            <div className="ProjetsRow">
                     <div className="ProjetsCard">
                         <a href="https://invoice-lovat.vercel.app/" target="_blank"><img className="ImageProjets"src={Invoice} alt="Invoice-App" /></a>
                         <div className="ProjetsName">Invoice App </div>
