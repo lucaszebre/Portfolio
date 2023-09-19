@@ -27,9 +27,9 @@ const Projets = (props) => {
                         <div className="ProjetsTechno">REACT.JS SUPABASE POSTGRESQL MATERIAL UI </div>
                     </div>
                     <div className="ProjetsCard">
-                        <a href="https://github.com/lucaszebre/kanbanwithapi" target="_blank"><img  className="ImageProjets" src={Kanban} alt="KanbanTask-app" /></a>
+                        <a href="https://kanbanwithapi-jnd26p5d1-lucaszebre.vercel.app/" target="_blank"><img  className="ImageProjets" src={Kanban} alt="KanbanTask-app" /></a>
                         <div className="ProjetsName">KANBAN TASK MANAGER V2</div>
-                        <div className="ProjetsTechno">REACT.JS MONGODB EXPRESS.JS TYPESCRIPT MATERIAL UI </div>
+                        <div className="ProjetsTechno">REACT.JS POSTGRESQL NEST.JS TYPESCRIPT MATERIAL UI </div>
                     </div>
                     
                     
@@ -51,9 +51,9 @@ const Projets = (props) => {
             </div>
             <div className="ProjetsRow">
                     <div className="ProjetsCard">
-                        <a href="https://github.com/lucaszebre/KanbanTaskApi" target="_blank"><img className="ImageProjets"src={API} alt="KanbanTask-APi" /></a>
+                        <a href="https://github.com/lucaszebre/KanbanTaskAPiV2" target="_blank"><img className="ImageProjets"src={API} alt="KanbanTask-APi" /></a>
                         <div className="ProjetsName">KANBANTASK API  </div>
-                        <div className="ProjetsTechno">EXPRESS.JS MONGODB NODE.JS</div>
+                        <div className="ProjetsTechno">NEST.JS POSTGRESQL NODE.JS</div>
                     </div>
                     <div className="ProjetsCard">
                         <a href="https://github.com/lucaszebre/OnlineFoodApi" target="_blank"><img className="ImageProjets"src={API} alt="Online-food-API" /></a>
