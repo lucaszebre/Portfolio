@@ -27,7 +27,7 @@ const Projets = (props) => {
                         <div className="ProjetsTechno">REACT.JS SUPABASE POSTGRESQL MATERIAL UI </div>
                     </div>
                     <div className="ProjetsCard">
-                        <a href="https://kanbanwithapi-jnd26p5d1-lucaszebre.vercel.app/" target="_blank"><img  className="ImageProjets" src={Kanban} alt="KanbanTask-app" /></a>
+                        <a href="https://kanbanwithapi.vercel.app/" target="_blank"><img  className="ImageProjets" src={Kanban} alt="KanbanTask-app" /></a>
                         <div className="ProjetsName">KANBAN TASK MANAGER V2</div>
                         <div className="ProjetsTechno">REACT.JS POSTGRESQL NEST.JS TYPESCRIPT MATERIAL UI </div>
                     </div>
