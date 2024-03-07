@@ -20,60 +20,55 @@ const Skill = () => {
     }
     return (
     <>
-    <div className="SkillContainer">
-        <div className="SkillWrapper">
-            <div className="SkillColumn">
-                <div className="SkillCard">
-                    <img className="SkillLogo"src={javascript} alt="Javascript_logo" />
-                    <div className="SkillTitle">
+    <div className="flex flex-col items-center justify-center w-full h-full mt-20rem">
+        <div className="flex flex-row justify-around w-80%">
+            <div className="flex flex-col items-center">
+                <div className="flex items-center">
+                    <img className="w-20 h-20 mr-4" src={javascript} alt="Javascript_logo" />
+                    <div className="text-white text-2.5rem font-semibold mb-1">
                         JavaScript
                     </div>
                 </div>
-                <div className="SkillCard">
-                    {/* <img className="SkillLogo" src={react} alt="React-logo" /> */}
-                    <ReactLogo className="SkillLogoReact" />
-                    <div className="SkillTitle">
+                <div className="flex items-center">
+                    {/* <img className="w-20 h-20 mr-4" src={react} alt="React-logo" /> */}
+                    <ReactLogo className="w-20 h-20 mr-4 fill-green" />
+                    <div className="text-white text-2.5rem font-semibold mb-1">
                         React
                     </div>
                 </div>
             </div>
-            <div className="SkillColumn">
-                <div className="SkillCard">
-                <img className="SkillLogo" src={responsive} alt="ResponsiveDesign-logo" />
-                <div className="SkillTitle">
-                    Responsive Design
+            <div className="flex flex-col items-center">
+                <div className="flex items-center">
+                    <img className="w-20 h-20 mr-4" src={responsive} alt="ResponsiveDesign-logo" />
+                    <div className="text-white text-2.5rem font-semibold mb-1">
+                        Responsive Design
+                    </div>
                 </div>
-                </div>
-                <div className="SkillCard">
-                    <img className="SkillLogo" src={python} alt="Python-logo" />
-                    <div className="SkillTitle">
-                    Python
+                <div className="flex items-center">
+                    <img className="w-20 h-20 mr-4" src={python} alt="Python-logo" />
+                    <div className="text-white text-2.5rem font-semibold mb-1">
+                        Python
                     </div>
                 </div>
             </div>
-            <div className="SkillColumn">
-                <div className="SkillCard">
-                <img className="SkillLogo" src={html} alt="html-logo" />
-                <div className="SkillTitle">
-                    HTML
-                </div>
-                </div>
-                <div className="SkillCard">
-
-                <img className="SkillLogo" src={css} alt="css-logo" />
-                <div className="SkillTitle">
-                    CSS
+            <div className="flex flex-col items-center">
+                <div className="flex items-center">
+                    <img className="w-20 h-20 mr-4" src={html} alt="html-logo" />
+                    <div className="text-white text-2.5rem font-semibold mb-1">
+                        HTML
                     </div>
+                </div>
+                <div className="flex items-center">
+                    <img className="w-20 h-20 mr-4" src={css} alt="css-logo" />
+                    <div className="text-white text-2.5rem font-semibold mb-1">
+                        CSS
                     </div>
-                    
-        </div>
-                
-
+                </div>
             </div>
         </div>
-    
+    </div>
+</>
 
-    </>
     )
 }
 
