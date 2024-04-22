@@ -74,7 +74,7 @@ Contributions are welcome! If you d like to contribute to this project feel free
                         }}
                         > 
                             <div className="flex flex-col cursor-pointer w-full relative rounded-3xl rounded-gray-300 items-start justify-start">
-                                    <img className=" w-full object-fill h-[20rem]" src={"/assets/instagram.jpg"} alt="EntertainnementWeb-app" />
+                                    <img className=" w-full object-fill h-[20rem]" src={"./assets/instagram.jpg"} alt="EntertainnementWeb-app" />
                                     <div className="text-[4vw] font-300 gap-3 flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
                                     <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] "'>
                                     NEXT.JS
@@ -143,7 +143,7 @@ Contributions are welcome! If you'd like to contribute to this project, feel fre
                             >
                             <div className="flex  w-full cursor-pointer relative flex-col items-start justify-start md:items-end md:justify-end">
                                 {/* <a className='w-full ' href="need to upload it" target="_blank"> */}
-                                    <img className="w-full object-fill h-[20rem]" src={"/assets/twitter.png"} alt="KanbanTask-app" />
+                                    <img className="w-full object-fill h-[20rem]" src={"./assets/twitter.png"} alt="KanbanTask-app" />
                                 {/* </a> */}
                                 <div className="text-[4vw] font-300 gap-3  flex justify-end flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
                                 <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
@@ -168,7 +168,7 @@ Contributions are welcome! If you'd like to contribute to this project, feel fre
                     
                     <DialogProject readme={`# Kanban Task Manager
 
-![App Screenshot](/public/assets/Kanban.jpg)
+![App Screenshot](./assets/Kanban.jpg)
 
 ## Overview
 
@@ -232,7 +232,7 @@ Happy task managing!
                                 >
                                 <div className="flex flex-col cursor-pointer w-full relative items-start justify-start">
                                     {/* <a className='w-full' href="https://kanbanwithapi.vercel.app/" target="_blank"> */}
-                                        <img className="w-full h-[20rem]" src={"/assets/Kanban.jpg"} alt="KanbanTask-app" />
+                                        <img className="w-full h-[20rem]" src={"./assets/Kanban.jpg"} alt="KanbanTask-app" />
                                     {/* </a> */}
                                     <div className="text-[4vw] font-300 gap-3 flex justify-start flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
                                     <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
@@ -322,7 +322,7 @@ Inspired by the idea of link trees for developers.
                         >
                             <div className="flex flex-col w-full cursor-pointer rounded-3xl rounded-gray-300 items-start justify-start md:items-end md:justify-end">
                                 {/* <a className='w-full' href="https://linkdev2.vercel.app/" target="_blank"> */}
-                                    <img className="w-full h-[20rem]" src={"/assets/LinkDev.jpg"} alt="EntertainnementWeb-app" />
+                                    <img className="w-full h-[20rem]" src={"./assets/LinkDev.jpg"} alt="EntertainnementWeb-app" />
                                 {/* </a> */}
                                     <div className="text-[4vw] font-300 gap-3  flex flex-row justify-start md:justify-end flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
                                     <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
@@ -420,7 +420,7 @@ You can also include additional sections or details as needed for your specific 
                     >
                         <div className="flex w-full relative flex-col cursor-pointer rounded-3xl rounded-gray-300 items-start justify-start">
                             {/* <a className='w-full' href="https://invoice-lovat.vercel.app/connexion" target="_blank"> */}
-                                <img className="w-full h-[20rem]" src={"/assets/Invoice.jpg"} alt="EntertainnementWeb-app" />
+                                <img className="w-full h-[20rem]" src={"./assets/Invoice.jpg"} alt="EntertainnementWeb-app" />
                             {/* </a> */}
                                 <div className="text-[4vw] font-300 gap-3  flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
                                 <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
@@ -442,6 +442,7 @@ You can also include additional sections or details as needed for your specific 
                         </Reveal>
                         </DialogProject>
                         <DialogProject readme={`# Audiophile Ecommerce Web App
+![App Screenshot](./assets/Audiophile.jpg)
 
 Welcome to the Audiophile Ecommerce Web App! This project is a multi-page e-commerce website built using only React.js. It allows users to browse through products, add/remove products from the cart, edit product quantities, fill in checkout details, and more.
 
@@ -490,7 +491,7 @@ Contributions are welcome! If you'd like to contribute to this project, feel fre
                             width='100%'
                             >
                             <div className="flex flex-col w-full relative cursor-pointer items-start justify-start md:items-end md:justify-end">
-                                    <img className="w-full h-[20rem]" src={"/assets/Audiophile.jpg"} alt="KanbanTask-app" />
+                                    <img className="w-full h-[20rem]" src={"./assets/Audiophile.jpg"} alt="KanbanTask-app" />
                                 <div className="text-[4vw] font-300 gap-3 justify-end  flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
                                 <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
                                 REACT.JS
@@ -508,6 +509,7 @@ Contributions are welcome! If you'd like to contribute to this project, feel fre
                     </div>  
                     <div className="flex flex-col items-start gap-10 md:flex-row mt-[5vw] mb-[5vw] w-full justify-between w-full">
                     <DialogProject readme={`# Designo Multi Page
+![App Screenshot](./assets/Designo.jpg)
 
 Welcome to Designo Multi Page, a multi-page website built using React.js. This project aims to closely replicate the provided design, allowing users to view the optimal layout for each page depending on their device's screen size, see hover states for all interactive elements throughout the site, and receive error messages when submitting the contact form.
 
@@ -550,7 +552,7 @@ Contributions are welcome! If you'd like to contribute to this project, feel fre
                     >
                         <div className="flex w-full relative flex-col cursor-pointer rounded-3xl rounded-gray-300 items-start justify-start">
                             {/* <a className='w-full' href="https://linkdev2.vercel.app/" target="_blank"> */}
-                                <img className="w-full h-[20rem]" src={"/assets/Designo.jpg"} alt="EntertainnementWeb-app" />
+                                <img className="w-full h-[20rem]" src={"./assets/Designo.jpg"} alt="EntertainnementWeb-app" />
                             {/* </a> */}
                                 <div className="text-[4vw] font-300 gap-3  flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
                                 <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
@@ -607,7 +609,7 @@ Contributions are welcome! If you'd like to contribute to this project, feel fre
                             >
                             <div className="flex flex-col w-full relative cursor-pointer items-start justify-start md:items-end md:justify-end">
                                 {/* <a className='w-full' href="https://kanbanwithapi.vercel.app/" target="_blank"> */}
-                                    <img className="w-full h-[20rem]" src={"/assets/images/thumbnail-project-6-large.webp"} alt="KanbanTask-app" />
+                                    <img className="w-full h-[20rem]" src={"./assets/images/thumbnail-project-6-large.webp"} alt="KanbanTask-app" />
                                 {/* </a> */}
                                 <div className="text-[4vw] font-300 gap-3 justify-end  flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
                                 <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
