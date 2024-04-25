@@ -9,10 +9,7 @@ interface Props{
     v:Variants
 }
 
-const Reveal = ({children:React.node,width="auto",justifyContent="center",display="flex", v={
-    hidden: {opacity:0 , y:75},
-    visible: {opacity:1 , y:0}
-}})=>{
+const Reveal = (props:Props)=>{
  
 
     const ref = useRef(null)
@@ -29,16 +26,16 @@ const Reveal = ({children:React.node,width="auto",justifyContent="center",displa
 
     },[InView])
     return (
-        <div ref={ref}  style={{position:"relative",justifyContent,display,width,overflow:"hidden"}}>
+        <div ref={ref}  style={{position:"relative",justifyContent:props.justifyContent,display:props.display,width:props.width,overflow:"hidden"}}>
             <motion.div
-                variants={v}
+                variants={props.v}
                 initial="hidden"
                 animate={mainControl}
                 transition={{
                     duration:0.5, delay: 0.25 
                 }}
             >
-                {children}
+                {props.children}
             </motion.div>
            
         </div>
