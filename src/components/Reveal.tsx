@@ -1,6 +1,13 @@
-import { motion, useAnimation, useInView } from "framer-motion";
+import { Variants, motion, useAnimation, useInView } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
+interface Props{
+    children:React.ReactNode;
+    width:string;
+    justifyContent:string;
+    display:string;
+    v:Variants
+}
 
 const Reveal = ({children:React.node,width="auto",justifyContent="center",display="flex", v={
     hidden: {opacity:0 , y:75},
