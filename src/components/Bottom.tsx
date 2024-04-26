@@ -9,7 +9,28 @@ import PatternRings from '../../public/assets/images/pattern-rings.svg'
 import Reveal from './Reveal'
 import toast, { Toaster } from 'react-hot-toast'
 import Image from 'next/image'
-
+import { useMutation } from '@tanstack/react-query'
+import { SchemaContact } from "@/types"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { Form, useForm } from "react-hook-form"
+import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import { z } from "zod"
+import axios from 'axios'
 const Bottom = () => {
 
     const [message, setMessage] = React.useState('')
@@ -19,38 +40,62 @@ const Bottom = () => {
     const [ErrorMail, setErrorMail] = React.useState(false)
     const [ErrorMessage, setErrorMessage] = React.useState(false)
     const [success, setSuccess] = React.useState(false)
-    
-    function sendFeedback(templateId:string, variables) {
-        window.emailjs.send(
-            'service_941kynd', templateId,
-            variables
-        ).then(res => {
-            toast.success("Thank you for the email !")
+    const [isLoading,setIsLoading] = React.useState(false)
 
-            console.log('Email successfully sent!')
-        })
+    // function sendFeedback(templateId:string, variables) {
+    //     window.emailjs.send(
+    //         'service_941kynd', templateId,
+    //         variables
+    //     ).then(res => {
+    //         toast.success("Thank you for the email !")
+
+    //         console.log('Email successfully sent!')
+    //     })
 
 
-            .catch(err =>{
-                console.error('Oh well, you failed. Here some thoughts on the error that occured:', err)
-                toast.error('Oh whell, the email fail, try again!')
-            } )
-    }
+    //         .catch(err =>{
+    //             console.error('Oh well, you failed. Here some thoughts on the error that occured:', err)
+    //             toast.error('Oh whell, the email fail, try again!')
+    //         } )
+    // }
+
+    
+      const form = useForm<z.infer<typeof SchemaContact>>({
+        resolver: zodResolver(SchemaContact),
+        defaultValues: {
+            name:"",
+          email: "",
+         message:""
+          
+        },
+      })
+    
+      async function  onSubmit(values: z.infer<typeof SchemaContact>) {
+            setIsLoading(true)
+            
+             const data = await axios.post('/api/send',{
+               email:values.email,
+               name:values.name,
+            message:values.message})  
+            .then(function (response) {
+                console.log(response);
+                toast.success('Sucessfully send the message')
+              })
+              .catch(function (error) {
+                toast.error('Error to send the message');
+              });
+            
+            setIsLoading(false)
+    
+      }
+    
+
+
+
     
     
     
-    function handleSubmit(e: { preventDefault: () => void }) {
-        e.preventDefault()
-            handleEmail()
-            handleMessage()
-            handleName()
-            if(success){
-            sendFeedback('template_ln941ys', { message: message, name: Name, email: email })
-            setName('')
-            setEmail('')
-            setMessage('')
-        }
-    }
+    
     function handleName() {
         if (Name === '') {
             setSuccess(false)
@@ -137,6 +182,44 @@ const Bottom = () => {
                     hidden: {opacity:0 , x:75},
                     visible: {opacity:1 , x:0}
                     }}>
+                        {/* //  FOrmulaire */}
+
+
+                        <Form {...form} >
+                        <form  onSubmit={form.handleSubmit(onSubmit)} className="p-3 content-start items-start flex-col space-y-8">
+                            <FormField
+                            control={form.control}
+                            name="email"
+                            render={({ field }) => (
+                                <FormItem className="flex-col items-start content-start w-full">
+                                <FormLabel className="text-start w-full" >Email</FormLabel>
+                                <FormControl>
+                                    <Input placeholder="lucas1@gmail.com" {...field} />
+                                </FormControl>
+                                
+                                <FormMessage />
+                                </FormItem>
+                            )}
+                            /> 
+                            <FormField
+                            control={form.control}
+                            name="password"
+                            render={({ field }) => (
+                                <FormItem className="w-full">
+                                <FormLabel className="text-start items-start w-full" >Password</FormLabel>
+                                <FormControl>
+                                    <Input type="password" placeholder="shadcn@dd11" {...field} />
+                                </FormControl>
+                                
+                                <FormMessage />
+                                </FormItem>
+                            )}
+                            />
+                            <Button  type="submit" className="w-full">{isLoading && (
+                                <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+                                )}Login</Button>
+                        </form>
+                        </Form>
                     <form className='flex flex-col items-end mt-[1em]' action="" onSubmit={handleSubmit}>
                         <input type="text" onChange={e => setName(e.target.value)} placeholder='NAME' className="w-[85vw] lg:w-[30vw] mb-[1.5em] text-white border-white border-b-[1px] h-[5vw] outline-0 bg-none bg-transparent"  />
                         {ErrorName && <div className="text-red  font-[1.2vw] font-thin mt-[0.5rem]">Please enter your name</div>}
