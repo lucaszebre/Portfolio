@@ -13,7 +13,7 @@ import { motion, useAnimate, useAnimation, useInView, useScroll, useTransform } 
 import { TypeAnimation } from 'react-type-animation';
 import Image from 'next/image'
 
-const Top = (props) => {
+const Top = (props: { onClick: (arg0: string) => void }) => {
 
    
 
@@ -54,11 +54,11 @@ const Top = (props) => {
                     visible: {opacity:1 , x:0}
                 }}>
                     
-                        <motion.h1 style={y} className='text-[1rem] font-bold text-white mb-[0.5rem] md:text-[3vw] lg:text-[2vw]'>lucaszebre</motion.h1>
+                        <motion.h1 style={{y}} className='text-[1rem] font-bold text-white mb-[0.5rem] md:text-[3vw] lg:text-[2vw]'>lucaszebre</motion.h1>
                     </Reveal>
                     
-                    <span  onClick={()=>props.onClick('projects')} className='text-white hover:underline font-bold md:flex hidden cursor-pointer hover:decoration-1  hover:decoration-[#00ff80]' href="">projects</span>
-                    <span  onClick={()=>props.onClick('contact')} className='text-white hover:underline  font-bold md:flex hidden cursor-pointer hover:decoration-1 hover:underline hover:decoration-[#00ff80]' href="">contact</span>
+                    <span  onClick={()=>props.onClick('projects')} className='text-white hover:underline font-bold md:flex hidden cursor-pointer hover:decoration-1  hover:decoration-[#00ff80]' >projects</span>
+                    <span  onClick={()=>props.onClick('contact')} className='text-white hover:underline  font-bold md:flex hidden cursor-pointer hover:decoration-1 hover:underline hover:decoration-[#00ff80]' >contact</span>
                     <a href='/Portfolio/blog' className='text-white hover:underline  font-bold md:flex hidden cursor-pointer hover:decoration-1 hover:underline hover:decoration-[#00ff80]'>blog</a>
                 
                     <Reveal v={{
@@ -154,15 +154,7 @@ const Top = (props) => {
 
 
                 </div>
-                    <motion.Image
-    //    initial={{ y: -20 }}
-    //    animate={{ y: 20 }}
-    //    transition={{
-    //      type: "smooth",
-    //      repeatType: "mirror",
-    //      duration: 2,
-    //      repeat: Infinity,
-    //    }} 
+                    <Image
        className='hidden lg:w-[30.903vw] h-[50vw] absolute z-[-33] right-0 top-0 top-0 lg:block' src={PhotoProfileDesktop} alt="Photo de lucas zebre " />
             </div>
             <Image className='md:hidden block w-[50%] h-[95vw] absolute z-[-33] top-0' src={PhotoProfileMobile} alt="Photo de lucas zebre " />

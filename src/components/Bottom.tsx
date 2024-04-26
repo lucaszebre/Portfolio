@@ -20,7 +20,7 @@ const Bottom = () => {
     const [ErrorMessage, setErrorMessage] = React.useState(false)
     const [success, setSuccess] = React.useState(false)
     
-    function sendFeedback(templateId, variables) {
+    function sendFeedback(templateId:string, variables) {
         window.emailjs.send(
             'service_941kynd', templateId,
             variables

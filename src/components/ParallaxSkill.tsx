@@ -1,5 +1,5 @@
 // import "./styles.css";
-import { useRef } from "react";
+import React, { useRef } from "react";
 import {
   motion,
   useScroll,
@@ -11,9 +11,12 @@ import {
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
 
+interface Props{
+  children:React.ReactNode,
+  baseVelocity:number
+}
 
-
-export const  ParallaxSkill = ({ children, baseVelocity = 100 }) => {
+export const  ParallaxSkill = (props:Props) => {
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -29,7 +32,12 @@ export const  ParallaxSkill = ({ children, baseVelocity = 100 }) => {
 
   const directionFactor = useRef(1);
   useAnimationFrame((t, delta) => {
-    let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
+    if(!props.baseVelocity){
+      props.baseVelocity=100
+    }
+
+    let moveBy = directionFactor.current * props.baseVelocity * (delta / 1000);
+
 
     if (velocityFactor.get() < 0) {
       directionFactor.current = -1;
@@ -46,7 +54,7 @@ export const  ParallaxSkill = ({ children, baseVelocity = 100 }) => {
   return (
     <div className="w-screen h-[150px]   justify-center flex flex-col ">
       <motion.div className="h-[100px]    flex flex-row  justify-between" style={{ x }}>
-        {children}
+        {props.children}
       </motion.div>
     </div>
   );
