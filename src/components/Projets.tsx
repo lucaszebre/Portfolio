@@ -2,14 +2,13 @@ import React, { useEffect } from 'react'
 import { useAnimate, useAnimation, useInView, useTransform } from 'framer-motion'
 import  Reveal  from './Reveal'
 import DialogProject from './DialogProject'
-
-const Projets = ({ref}) => {
+import Image from 'next/image'
+const Projets = () => {
 
 
 
     return (
         <div 
-        ref={ref}
          className="flex flex-col items-center  justify-center w-full">
             <div className="mt-[5vw]  max-w-[1440px] w-[80%] flex flex-col justify-center items-center">
                 <div className="flex flex-col  justify-center items-center w-full ">

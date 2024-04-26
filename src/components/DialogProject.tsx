@@ -1,8 +1,13 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import MarkdownPreview from "@uiw/react-markdown-preview";
-
-export default function DialogProject({ children,readme,code,demo}) { 
+interface Props{
+  children:React.ReactNode;
+  readme?:string;
+  code?:string;
+  demo?:string;
+}
+export default function DialogProject(props:Props) { 
   let [isOpen, setIsOpen] = useState(false)
 
   function closeModal() {
@@ -16,7 +21,7 @@ export default function DialogProject({ children,readme,code,demo}) {
   return (
     <>
       <div onClick={openModal} className="w-full">
-        {children} 
+        {props.children} 
       </div>
 
       <Transition appear show={isOpen} as={Fragment}>
@@ -48,20 +53,20 @@ export default function DialogProject({ children,readme,code,demo}) {
                 
                   <div className="mt-2">
                     
-                    <MarkdownPreview source={readme}  />
+                    <MarkdownPreview source={props.readme}  />
                   </div>
 
                   <div className="mt-4 flex flex-row gap-4">
-                    {code&&<a
-                      href={code}
+                    {props.code&&<a
+                      href={props.code}
                       target='_blank'
                       className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                     >
                       See the code
                     </a>}
-                    {demo &&   
+                    {props.demo &&   
                     <a
-                      href={demo}
+                      href={props.demo}
                       target='_blank'
                       className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                     >

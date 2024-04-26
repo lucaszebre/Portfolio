@@ -3,9 +3,9 @@ import React, { useEffect, useRef, useState } from "react";
 
 interface Props{
     children:React.ReactNode;
-    width:string;
-    justifyContent:string;
-    display:string;
+    width?:string;
+    justifyContent?:string;
+    display?:string;
     v:Variants
 }
 
