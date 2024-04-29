@@ -1,3 +1,5 @@
+"use client"
+
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/jsx-no-undef */
 import React from 'react'
@@ -129,7 +131,10 @@ const Bottom = () => {
     <>  
         <Toaster/>
         <div  className="w-full h-full py-10 flex flex-col justify-center items-center bg-[#242424] relative">
-        <Image className="absolute z-10 lg:top-[14vw] md:top-[39vw]  max-md:top-[50vw] max-md:left-[-20rem] left-[-4rem]" src={"./assets/images/pattern-rings.svg"} alt="background-pattern" />
+        <div className="absolute z-10 lg:top-[14vw] md:top-[39vw]  max-md:top-[50vw] max-md:left-[-20rem] left-[-4rem]">
+            <Image fill={true}  src={"./assets/images/pattern-rings.svg"} alt="background-pattern" />
+
+        </div>
 
             <div className="lg:w-[80%] md:w-full max-w-[1440px] h-full flex lg:flex-row lg:justify-between md:items-center md:justify-center mb-[2em] flex-col max-md:w-[90%]">
             <div className='hidden lg:flex'>

@@ -1,3 +1,5 @@
+"use client"
+
 /* eslint-disable react/no-unescaped-entities */
 import React, { forwardRef, useEffect, useRef, useState } from 'react'
 import github from '../../public/assets/images/icon-github.svg'
@@ -43,7 +45,10 @@ const Top = (props: { onClick: (arg0: string) => void }) => {
     <div ref={scope}  className="flex flex-col items-center justify-center w-full h-full">
         
     <Cursor isActive={isActive} />
-    <Image className="absolute z-10 lg:top-[14vw] md:top-[39vw]  max-md:top-[50vw] max-md:left-[-20rem] left-[-4rem]" src={"./assets/images/pattern-rings.svg"} alt="background-pattern" />
+    <div className="absolute z-10 lg:top-[14vw] md:top-[39vw]  max-md:top-[50vw] max-md:left-[-20rem] left-[-4rem]">
+        <Image fill={true} src={"./assets/images/pattern-rings.svg"} alt="background-pattern" />
+
+    </div>
 
 
         <div className="flex flex-col items-center justify-center max-w-[1440px] w-[80%] relative">
@@ -154,12 +159,20 @@ const Top = (props: { onClick: (arg0: string) => void }) => {
 
 
                 </div>
-                    <Image
-       className='hidden lg:w-[30.903vw] h-[50vw] absolute z-[-33] right-0 top-0 top-0 lg:block' src={PhotoProfileDesktop} alt="Photo de lucas zebre " />
-            </div>
-            <Image className='md:hidden block w-[50%] h-[95vw] absolute z-[-33] top-0' src={PhotoProfileMobile} alt="Photo de lucas zebre " />
+                <div className='hidden lg:w-[30.903vw] h-[50vw] absolute z-[-33] right-0 top-0 top-0 lg:block'>
+                <Image fill={true}  src={PhotoProfileDesktop} alt="Photo de lucas zebre " />
 
-            <Image className='lg:hidden md:block hidden w-[31.445vw] h-[58.594vw] absolute z-[-33] right-0 top-0' src={PhotoProfileTablet} alt="Photo de lucas zebre " />
+                </div>
+            </div>
+            <div className='md:hidden block w-[50%] h-[95vw] absolute z-[-33] top-0'>
+            <Image fill={true} src={PhotoProfileMobile} alt="Photo de lucas zebre " />
+
+            </div>
+            <div className='lg:hidden md:block hidden w-[31.445vw] h-[58.594vw] absolute z-[-33] right-0 top-0'>
+                <Image fill={true} src={PhotoProfileTablet} alt="Photo de lucas zebre " />
+
+            </div>
+
 
 
         

@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
@@ -40,7 +42,7 @@ Also i like competition , i did a lot of sport in my life from basketball to foo
  
 
     useEffect(() => {
-        const handleKeyPress = (event) => {
+        const handleKeyPress = (event: { key: string; }) => {
           if(event.key=='a' || event.key=='A'){
             setIsOpen(isOpen=>!isOpen)
           }
