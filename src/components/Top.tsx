@@ -52,14 +52,14 @@ const Top = (props: { onClick: (arg0: string) => void }) => {
 
 
         <div className="flex flex-col items-center justify-center max-w-[1440px] w-[80%] relative">
-            <div   className="flex md:flex-row md:gap-8 flex-col items-center justify-start w-full "  >
+            <div   className="flex md:flex-row md:gap-8 flex-col items-center text-start justify-start w-full "  >
                 
                     <Reveal v={{
                     hidden: {opacity:0 , x:-75 },
                     visible: {opacity:1 , x:0}
                 }}>
                     
-                        <motion.h1 style={{y}} className='text-[1rem] font-bold text-white mb-[0.5rem] md:text-[3vw] lg:text-[2vw]'>lucaszebre</motion.h1>
+                        <h1 className='text-[1rem] font-bold text-white mb-[0.5rem] md:text-[3vw] lg:text-[2vw]'>lucaszebre</h1>
                     </Reveal>
                     
                     <span  onClick={()=>props.onClick('projects')} className='text-white hover:underline font-bold md:flex hidden cursor-pointer hover:decoration-1  hover:decoration-[#00ff80]' >projects</span>

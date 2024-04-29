@@ -187,15 +187,15 @@ const Bottom = () => {
 
 
                         <Form {...form} >
-                        <form  onSubmit={form.handleSubmit(onSubmit)} className="p-3 content-start items-start flex-col space-y-8">
+                        <form  onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col items-end mt-[1em]'>
                         <FormField
                             control={form.control}
                             name="name"
                             render={({ field }) => (
                                 <FormItem className="w-full">
-                                <FormLabel className="text-start items-start w-full" >Name</FormLabel>
+                                {/* <FormLabel className="text-start items-start w-full" >Name</FormLabel> */}
                                 <FormControl>
-                                    <Input type="text" placeholder="miguel" {...field} />
+                                    <Input className="w-[85vw] lg:w-[30vw] mb-[1.5em] text-white border-white border-b-[1px] h-[5vw] outline-0 bg-none bg-transparent" type="text" placeholder="miguel" {...field} />
                                 </FormControl>
                                 
                                 <FormMessage />
@@ -207,9 +207,9 @@ const Bottom = () => {
                             name="email"
                             render={({ field }) => (
                                 <FormItem className="flex-col items-start content-start w-full">
-                                <FormLabel className="text-start w-full" >Email</FormLabel>
+                                {/* <FormLabel className="text-start w-full" >Email</FormLabel> */}
                                 <FormControl>
-                                    <Input placeholder="lucas1@gmail.com" {...field} />
+                                    <Input className="w-[85vw] lg:w-[30vw] mb-[1.5em] text-white border-white border-b-[1px] h-[5vw] outline-0 bg-none bg-transparent" placeholder="lucas1@gmail.com" {...field} />
                                 </FormControl>
                                 
                                 <FormMessage />
@@ -219,11 +219,11 @@ const Bottom = () => {
                             <FormField
                             control={form.control}
                             name="message"
-                            render={({ field }) => (
+                            render={({ field }) => ( 
                                 <FormItem className="flex-col items-start content-start w-full">
-                                <FormLabel className="text-start w-full" >Message</FormLabel>
+                                {/* <FormLabel className="text-start w-full" >Message</FormLabel> */}
                                 <FormControl>
-                                    <Input placeholder="lucas1@gmail.com" {...field} />
+                                    <Input className="w-[85vw] lg:w-[30vw] mb-[1.5em] text-white border-white border-b-[1px] h-[5vw] outline-0 bg-none bg-transparent" placeholder="lucas1@gmail.com" {...field} />
                                 </FormControl>
                                 
                                 <FormMessage />
@@ -231,9 +231,9 @@ const Bottom = () => {
                             )}
                             /> 
                             
-                            <Button  type="submit" className="w-full">{isLoading && (
+                            <Button  type="submit" className='mt-[1em] text-white  font-bold bg-none bg-transparent outline-0 border-0 cursor-pointe underline decoration-[#0bd949] decoration-4 text-[3vw]'>{isLoading && (
                                 <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-                                )}Login</Button>
+                                )}SEND MESSAGE</Button>
                         </form>
                         </Form>
                     
