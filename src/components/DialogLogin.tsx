@@ -3,6 +3,7 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import Login from './Login';
+import Auth from './Auth';
 interface Props{
   children:React.ReactNode;
   readme?:string;
@@ -55,7 +56,7 @@ export default function DialogLogin(props:Props) {
                 
                   <div className="mt-2">
                     
-                    <Login  />
+                    <Auth  />
                   </div>
 
                   

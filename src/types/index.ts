@@ -14,3 +14,13 @@ export const SchemaLogin = z.object({
     .regex(/[0-9]/, { message: 'Must contain at least one digit' })
     .regex(/[!@#$%^&*(),.?":{}|<>]/, { message: 'At least one special character' }),
 });
+
+
+export const SchemaRegister = z.object({
+  email: z.string().email().min(1, { message: 'Need an email' }),
+  name: z.string().min(1, { message: 'Need a first name' }),
+  password: z.string().min(8, { message: 'At least 8 characters long' })
+    .regex(/[A-Za-z]/, { message: 'Must contain at least one letter' })
+    .regex(/[0-9]/, { message: 'Must contain at least one digit' })
+    .regex(/[!@#$%^&*(),.?":{}|<>]/, { message: 'At least one special character' }),
+});
