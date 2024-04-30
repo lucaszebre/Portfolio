@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "tinacms dev -c \"next dev\"",
+    "build": "tinacms build && next build",
+    "start": "tinacms build && next start"
+    
   },
   "dependencies": {
     "@headlessui/react": "^1.7.19",
@@ -37,10 +37,12 @@
     "resend": "^3.2.0",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
+    "tinacms": "^1.6.2",
     "zod": "^3.23.4"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@tinacms/cli": "^1.5.44",
+    "@types/node": "^20.12.7",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
