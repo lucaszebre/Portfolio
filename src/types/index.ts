@@ -5,3 +5,12 @@ export const SchemaContact = z.object({
     name: z.string().min(1, { message: 'Need a name' }),
     message: z.string().min(1, { message: 'Need a message' })
   });
+
+  
+export const SchemaLogin = z.object({
+  email: z.string().min(1, { message: 'Need a username' }),
+  password: z.string().min(8, { message: 'At least 8 characters long' })
+    .regex(/[A-Za-z]/, { message: 'Must contain at least one letter' })
+    .regex(/[0-9]/, { message: 'Must contain at least one digit' })
+    .regex(/[!@#$%^&*(),.?":{}|<>]/, { message: 'At least one special character' }),
+});

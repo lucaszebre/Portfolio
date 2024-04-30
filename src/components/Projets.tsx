@@ -75,7 +75,7 @@ Contributions are welcome! If you d like to contribute to this project feel free
                         }}
                         > 
                             <div className="flex flex-col cursor-pointer w-full relative rounded-3xl rounded-gray-300 items-start justify-start">
-                                    <div className=" w-full  h-[20rem]">
+                                    <div className=" w-full relative h-[20rem]">
                                     <Image fill={true}  src={"/assets/instagram.jpg"} alt="EntertainnementWeb-app" />
 
                                     </div>
@@ -146,7 +146,7 @@ Contributions are welcome! If you'd like to contribute to this project, feel fre
                             }}
                             >
                             <div className="flex  w-full cursor-pointer relative flex-col items-start justify-start md:items-end md:justify-end">
-                                <div className="w-full  h-[20rem]">
+                                <div className="w-full relative h-[20rem]">
                                     <Image fill={true} src={"/assets/twitter.png"} alt="KanbanTask-app" />
 
                                 </div>
@@ -236,7 +236,7 @@ Happy task managing!
                                 }}
                                 >
                                 <div className="flex flex-col cursor-pointer w-full relative items-start justify-start">
-                                    <div className="w-full h-[20rem]">
+                                    <div className="w-full relative h-[20rem]">
                                     <Image fill={true} src={"/assets/Kanban.jpg"} alt="KanbanTask-app" />
 
                                     </div>
@@ -327,7 +327,7 @@ Inspired by the idea of link trees for developers.
                         }}
                         >
                             <div className="flex flex-col w-full cursor-pointer rounded-3xl rounded-gray-300 items-start justify-start md:items-end md:justify-end">
-                                    <div className="w-full h-[20rem]" >
+                                    <div className="w-full relative h-[20rem]" >
                                         <Image fill={true} src={"/assets/LinkDev.jpg"} alt="EntertainnementWeb-app" />
                                     </div>
                                     <div className="text-[4vw] font-300 gap-3  flex flex-row justify-start md:justify-end flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
@@ -425,7 +425,7 @@ You can also include additional sections or details as needed for your specific 
                     width='100%'
                     >
                         <div className="flex w-full relative flex-col cursor-pointer rounded-3xl rounded-gray-300 items-start justify-start">
-                                <div className="w-full h-[20rem]">
+                                <div className="w-full relative h-[20rem]">
                                     <Image fill={true}  src={"/assets/Invoice.jpg"} alt="EntertainnementWeb-app" />
                                 </div>
                                 <div className="text-[4vw] font-300 gap-3  flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
@@ -497,7 +497,7 @@ Contributions are welcome! If you'd like to contribute to this project, feel fre
                             width='100%'
                             >
                             <div className="flex flex-col w-full relative cursor-pointer items-start justify-start md:items-end md:justify-end">
-                                <div className="w-full h-[20rem]">
+                                <div className="w-full relative h-[20rem]">
                                     <Image fill={true} src={"/assets/Audiophile.jpg"} alt="KanbanTask-app" />
                                 </div>
                                 <div className="text-[4vw] font-300 gap-3 justify-end  flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
@@ -559,7 +559,7 @@ Contributions are welcome! If you'd like to contribute to this project, feel fre
                     width='100%'
                     >
                         <div className="flex w-full relative flex-col cursor-pointer rounded-3xl rounded-gray-300 items-start justify-start">
-                                <div className="w-full h-[20rem]">
+                                <div className="w-full relative h-[20rem]">
                                 <Image fill={true}  src={"/assets/Designo.jpg"} alt="EntertainnementWeb-app" />
 
                                 </div>
@@ -617,7 +617,7 @@ Contributions are welcome! If you'd like to contribute to this project, feel fre
                             width='100%'
                             >
                             <div className="flex flex-col w-full relative cursor-pointer items-start justify-start md:items-end md:justify-end">
-                                <div className="w-full h-[20rem]">
+                                <div className="w-full relative h-[20rem]">
                                     <Image fill={true} src={"/assets/images/thumbnail-project-6-large.webp"} alt="KanbanTask-app" />
                                 </div>
                                 <div className="text-[4vw] font-300 gap-3 justify-end  flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">

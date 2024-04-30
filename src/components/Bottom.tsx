@@ -195,7 +195,7 @@ const Bottom = () => {
                                 <FormItem className="w-full">
                                 {/* <FormLabel className="text-start items-start w-full" >Name</FormLabel> */}
                                 <FormControl>
-                                    <Input className="w-[85vw] lg:w-[30vw] mb-[1.5em] text-white border-white border-b-[1px] h-[5vw] outline-0 bg-none bg-transparent" type="text" placeholder="miguel" {...field} />
+                                    <Input className="w-[85vw] lg:w-[30vw] mb-[1.5em] text-white border-white border-b-[1px] h-[5vw] outline-0 bg-none bg-transparent" type="text" placeholder="NAME" {...field} />
                                 </FormControl>
                                 
                                 <FormMessage />
@@ -209,7 +209,7 @@ const Bottom = () => {
                                 <FormItem className="flex-col items-start content-start w-full">
                                 {/* <FormLabel className="text-start w-full" >Email</FormLabel> */}
                                 <FormControl>
-                                    <Input className="w-[85vw] lg:w-[30vw] mb-[1.5em] text-white border-white border-b-[1px] h-[5vw] outline-0 bg-none bg-transparent" placeholder="lucas1@gmail.com" {...field} />
+                                    <Input className="w-[85vw] lg:w-[30vw] mb-[1.5em] text-white border-white border-b-[1px] h-[5vw] outline-0 bg-none bg-transparent" placeholder="EMAIL" {...field} />
                                 </FormControl>
                                 
                                 <FormMessage />
@@ -223,7 +223,7 @@ const Bottom = () => {
                                 <FormItem className="flex-col items-start content-start w-full">
                                 {/* <FormLabel className="text-start w-full" >Message</FormLabel> */}
                                 <FormControl>
-                                    <Input className="w-[85vw] lg:w-[30vw] mb-[1.5em] text-white border-white border-b-[1px] h-[5vw] outline-0 bg-none bg-transparent" placeholder="lucas1@gmail.com" {...field} />
+                                    <Input className="w-[85vw] lg:w-[30vw] mb-[1.5em] text-white border-white border-b-[1px] h-[5vw] outline-0 bg-none bg-transparent" placeholder="MESSAGE" {...field} />
                                 </FormControl>
                                 
                                 <FormMessage />
