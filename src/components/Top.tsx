@@ -17,6 +17,7 @@ import { TypeAnimation } from 'react-type-animation';
 import Image from 'next/image'
 import DialogLogin from './DialogLogin'
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar'
+import Link from 'next/link'
 
 const Top = (props: { onClick: (arg0: string) => void }) => {
 
@@ -68,12 +69,8 @@ const Top = (props: { onClick: (arg0: string) => void }) => {
                     
                     <span  onClick={()=>props.onClick('projects')} className='text-white hover:underline font-bold md:flex hidden cursor-pointer hover:decoration-1  hover:decoration-[#00ff80]' >projects</span>
                     <span  onClick={()=>props.onClick('contact')} className='text-white hover:underline  font-bold md:flex hidden cursor-pointer hover:decoration-1 hover:underline hover:decoration-[#00ff80]' >contact</span>
-                    <a href='/Portfolio/blog' className='text-white hover:underline  font-bold md:flex hidden cursor-pointer hover:decoration-1 hover:underline hover:decoration-[#00ff80]'>blog</a>
-                    <DialogLogin>
-
-                        <span className='text-white hover:underline  font-bold md:flex hidden cursor-pointer hover:decoration-1 hover:underline hover:decoration-[#00ff80]'>login</span>
-                    </DialogLogin>
-
+                    <a href='https://lucaszebre.substack.com/' target='_blank' className='text-white hover:underline  font-bold md:flex hidden cursor-pointer hover:decoration-1 hover:underline hover:decoration-[#00ff80]'>blog</a>
+                 
                 
                     <Reveal v={{
                     hidden: {opacity:0 , x:75},
