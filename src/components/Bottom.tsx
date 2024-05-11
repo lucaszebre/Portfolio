@@ -193,7 +193,6 @@ const Bottom = () => {
                             name="name"
                             render={({ field }) => (
                                 <FormItem className="w-full">
-                                {/* <FormLabel className="text-start items-start w-full" >Name</FormLabel> */}
                                 <FormControl>
                                     <Input className="w-[85vw] lg:w-[30vw] mb-[1.5em] text-white border-white border-b-[1px] h-[5vw] outline-0 bg-none bg-transparent" type="text" placeholder="NAME" {...field} />
                                 </FormControl>
