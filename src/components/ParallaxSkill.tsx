@@ -1,7 +1,7 @@
 "use client"
 
 // import "./styles.css";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   motion,
   useScroll,
@@ -9,9 +9,11 @@ import {
   useTransform,
   useMotionValue,
   useVelocity,
-  useAnimationFrame
+  useAnimationFrame,
+  animate
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
+import useMeasure from "react-use-measure";
 
 interface Props{
   children:React.ReactNode,
@@ -19,43 +21,63 @@ interface Props{
 }
 
 export const  ParallaxSkill = (props:Props) => {
-  const baseX = useMotionValue(0);
-  const { scrollY } = useScroll();
-  const scrollVelocity = useVelocity(scrollY);
-  const smoothVelocity = useSpring(scrollVelocity, {
-    damping: 200,
-    stiffness: 200
-  });
-  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
-    clamp: false
-  });
+ 
 
-  const x = useTransform(baseX, (v) => `${wrap(-20, -105, v)}%`);
 
-  const directionFactor = useRef(1);
-  useAnimationFrame((t, delta) => {
-    if(!props.baseVelocity){
-      props.baseVelocity=100
+  const FAST_DURATION = 15;
+  const SLOW_DURATION = 75;
+
+  const [duration, setDuration] = useState(FAST_DURATION);
+  let [ref, { width }] = useMeasure();
+
+  const xTranslation = useMotionValue(0);
+
+  const [mustFinish, setMustFinish] = useState(false);
+  const [rerender, setRerender] = useState(false);
+
+  useEffect(() => {
+    let controls;
+    let finalPosition = -width / 2 - 8;
+
+    if (mustFinish) {
+      controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
+        ease: "linear",
+        duration: duration * (1 - xTranslation.get() / finalPosition),
+        onComplete: () => {
+          setMustFinish(false);
+          setRerender(!rerender);
+        },
+      });
+    } else {
+      controls = animate(xTranslation, [0, finalPosition], {
+        ease: "linear",
+        duration: duration,
+        repeat: Infinity,
+        repeatType: "loop",
+        repeatDelay: 0,
+      });
     }
 
-    let moveBy = directionFactor.current * props.baseVelocity * (delta / 1000);
-
-
-    if (velocityFactor.get() < 0) {
-      directionFactor.current = -1;
-    } else if (velocityFactor.get() > 0) {
-      directionFactor.current = 1;
-    }
-
-    moveBy += directionFactor.current * moveBy * velocityFactor.get();
-
-    baseX.set(baseX.get() + moveBy);
-  });
+    return controls?.stop;
+  }, [rerender, xTranslation, duration, width]);
+  
+  
 
  
   return (
     <div className="w-screen h-[150px]   justify-center flex flex-col ">
-      <motion.div className="h-[100px]    flex flex-row  justify-between" style={{ x }}>
+      <motion.div className="h-[100px]    flex flex-row  justify-between"
+       style={{ x: xTranslation }}
+       ref={ref}
+       onHoverStart={() => {
+         setMustFinish(true);
+         setDuration(SLOW_DURATION);
+       }}
+       onHoverEnd={() => {
+         setMustFinish(true);
+         setDuration(FAST_DURATION);
+       }}
+       >
         {props.children}
       </motion.div>
     </div>
