@@ -17,14 +17,13 @@ import useMeasure from "react-use-measure";
 
 interface Props{
   children:React.ReactNode,
-  baseVelocity:number
 }
 
 export const  ParallaxSkill = (props:Props) => {
  
 
 
-  const FAST_DURATION = 15;
+  const FAST_DURATION = 10;
   const SLOW_DURATION = 75;
 
   const [duration, setDuration] = useState(FAST_DURATION);
@@ -57,6 +56,7 @@ export const  ParallaxSkill = (props:Props) => {
         repeatDelay: 0,
       });
     }
+
 
     return controls?.stop;
   }, [rerender, xTranslation, duration, width]);
