@@ -6,6 +6,7 @@ import Top from '@/components/Top'
 import Projets from '@/components/Projets'
 import Press from '@/components/Press'
 import Skill from "@/components/Skill";
+import CalltoAction from '@/components/CalltoAction'
 export default function Home() {
   const bottom = useRef<HTMLDivElement>(null)
   const project = useRef<HTMLDivElement>(null);
@@ -38,7 +39,7 @@ export default function Home() {
           <Skill  />
           <div className='w-full ' ref={project}>
           <Projets  />
-
+          <CalltoAction />
           </div>
           <div className='w-full' ref={bottom}>
           <Bottom    /> 

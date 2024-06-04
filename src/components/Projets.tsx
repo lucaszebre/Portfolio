@@ -635,7 +635,7 @@ Contributions are welcome! If you'd like to contribute to this project, feel fre
                        
                         
                     </div> 
-                      
+                      <h1 className='text-white font-bold text-6xl'>Want to meet me ? </h1>
                 </div>
             </div>
         </div>

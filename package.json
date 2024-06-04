@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.0",
     "@headlessui/react": "^1.7.19",
     "@hookform/resolvers": "^3.3.4",
     "@measured/puck": "^0.14.2",
