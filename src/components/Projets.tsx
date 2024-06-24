@@ -31,7 +31,7 @@ const Projets = () => {
                         
                     </div>
 
-                    <div className="flex flex-col items-start gap-10 md:flex-row mt-[5vw] mb-[5vw] w-full justify-between w-full">
+                    <div className="flex flex-col items-start gap-10 md:flex-row mt-[5vw] mb-[5vw]  justify-between w-full">
                     <DialogProject  readme={`# Instagram Clone
 ![App Screenshot](./assets/instagram.jpg)
 
@@ -138,7 +138,7 @@ Once the development server is running, you can access the application in your w
 Contributions are welcome! If you'd like to contribute to this project, feel free to fork the repository and submit a pull request. Please follow the existing code style and conventions.
 
 
-`} >
+` } code='https://github.com/lucaszebre/Twitter-clone' >
 
                         <Reveal v={{
                             hidden: {opacity:0 , y:175,width:'100%'},
@@ -147,7 +147,7 @@ Contributions are welcome! If you'd like to contribute to this project, feel fre
                             >
                             <div className="flex  w-full cursor-pointer relative flex-col items-start justify-start md:items-end md:justify-end">
                                 <div className="w-full relative h-[20rem]">
-                                    <Image fill={true} src={"/assets/twitter.png"} alt="KanbanTask-app" />
+                                    <Image fill={true} src={"/assets/twitter.png"} alt="TWITTER APP PHOTO" />
 
                                 </div>
                                 <div className="text-[4vw] font-300 gap-3  flex justify-end flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
@@ -167,9 +167,409 @@ Contributions are welcome! If you'd like to contribute to this project, feel fre
                        
                     </DialogProject>
 
+                    </div> <div className="flex flex-col items-start gap-10 md:flex-row mt-[5vw] mb-[5vw]  justify-between w-full">
+                    <DialogProject  readme={` ### Free Ads
+
+#### Introduction
+
+The goal of this project is to create a classified ads website using the Laravel framework.
+
+#### Language
+
+PHP
+
+#### Requirements
+
+The entirety of your source files, except for any unnecessary files (binaries, temporary files, object files, etc.), must be included in your delivery.
+
+#### Day 1
+
+##### Objectives
+
+*   Install Laravel.
+*   Set up the homepage.
+
+##### Steps
+
+1.  Install Laravel: https\://[laravel.com/docs/8.x/installation](https://laravel.com/docs/8.x/installation)
+2.  Create a new application named "freeads" in the root of your web directory. All subsequent work will be done in this directory.
+3.  Start the development server with "artisan" and access the application in your browser to verify that Laravel is installed correctly.
+4.  Create a homepage:
+    *   Create a view named "index.php" that contains the basic HTML structure.
+    *   Create a controller named "IndexController."
+        *   Add a "showIndex" method that calls your view.
+5.  Create the route to access the homepage.
+6.  Conduct tests, for example, you should be able to access the URL http\://localhost:3000. A default route already exists; delete it to replace it with yours.
+
+Laravel is an MVC framework; you can find these three components in the "/app" directory.
+
+#### Day 2
+
+##### Objectives
+
+*   Registration and login page.
+*   Profile editing page.
+
+##### Steps
+
+1.  Create a "User" resource using "artisan" to generate the files.
+2.  Create a registration form:
+    *   Send a confirmation email to activate the user account.
+3.  Create a login form (refer to the documentation, "Authentication" section).
+4.  Create a CRUD to modify user information (e.g., email, password, etc.).
+5.  Conduct tests.
+
+#### Day 3
+
+##### Objectives
+
+*   Ad creation.
+*   Display the list of ads.
+
+##### Steps
+
+1.  Create the "Ad" model and its controller.
+    *   An ad consists of at least:
+        *   A title
+        *   A description
+        *   A photo
+        *   A price
+2.  Create the ad creation form.
+3.  Create a page that will list all the ads.
+4.  Make it possible to modify and delete your own ads.
+5.  Make it possible to have multiple photos in an ad.
+6.  Test.
+
+#### Day 4
+
+##### Objectives
+
+*   Ad search system with filters (name, product type, price, etc.).
+*   Ad suggestion system by matching (proximity, tastes, color, etc.).
+
+##### Steps
+
+1.  Complete the "Ads" and "Users" resources to add:
+    *   Ad search.
+    *   Ad filtering by criteria.
+    *   List of published ads.
+    *   List of most recent ads.
+    *   List of most relevant ads (matching).
+2.  Test again.
+
+#### Day 5
+
+##### Objectives
+
+*   Messaging system between users.
+*   Testing and debugging.
+
+##### Steps
+
+1.  Create the "Message" resource.
+2.  Create a sending page and a receiving page.
+3.  Indicate the number of new messages received in the menu.
+4.  Test and debug.`} code={'https://github.com/lucaszebre/FreeAds'} >
+                        <Reveal v={{
+                        hidden: {opacity:0 , y:175,width:'100%'},
+                        visible: {opacity:1 , y:0},
+                        
+                        }}
+                        > 
+                            <div className="flex flex-col cursor-pointer w-full relative rounded-3xl rounded-gray-300 items-start justify-start">
+                                    <div className=" w-full relative h-[20rem]">
+                                    <Image fill={true}  src={"/freeads.png"} alt="Free ads" />
+
+                                    </div>
+                                    <div className="text-[4vw] font-300 gap-3 flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
+                                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] "'>
+                                    LARAVEL
+                                    </span>
+                                    
+                                    </div>
+                                    <h2 className="text-[5vw]  md:text-[2.5vw] lg:text-[1.7vw] font-bold text-white mt-[0.5rem]">FREEADS </h2>
+
+                            </div>
+                            </Reveal>
+                        </DialogProject>
+                        <DialogProject readme={`
+                        ### MVC_My_Quiz
+
+#### Introduction
+
+This project involves developing a quiz website in PHP using the Symfony framework (version 3 or later). The site will allow users to test their general knowledge on various topics and track their progress.
+
+#### Restrictions
+
+*   **JavaScript forbidden:** The use of JavaScript is forbidden, even for bonus features.
+*   **Non-deducible answers:** Quiz answers must not be able to be deduced from the source code.
+
+#### Features
+
+##### Unconnected users
+
+*   Answer quizzes.
+*   View the history of past quizzes and scores obtained.
+*   Register (with email validation) and log in.
+
+##### Connected users
+
+*   Change their email address (with revalidation) and password.
+*   Create quizzes.
+
+##### Administrators
+
+*   Manage user accounts (create, update, delete, activate).
+*   Manage categories and quizzes (create, update, delete).
+*   Promote users to administrators.
+*   Send emails to users based on specific criteria (activity, quizzes taken, etc.).
+*   View detailed statistics on quizzes and users.
+*   Display graphs on the number of unique visitors and the number of quizzes taken over different periods.
+
+#### Technologies
+
+*   **PHP**
+*   **Symfony 3+**
+*   **Doctrine (Repositories, Entities, Relations)**
+*   **Twig**
+*   **Form Builder**
+
+#### Instructions
+
+1.  **Clone the repository:** "git clone <repository URL>"
+2.  **Install dependencies:** "composer install"
+3.  **Configure the database:** Update connection information in "parameters.yml".
+4.  **Create the database:** "php bin/console doctrine:database:create"
+5.  **Update the database schema:** "php bin/console doctrine:schema:update --force"
+6.  **Start the server:** "php bin/console server:run"
+
+#### Remarks
+
+*   The repository name is "MVC_My_Quiz".
+*   All source files (except unnecessary files) must be included in the repository.
+
+
+`} code='https://github.com/lucaszebre/My_Quizz'>
+
+                        <Reveal v={{
+                            hidden: {opacity:0 , y:175,width:'100%'},
+                            visible: {opacity:1 , y:0},
+                            }}
+                            >
+                            <div className="flex  w-full cursor-pointer relative flex-col items-start justify-start md:items-end md:justify-end">
+                                <div className="w-full relative h-[20rem]">
+                                    <Image fill={true} src={"/myquizz.png"} alt="KanbanTask-app" />
+
+                                </div>
+                                <div className="text-[4vw] font-300 gap-3  flex justify-end flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
+                                <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                                SYMFONY
+                                </span>  
+                                <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                                DOCTRINE
+                                </span> 
+                                <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                                TWIG
+                                </span>
+                               
+                                </div>
+                                <h2 className="text-[5vw] md:text-[2.5vw] lg:text-[1.7vw] flex justify-end font-bold text-white mt-[0.5rem]">MYQUIZZ</h2>
+                            </div>  
+                    </Reveal>
+                       
+                    </DialogProject>
+
                     </div> 
                     
-                    <div className="flex flex-col items-start gap-10 md:flex-row mt-[5vw] mb-[5vw] w-full justify-between w-full">
+                    <div className="flex flex-col items-start gap-10 md:flex-row mt-[5vw] mb-[5vw]  justify-between w-full">
+                    <DialogProject  readme={`### my_meetic
+
+#### Repository Name
+
+my_meetic
+
+#### Language
+
+JQuery, PHP
+
+#### Project Overview
+
+This project aims to create a dating website similar to Meetic, focusing on connecting people within a school environment who share common interests. The site will be built using object-oriented PHP, JQuery, and Ajax, with a strong emphasis on data validation and error handling.
+
+#### Skills to Acquire
+
+*   HTML5/CSS
+*   JQuery
+*   Ajax
+*   PHP
+*   Object-oriented programming
+*   Front-end and back-end data validation
+
+#### Presentation/Restrictions
+
+*   **Visitors:** Can only access registration and login forms.
+*   **Database Design:** Pay special attention to the database structure, as it will be evaluated during project defense.
+*   **Dropdown Menu:** Each page (except login/registration) should have a JQuery-based dropdown menu.
+*   **Error Handling:** Handle all possible error cases (SQL injections, database duplicates, etc.).
+*   **jQuery Plugins:** Do not use jQuery plugins.
+*   **Bootstrap JavaScript:** Do not use Bootstrap's JavaScript files (bootstrap.js and bootstrap.min.js).
+
+#### Mandatory Features
+
+##### Registration/Login
+
+*   **Minimum Required Information:**
+    *   Last name
+    *   First name
+    *   Date of birth (age verification, 18+ only)
+    *   Gender (male, female, other)
+    *   City
+    *   Email (unique, used for login)
+    *   Password (hashed, used for login)
+    *   Interests (at least one)
+
+##### My Account Page
+
+*   **Account Information Summary:**
+    *   Last name
+    *   First name
+    *   Date of birth
+    *   Gender
+    *   Email
+    *   Interests
+*   **Account Management:**
+    *   Change password
+    *   Change email
+    *   Delete account (soft delete, no actual deletion from the database)
+
+##### Search
+
+*   **Filters:**
+    *   Gender (Male/Female/Other)
+    *   Location (city, multiple selections allowed)
+    *   Interests (Dance, Skateboard, Manga, Unicorn, Cooking/Other)
+    *   Age Range (18/25, 25/35, 35/45, 45+)
+*   **Search Results:** Displayed as a JQuery-based carousel, each item containing a person's information.
+
+#### Bonus Features
+
+*   **Messaging System:**
+    *   Allow members to send messages to each other.
+    *   "Messaging" page to view received, sent, and deleted messages.
+    *   Display date, sender/recipient, and message content for each message.
+*   **Boosted Carousel:**
+    *   Add an option to directly contact the selected person from the carousel.
+
+#### Additional Notes
+
+*   All source files, excluding unnecessary files, must be included in the repository.
+*   Bonus features will only be evaluated if the mandatory features are fully functional.`}
+code='https://github.com/lucaszebre/MyMeetic'>
+                        <Reveal v={{
+                        hidden: {opacity:0 , y:175,width:'100%'},
+                        visible: {opacity:1 , y:0},
+                        
+                        }}
+                        > 
+                            <div className="flex flex-col cursor-pointer w-full relative rounded-3xl rounded-gray-300 items-start justify-start">
+                                    <div className=" w-full relative h-[20rem]">
+                                    <Image fill={true}  src={"/mymeetic.png"} alt="MYMEETIC" />
+
+                                    </div>
+                                    <div className="text-[4vw] font-300 gap-3 flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
+                                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] "'>
+                                   PHP
+                                    </span>
+                                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                                    MYSQL
+                                    </span>
+                                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                                    JQUERY
+                                    </span>
+                                     <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                                    AJAX
+                                    </span>
+                                    
+                                    </div>
+                                    <h2 className="text-[5vw]  md:text-[2.5vw] lg:text-[1.7vw] font-bold text-white mt-[0.5rem]">MYMEETIC</h2>
+
+                            </div>
+                            </Reveal>
+                        </DialogProject>
+                        <DialogProject readme={`### my\_snapchat
+
+#### Introduction
+
+This project aims to recreate a simplified version of the Snapchat application, named "my\_snapchat." The app allows users to send images to friends with a set viewing time limit, after which the images are automatically deleted.
+
+#### Technical Details
+
+*   **Language:** REACT-Native
+*   **API Endpoint:** [https://snapchat.epidoc.eu/](https://snapchat.epidoc.eu/)
+*   **Deployment:** The app will be deployed on a group member's smartphone for demonstration during the project defense.
+*   **External Libraries:** The use of npm packages requires approval from the teaching team.
+
+#### Project Stages
+
+1.  **Authentication:**
+    *   Create a signup page (email, password, username).
+    *   Create a login page (email, password).
+    *   Hide these pages after successful login.
+    *   Implement a logout feature.
+    *   Consider using a splash screen.
+
+2.  **Core Functionality:**
+    *   Allow users to select an image from their gallery or camera.
+    *   Display a list of registered users after image capture.
+    *   Enable users to select a recipient and set a viewing time limit for the image.
+
+3.  **Receiving Snaps:**
+    *   Display the sender's username.
+    *   Upon tapping the username, show the snap for the specified duration.
+    *   Automatically delete the snap from all storage after the time limit expires and notify the API.
+
+#### Bonus Features
+
+*   User profile pictures.
+*   User data editing (email, password, username, profile picture).
+*   Account deletion.
+*   Adding and removing friends.
+*   Drawing or writing on snaps.
+*   "Remember me" feature for login.
+*   Offline snap saving.
+
+#### Repository
+
+The project's source code, excluding unnecessary files, will be available in the "my\_snapchat" repository.
+
+
+`} code='https://github.com/lucaszebre/Mysnapchat' >
+
+                        <Reveal v={{
+                            hidden: {opacity:0 , y:175,width:'100%'},
+                            visible: {opacity:1 , y:0},
+                            }}
+                            >
+                            <div className="flex  w-full cursor-pointer relative flex-col items-start justify-start md:items-end md:justify-end">
+                                <div className="w-full relative h-[20rem]">
+                                    <Image fill={true} src={"/snapchat.png"} alt="MYSNAPCHAT" />
+
+                                </div>
+                                <div className="text-[4vw] font-300 gap-3  flex justify-end flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
+                                <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                                REACT NATIVE
+                                </span>
+                                
+                                </div>
+                                <h2 className="text-[5vw] md:text-[2.5vw] lg:text-[1.7vw] flex justify-end font-bold text-white mt-[0.5rem]">MYSNAPCHAT</h2>
+                            </div>  
+                    </Reveal>
+                       
+                    </DialogProject>
+
+                    </div> 
+                    
+                    <div className="flex flex-col items-start gap-10 md:flex-row mt-[5vw] mb-[5vw] w-full justify-between ">
                     
                     <DialogProject readme={`# Kanban Task Manager
 
