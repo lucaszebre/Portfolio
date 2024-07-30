@@ -82,7 +82,7 @@ const Top = (props: { onClick: (arg0: string) => void }) => {
                         <a href="https://www.frontendmentor.io/profile/Kihura" target="_blank"><Image className='w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]' src={frontend} alt="frontend-icon" /></a>
                         <a href="https://www.linkedin.com/in/lucas-zebre-22305a191/" target="_blank"><Image className='w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]' src={linkedin} alt="linkedin-icon" /></a>
                         <a href="https://twitter.com/ZebreLucas" target="_blank"><Image className='w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]' src={twitter} alt="twitter-icon" /></a>
-                        <a className='text-2xl text-white font-bold' href="/Portfolio/assets/cv.pdf" target="_blank">CV</a>
+                        <a className='text-2xl text-white font-bold' href="/assets/cv.pdf" target="_blank">CV</a>
                     </div>
                 </Reveal>
             </div>
@@ -155,7 +155,7 @@ const Top = (props: { onClick: (arg0: string) => void }) => {
                         <a href="https://www.frontendmentor.io/profile/Kihura" target="_blank"><Image className='w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]' src={frontend} alt="frontend-icon" /></a>
                         <a href="https://www.linkedin.com/in/lucas-zebre-22305a191/" target="_blank"><Image className='w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]' src={linkedin} alt="linkedin-icon" /></a>
                         <a href="https://twitter.com/ZebreLucas" target="_blank"><Image className='w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]' src={twitter} alt="twitter-icon" /></a>
-                        <a className='text-2xl text-white font-bold' href="/Portfolio/assets/cv.pdf" target="_blank">CV</a>
+                        <a className='text-2xl text-white font-bold' href="/assets/cv.pdf" target="_blank">CV</a>
                     </div>
                 </Reveal>
                     <div onClick={ ()=>props.onClick('contact')}  className="text-[3vw] lg:text-[2vw] justify-center md:justify-start flex text-white cursor-pointer font-400 mb-[2em] decoration-4 underline decoration-[#00ff80]">

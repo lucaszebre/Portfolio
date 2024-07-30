@@ -259,7 +259,7 @@ const Bottom = () => {
                 <a href="https://www.frontendmentor.io/profile/Kihura" target="_blank"><Image src={frontend} alt="frontend-logo" className='max-md:w-[3vw] mr-[1vw] max-md:min-w-[19.2px] md:w-[3vw] lg:w-[2vw]' /></a>
                 <a href="https://www.linkedin.com/in/lucas-zebre-22305a191/" target="_blank"><Image src={linkedin} alt="linkedin" className='max-md:w-[3vw] mr-[1vw] max-md:min-w-[19.2px] md:w-[3vw] lg:w-[2vw]' /></a>
                 <a href="https://twitter.com/ZebreLucas" target="_blank"><Image src={twitter} alt="twitter-logo" className='max-md:w-[3vw] mr-[1vw] max-md:min-w-[19.2px] md:w-[3vw] lg:w-[2vw]' /></a>
-                <a className='text-2xl text-white font-bold' href="/Portfolio/assets/cv.pdf" target="_blank">CV</a>
+                <a className='text-2xl text-white font-bold' href="/assets/cv.pdf" target="_blank">CV</a>
 
             </div>
             </Reveal>
