@@ -31,7 +31,7 @@ const Projets = () => {
                         
                     </div>
 
-                    <div className="flex flex-col items-start gap-10 md:flex-row mt-[5vw] mb-[5vw] w-full justify-between w-full">
+                    <div className="flex flex-col items-start gap-10 lg:flex-row mt-[5vw] mb-[5vw] justify-between w-full">
                     <DialogProject  readme={`# Instagram Clone
 ![App Screenshot](./assets/instagram.jpg)
 
@@ -76,7 +76,7 @@ Contributions are welcome! If you d like to contribute to this project feel free
                         > 
                             <div className="flex flex-col cursor-pointer w-full relative rounded-3xl rounded-gray-300 items-start justify-start">
                                     <div className=" w-full relative h-[20rem]">
-                                    <Image fill={true}  src={"/assets/instagram.jpg"} alt="EntertainnementWeb-app" />
+                                    <Image className='rounded-xl' fill={true}  src={"/assets/instagram.jpg"} alt="EntertainnementWeb-app" />
 
                                     </div>
                                     <div className="text-[4vw] font-300 gap-3 flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
@@ -147,7 +147,7 @@ Contributions are welcome! If you'd like to contribute to this project, feel fre
                             >
                             <div className="flex  w-full cursor-pointer relative flex-col items-start justify-start md:items-end md:justify-end">
                                 <div className="w-full relative h-[20rem]">
-                                    <Image fill={true} src={"/assets/twitter.png"} alt="KanbanTask-app" />
+                                    <Image className='rounded-xl' fill={true} src={"/assets/twitter.png"} alt="KanbanTask-app" />
 
                                 </div>
                                 <div className="text-[4vw] font-300 gap-3  flex justify-end flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
@@ -169,7 +169,7 @@ Contributions are welcome! If you'd like to contribute to this project, feel fre
 
                     </div> 
                     
-                    <div className="flex flex-col items-start gap-10 md:flex-row mt-[5vw] mb-[5vw] w-full justify-between w-full">
+                    <div className="flex flex-col items-start gap-10 lg:flex-row mt-[5vw] mb-[5vw]  justify-between w-full">
                     
                     <DialogProject readme={`# Kanban Task Manager
 
@@ -237,7 +237,7 @@ Happy task managing!
                                 >
                                 <div className="flex flex-col cursor-pointer w-full relative items-start justify-start">
                                     <div className="w-full relative h-[20rem]">
-                                    <Image fill={true} src={"/assets/Kanban.jpg"} alt="KanbanTask-app" />
+                                    <Image className='rounded-xl' fill={true} src={"/assets/Kanban.jpg"} alt="KanbanTask-app" />
 
                                     </div>
                                     <div className="text-[4vw] font-300 gap-3 flex justify-start flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
@@ -328,7 +328,7 @@ Inspired by the idea of link trees for developers.
                         >
                             <div className="flex flex-col w-full cursor-pointer rounded-3xl rounded-gray-300 items-start justify-start md:items-end md:justify-end">
                                     <div className="w-full relative h-[20rem]" >
-                                        <Image fill={true} src={"/assets/LinkDev.jpg"} alt="EntertainnementWeb-app" />
+                                        <Image className='rounded-xl' fill={true} src={"/assets/LinkDev.jpg"} alt="EntertainnementWeb-app" />
                                     </div>
                                     <div className="text-[4vw] font-300 gap-3  flex flex-row justify-start md:justify-end flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
                                     <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
@@ -352,7 +352,7 @@ Inspired by the idea of link trees for developers.
 
                         
                     </div> 
-                    <div className="flex flex-col items-start gap-10 md:flex-row mt-[5vw] mb-[5vw] w-full justify-between w-full">
+                    <div className="flex flex-col items-start gap-10 lg:flex-row mt-[5vw] mb-[5vw]  justify-between w-full">
                     <DialogProject readme={`# Invoice Manager
 
 ![App Screenshot](./assets/Invoice.jpg)
@@ -426,7 +426,7 @@ You can also include additional sections or details as needed for your specific 
                     >
                         <div className="flex w-full relative flex-col cursor-pointer rounded-3xl rounded-gray-300 items-start justify-start">
                                 <div className="w-full relative h-[20rem]">
-                                    <Image fill={true}  src={"/assets/Invoice.jpg"} alt="EntertainnementWeb-app" />
+                                    <Image className='rounded-xl' fill={true}  src={"/assets/Invoice.jpg"} alt="EntertainnementWeb-app" />
                                 </div>
                                 <div className="text-[4vw] font-300 gap-3  flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
                                 <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
@@ -496,9 +496,9 @@ Contributions are welcome! If you'd like to contribute to this project, feel fre
                             }}
                             width='100%'
                             >
-                            <div className="flex flex-col w-full relative cursor-pointer items-start justify-start md:items-end md:justify-end">
+                            <div className="flex flex-col w-full relative  cursor-pointer items-start justify-start md:items-end md:justify-end">
                                 <div className="w-full relative h-[20rem]">
-                                    <Image fill={true} src={"/assets/Audiophile.jpg"} alt="KanbanTask-app" />
+                                    <Image className='rounded-xl' fill={true} src={"/assets/Audiophile.jpg"} alt="KanbanTask-app" />
                                 </div>
                                 <div className="text-[4vw] font-300 gap-3 justify-end  flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
                                 <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
@@ -515,7 +515,7 @@ Contributions are welcome! If you'd like to contribute to this project, feel fre
                        
                         
                     </div>  
-                    <div className="flex flex-col items-start gap-10 md:flex-row mt-[5vw] mb-[5vw] w-full justify-between w-full">
+                    <div className="flex flex-col items-start gap-10 lg:flex-row mt-[5vw] mb-[5vw]  justify-between w-full">
                     <DialogProject readme={`# Designo Multi Page
 ![App Screenshot](./assets/Designo.jpg)
 
@@ -558,9 +558,9 @@ Contributions are welcome! If you'd like to contribute to this project, feel fre
                     }}
                     width='100%'
                     >
-                        <div className="flex w-full relative flex-col cursor-pointer rounded-3xl rounded-gray-300 items-start justify-start">
+                        <div className="flex w-full relative flex-col rounded-xl cursor-pointer rounded-3xl rounded-gray-300 items-start justify-start">
                                 <div className="w-full relative h-[20rem]">
-                                <Image fill={true}  src={"/assets/Designo.jpg"} alt="EntertainnementWeb-app" />
+                                <Image className='rounded-xl' fill={true}  src={"/assets/Designo.jpg"} alt="EntertainnementWeb-app" />
 
                                 </div>
                                 <div className="text-[4vw] font-300 gap-3  flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
@@ -616,9 +616,9 @@ Contributions are welcome! If you'd like to contribute to this project, feel fre
                             }}
                             width='100%'
                             >
-                            <div className="flex flex-col w-full relative cursor-pointer items-start justify-start md:items-end md:justify-end">
+                            <div className="flex flex-col w-full relative rounded-xl cursor-pointer items-start justify-start md:items-end md:justify-end">
                                 <div className="w-full relative h-[20rem]">
-                                    <Image fill={true} src={"/assets/images/thumbnail-project-6-large.webp"} alt="KanbanTask-app" />
+                                    <Image className='rounded-xl' fill={true} src={"/assets/images/thumbnail-project-6-large.webp"} alt="KanbanTask-app" />
                                 </div>
                                 <div className="text-[4vw] font-300 gap-3 justify-end  flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
                                 <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
@@ -635,7 +635,7 @@ Contributions are welcome! If you'd like to contribute to this project, feel fre
                        
                         
                     </div> 
-                      <h1 className='text-white font-bold text-6xl'>Want to meet me ? </h1>
+                     
                 </div>
             </div>
         </div>

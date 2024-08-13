@@ -41,7 +41,7 @@ export default function Home() {
           <div className='w-full ' ref={project}>
             <Youtube />
           <Projets  />
-          <CalltoAction />
+          {/* <CalltoAction /> */}
           </div>
           <div className='w-full' ref={bottom}>
           <Bottom    /> 

@@ -24,3 +24,17 @@ export const SchemaRegister = z.object({
     .regex(/[0-9]/, { message: 'Must contain at least one digit' })
     .regex(/[!@#$%^&*(),.?":{}|<>]/, { message: 'At least one special character' }),
 });
+
+
+
+export const skills = [
+  "CSS",
+  "PHP",
+  "Laravel",
+  "Symfony",
+  "React native",
+  "WordPress",
+  "HTML",
+  "JS",
+  "REACT",
+];
