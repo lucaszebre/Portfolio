@@ -10,25 +10,25 @@ const Press = () => {
   let readme = "# My Developer Journey\n\
 \n\
 ## Introduction\n\
-In 2019, I embarked on my developer journey as a computer science student at Sorbonne University. Delving into a Python clone, my journey began with practical duo sessions, igniting <span style='background-color: #FFFF00'> my passion for problem-solving </span> and pushing me to constantly seek solutions.\n\
+In 2019, I embarked on my developer journey as a computer science student at Sorbonne University. Delving into a Python clone, my journey began with practical duo sessions, igniting  my passion for problem-solving  and pushing me to constantly seek solutions.\n\
 ![App Screenshot](./assets/sorbonne.jpg)\n\
 \n\
 ## Early Doubts and Exploration\n\
-Navigating the vibrant city of Paris, doubts clouded my path. Unsure of my career trajectory, I grappled with distractions, yet remained determined to explore my potential. <span style='background-color: #FFFF00'> It was a period of self-discovery,</span> where understanding the value of money came through hard-earned lessons.\n\
+Navigating the vibrant city of Paris, doubts clouded my path. Unsure of my career trajectory, I grappled with distractions, yet remained determined to explore my potential.  It was a period of self-discovery, where understanding the value of money came through hard-earned lessons.\n\
 ![App Screenshot](./assets/exploring.jpg)\n\
 \n\
 ## Transition to Working\n\
-Opting out of my second university year wasn't due to lack of intelligence but a sense of aimlessness. It was in the realm of work that the importance of coding skills and problem-solving prowess truly dawned on me. Enduring uninspiring roles reinforced my gratitude for my capabilities.\n\\n\
+Opting out of my second university year wasn't due to lack of intelligence but a sense of aimlessness. It was in the realm of work that the importance of coding skills and problem-solving prowess truly dawned on me. Enduring uninspiring roles reinforced my gratitude for my capabilities.\n\
 ![App Screenshot](./assets/server.jpg)\n\
 \n\
 ## Decision to Become a Web Developer\n\
-In 2022, a pivotal decision was made: I would forge a path as a web developer. Armed with <span style='background-color: #FFFF00'> HTML, CSS, and JS knowledge,</span> I initially sought employment opportunities. Realizing the necessity of React, I transitioned to internships, despite the challenges posed by the French job market.\n\
+In 2022, a pivotal decision was made: I would forge a path as a web developer. Armed with  HTML, CSS, and JS knowledge, I initially sought employment opportunities. Realizing the necessity of React, I transitioned to internships, despite the challenges posed by the French job market.\n\
 \n\
 ## Discovering the Web Academy\n\
-The Web Academy by Epitech emerged as a beacon of tailored learning. Over ten months, I honed my skills, delved into SQL and PHP, and conquered projects that seemed insurmountable at first. <span style='background-color: #FFFF00'> From SQL novitiate to crafting a PHP Twitter clone in six months, my growth was tangible </span>.\n\
+The Web Academy by Epitech emerged as a beacon of tailored learning. Over ten months, I honed my skills, delved into SQL and PHP, and conquered projects that seemed insurmountable at first.  From SQL novitiate to crafting a PHP Twitter clone in six months, my growth was tangible .\n\
 \n\
 ## Current Progress\n\
-Fast forward to April 2024, and I find myself collaborating on cutting-edge projects. Leveraging tools like Docker, I'm spearheading innovative solutions such as a Spotify clone. Each milestone reaffirms my dedication and drives me towards realizing my vision: <span style='background-color: #FFFF00'> i want to create thing and do thing that excite me </span>\n\
+Fast forward to April 2024, and I find myself collaborating on cutting-edge projects. Leveraging tools like Docker, I'm spearheading innovative solutions such as a Spotify clone. Each milestone reaffirms my dedication and drives me towards realizing my vision:  i want to create thing and do thing that excite me \n\
 <video width='200px' height='200px' autoPlay loop muted><source src='./assets/video.mp4' type='video/mp4' />Your browser does not support the video tag.</video>\n\
 ## Conpetetive spirit\n\
 Also i like competition , i did a lot of sport in my life from basketball to football to surf to beach-tennis , etc . I ended , doing a lot a skate , this sport it's my my go to , just a way to challenge myself , learning new thing , just being focus one thing for few hours . Progressing everyday , fall , hurting my self . Could sounds sadomasochist but  for those reason i really like to skate . To do parallele with web develloper in skate we always fail before landing a tricks , i think it's the same in life , the most important is that you stay consistant and keep trying smartly \n\
