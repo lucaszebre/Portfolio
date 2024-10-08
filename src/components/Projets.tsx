@@ -40,44 +40,52 @@ const Projets = () => {
           </div>
           <div className="flex flex-col items-start gap-10 lg:flex-row mt-[5vw] mb-[5vw] justify-between w-full">
             <DialogProject
-              readme={`# Instagram Clone
-![App Screenshot](./assets/instagram.jpg)
+              readme={`# Letter Easy
 
-This project is a clone of Instagram built using Next js, Prisma, and Pusher. It aims to replicate some of the core features of Instagram such as posting images, liking and commenting on posts, real-time updates, user authentication, and more.
+![App Screenshot](./assets/letter.png)
+
+Letter Easy is an innovative SaaS (Software as a Service) application designed to simplify the process of creating motivation letters. Leveraging AI technology, this tool enables users to generate personalized and compelling motivation letters for various purposes, including job applications, university admissions, and more.
 
 ## Features
 
-- **User Authentication**: Users can sign up, log in, and log out securely.
-- **Posting Images**: Users can upload and share images with captions.
-- **Liking and Commenting**: Users can like and comment on posts.
-- **Real-time Updates**: Utilizing Pusher, the application provides real-time updates for likes, comments, and new posts.
-- **User Profiles**: Each user has a profile page displaying their posts and other relevant information.
+- **AI-Powered Letter Generation**: Utilizes advanced AI to create customized motivation letters based on user input.
+- **Template Library**: Offers a variety of templates to suit different purposes and industries.
+- **CV Integration**: Allows users to upload and incorporate details from their CV into the letter.
+- **Real-time Editing**: Users can edit and refine the AI-generated content in real-time.
+- **Multi-format Export**: Export letters in various formats including PDF, Word, and plain text.
+- **Cloud Storage**: Safely store and access your letters from anywhere.
+- **Collaboration Tools**: Share and collaborate on letters with team members or mentors.
 
 ## Technologies Used
 
-- **Next.js**: Next.js is a React framework that enables server-side rendering, routing, and more.
-- **Prisma**: Prisma is a modern database toolkit for TypeScript and Node.js. It provides an ORM for working with databases.
-- **Pusher**: Pusher is a hosted service that provides real-time messaging via WebSockets.
+Letter Easy is built using cutting-edge technologies to provide a seamless and efficient user experience:
+
+- **Next.js**: For a fast, SEO-friendly front-end experience.
+- **Prisma**: Ensuring robust and efficient database operations.
+- **React Query (useQuery)**: For optimal data fetching and state management.
+- **AI Integration**: Leveraging state-of-the-art language models for high-quality letter generation.
 
 ## Getting Started
 
-To get started with this project, follow these steps:
+To start using Letter Easy:
 
-1. Clone this repository.
-2. Install dependencies using 'npm install' or 'yarn install'.
-3. Set up your database with Prisma.
-4. Configure your Pusher account.
-5. Run the development server using 'npm run dev' or 'yarn dev'.
+1. Visit our website at [www.lettereasy.co](https://www.lettereasy.co)
+2. Sign up for an account
+3. Choose a subscription plan that fits your needs
+4. Start creating professional, AI-assisted motivation letters!
 
 ## Usage
 
-Once the development server is running, you can access the application in your web browser at 'http://localhost:3000'. Sign up for an account, explore the features, and start sharing photos with your friends!
+After logging in to your Letter Easy account:
 
-## Contributing
+1. Select a letter template or start from scratch
+2. Input key details about yourself and the position you're applying for
+3. Let our AI generate a base letter
+4. Edit and refine the letter to your liking
+5. Export your finished letter in your preferred format
 
-Contributions are welcome! If you d like to contribute to this project feel free to fork the repository and submit a pull request Please follow the existing code style and conventions`}
-              code={"https://github.com/lucaszebre/instaclone"}
-              demo={"https://instaclone-gules-one.vercel.app/auth"}
+`}
+              demo={"https://lettereasy.co/"}
             >
               <Reveal
                 v={{
@@ -91,7 +99,7 @@ Contributions are welcome! If you d like to contribute to this project feel free
                       className="rounded-xl"
                       fill={true}
                       src={"/assets/letter.png"}
-                      alt="EntertainnementWeb-app"
+                      alt="lettereasy-app"
                     />
                   </div>
                   <div className="text-[4vw] font-300 gap-3 flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
@@ -116,47 +124,82 @@ Contributions are welcome! If you d like to contribute to this project feel free
             </DialogProject>
 
             <DialogProject
-              readme={`# Twitter Clone
-![App Screenshot](./assets/twitter.png)
+              readme={`
+                # Previously_On
 
-This project is a Twitter clone developed using PHP, MySQL, and jQuery. It aims to replicate some of the core features of Twitter such as posting tweets, following other users, liking and retweeting tweets, user authentication, and more.
+![App Screenshot](./assets/previously_on.png)
+
+Previously On is a web application that allows users to track their favorite TV series and movies. Built with Next.js and integrating with the BetaSeries API, this app provides a comprehensive platform for managing your watched content, exploring new shows, and engaging with a community of fellow TV and movie enthusiasts.
 
 ## Features
 
-- **User Authentication**: Users can sign up, log in, and log out securely.
-- **Posting Tweets**: Users can compose and share tweets with text, images, or links.
-- **Following Users**: Users can follow other users to see their tweets on their timeline.
-- **Liking and Retweeting**: Users can like and retweet tweets from other users.
-- **Real-time Updates**: Utilizing jQuery for AJAX requests, the application provides real-time updates for likes, retweets, and new tweets.
-- **User Profiles**: Each user has a profile page displaying their tweets, followers, and other relevant information.
+- **Watch List Management**: Keep track of series and movies you've watched.
+- **Episode Tracking**: Mark episodes as watched or unwatched.
+- **Actor Details**: Explore detailed information about actors in your favorite shows.
+- **Trailer Viewing**: Watch trailers for series and movies when available.
+- **BetaSeries Integration**: Log in with your BetaSeries account for a seamless experience.
+- **Community Interaction**: Post comments on series and movies.
+- **Responsive Design**: Enjoy a great experience on both desktop and mobile devices.
 
 ## Technologies Used
 
-- **PHP**: PHP is a server-side scripting language widely used for web development.
-- **MySQL**: MySQL is an open-source relational database management system.
-- **jQuery**: jQuery is a fast, small, and feature-rich JavaScript library for simplifying tasks like HTML document traversal and manipulation, event handling, and AJAX.
+- **Next.js**: React framework for building efficient and scalable web applications.
+- **shadcn/ui**: A collection of re-usable components built with Radix UI and Tailwind CSS.
+- **BetaSeries API**: Provides comprehensive data on TV series and movies.
 
 ## Getting Started
 
-To get started with this project, follow these steps:
+To get started with Previously On, follow these steps:
 
-1. Clone this repository.
-2. Set up your PHP development environment (e.g., XAMPP, WAMP, MAMP).
-3. Import the provided MySQL database schema.
-4. Configure your database connection settings in the PHP files.
-5. Run your PHP development server.
-6. Access the application in your web browser.
+1. Clone this repository:
+   "
+   git clone https://github.com/lucaszebre/Previously_On
+   "
+2. Navigate to the project directory:
+   "
+   cd previously-on
+   "
+3. Install dependencies:
+   "
+   npm install
+   "
+4. Set up your environment variables:
+   - Create a ".env.local" file in the root directory
+   - Add your BetaSeries API key:
+     "
+     BETASERIES_API_KEY=your_api_key_here
+     "
+5. Run the development server:
+   "
+   npm run dev
+   "
 
 ## Usage
 
-Once the development server is running, you can access the application in your web browser. Sign up for an account, explore the features, follow other users, and start tweeting and interacting with the community!
+1. Open your browser and navigate to "http://localhost:3000"
+2. Log in with your BetaSeries account
+3. Start adding series and movies to your watch list
+4. Mark episodes as watched, explore actor details, and watch trailers
+5. Engage with the community by posting comments on series and movies
 
 ## Contributing
 
-Contributions are welcome! If you'd like to contribute to this project, feel free to fork the repository and submit a pull request. Please follow the existing code style and conventions.
+Contributions are welcome! If you'd like to contribute to Previously On, please follow these steps:
 
+1. Fork the repository
+2. Create a new branch: "git checkout -b feature/your-feature-name"
+3. Make your changes and commit them: "git commit -m 'Add some feature'"
+4. Push to the branch: "git push origin feature/your-feature-name"
+5. Submit a pull request
 
-`}
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Acknowledgments
+
+- Thanks to BetaSeries for providing the API that powers this application.
+- Shout out to the Next.js and shadcn/ui communities for their excellent tools and documentation.`}
               demo="https://previously-on-eight.vercel.app/"
             >
               <Reveal
