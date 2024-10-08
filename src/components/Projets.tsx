@@ -1,38 +1,243 @@
-"use client"
+"use client";
 
-import React, { useEffect } from 'react'
-import { useAnimate, useAnimation, useInView, useTransform } from 'framer-motion'
-import  Reveal  from './Reveal'
-import DialogProject from './DialogProject'
-import Image from 'next/image'
+import React, { useEffect } from "react";
+import {
+  useAnimate,
+  useAnimation,
+  useInView,
+  useTransform,
+} from "framer-motion";
+import Reveal from "./Reveal";
+import DialogProject from "./DialogProject";
+import Image from "next/image";
 const Projets = () => {
+  return (
+    <div className="flex flex-col items-center  justify-center w-full">
+      <div className="mt-[5vw]  max-w-[1440px] w-[80%] flex flex-col justify-center items-center">
+        <div className="flex flex-col  justify-center items-center w-full ">
+          <div className="flex items-end justify-between w-full">
+            <Reveal
+              v={{
+                hidden: { opacity: 0, x: -75 },
+                visible: { opacity: 1, x: 0 },
+              }}
+            >
+              <h1 className="text-white text-xl md:text-6xl font-semibold">
+                Projets
+              </h1>
+            </Reveal>
 
+            <Reveal
+              v={{
+                hidden: { opacity: 0, x: 75 },
+                visible: { opacity: 1, x: 0 },
+              }}
+            >
+              <div className="md:text-4xl text-lg text-white underline decoration-4 decoration-[#07ff6a] cursor-pointer ">
+                CONTACT ME
+              </div>
+            </Reveal>
+          </div>
+          <div className="flex flex-col items-start gap-10 lg:flex-row mt-[5vw] mb-[5vw] justify-between w-full">
+            <DialogProject
+              readme={`# Letter Easy
 
+![App Screenshot](./assets/letter.png)
 
-    return (
-        <div 
-         className="flex flex-col items-center  justify-center w-full">
-            <div className="mt-[5vw]  max-w-[1440px] w-[80%] flex flex-col justify-center items-center">
-                <div className="flex flex-col  justify-center items-center w-full ">
-                    <div className="flex items-end justify-between w-full">
-                    <Reveal v={{
-                    hidden: {opacity:0 , x:-75},
-                    visible: {opacity:1 , x:0}
-                    }}>
-                        <h1 className="text-white text-xl md:text-6xl font-semibold">Projets</h1>
-                    </Reveal>
+Letter Easy is an innovative SaaS (Software as a Service) application designed to simplify the process of creating motivation letters. Leveraging AI technology, this tool enables users to generate personalized and compelling motivation letters for various purposes, including job applications, university admissions, and more.
 
-                    <Reveal v={{
-                    hidden: {opacity:0 , x:75},
-                    visible: {opacity:1 , x:0}
-                    }}>
-                        <div className="md:text-4xl text-lg text-white underline decoration-4 decoration-[#07ff6a] cursor-pointer " >CONTACT ME</div>
-                    </Reveal>
-                        
-                    </div>
+## Features
 
-                    <div className="flex flex-col items-start gap-10 lg:flex-row mt-[5vw] mb-[5vw] justify-between w-full">
-                    <DialogProject  readme={`# Instagram Clone
+- **AI-Powered Letter Generation**: Utilizes advanced AI to create customized motivation letters based on user input.
+- **Template Library**: Offers a variety of templates to suit different purposes and industries.
+- **CV Integration**: Allows users to upload and incorporate details from their CV into the letter.
+- **Real-time Editing**: Users can edit and refine the AI-generated content in real-time.
+- **Multi-format Export**: Export letters in various formats including PDF, Word, and plain text.
+- **Cloud Storage**: Safely store and access your letters from anywhere.
+- **Collaboration Tools**: Share and collaborate on letters with team members or mentors.
+
+## Technologies Used
+
+Letter Easy is built using cutting-edge technologies to provide a seamless and efficient user experience:
+
+- **Next.js**: For a fast, SEO-friendly front-end experience.
+- **Prisma**: Ensuring robust and efficient database operations.
+- **React Query (useQuery)**: For optimal data fetching and state management.
+- **AI Integration**: Leveraging state-of-the-art language models for high-quality letter generation.
+
+## Getting Started
+
+To start using Letter Easy:
+
+1. Visit our website at [www.lettereasy.co](https://www.lettereasy.co)
+2. Sign up for an account
+3. Choose a subscription plan that fits your needs
+4. Start creating professional, AI-assisted motivation letters!
+
+## Usage
+
+After logging in to your Letter Easy account:
+
+1. Select a letter template or start from scratch
+2. Input key details about yourself and the position you're applying for
+3. Let our AI generate a base letter
+4. Edit and refine the letter to your liking
+5. Export your finished letter in your preferred format
+
+`}
+              demo={"https://lettereasy.co/"}
+            >
+              <Reveal
+                v={{
+                  hidden: { opacity: 0, y: 175, width: "100%" },
+                  visible: { opacity: 1, y: 0 },
+                }}
+              >
+                <div className="flex flex-col cursor-pointer w-full relative rounded-3xl rounded-gray-300 items-start justify-start">
+                  <div className=" w-full relative h-[20rem]">
+                    <Image
+                      className="rounded-xl"
+                      fill={true}
+                      src={"/assets/letter.png"}
+                      alt="lettereasy-app"
+                    />
+                  </div>
+                  <div className="text-[4vw] font-300 gap-3 flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] "'>
+                      NEXT.JS
+                    </span>
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      NEXT-AUTH
+                    </span>
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      POSTGRESQL
+                    </span>
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      PRISMA
+                    </span>
+                  </div>
+                  <h2 className="text-[5vw]  md:text-[2.5vw] lg:text-[1.7vw] font-bold text-white mt-[0.5rem]">
+                    LETTEREASY - SASS{" "}
+                  </h2>
+                </div>
+              </Reveal>
+            </DialogProject>
+
+            <DialogProject
+              readme={`
+                # Previously_On
+
+![App Screenshot](./assets/previously_on.png)
+
+Previously On is a web application that allows users to track their favorite TV series and movies. Built with Next.js and integrating with the BetaSeries API, this app provides a comprehensive platform for managing your watched content, exploring new shows, and engaging with a community of fellow TV and movie enthusiasts.
+
+## Features
+
+- **Watch List Management**: Keep track of series and movies you've watched.
+- **Episode Tracking**: Mark episodes as watched or unwatched.
+- **Actor Details**: Explore detailed information about actors in your favorite shows.
+- **Trailer Viewing**: Watch trailers for series and movies when available.
+- **BetaSeries Integration**: Log in with your BetaSeries account for a seamless experience.
+- **Community Interaction**: Post comments on series and movies.
+- **Responsive Design**: Enjoy a great experience on both desktop and mobile devices.
+
+## Technologies Used
+
+- **Next.js**: React framework for building efficient and scalable web applications.
+- **shadcn/ui**: A collection of re-usable components built with Radix UI and Tailwind CSS.
+- **BetaSeries API**: Provides comprehensive data on TV series and movies.
+
+## Getting Started
+
+To get started with Previously On, follow these steps:
+
+1. Clone this repository:
+   "
+   git clone https://github.com/lucaszebre/Previously_On
+   "
+2. Navigate to the project directory:
+   "
+   cd previously-on
+   "
+3. Install dependencies:
+   "
+   npm install
+   "
+4. Set up your environment variables:
+   - Create a ".env.local" file in the root directory
+   - Add your BetaSeries API key:
+     "
+     BETASERIES_API_KEY=your_api_key_here
+     "
+5. Run the development server:
+   "
+   npm run dev
+   "
+
+## Usage
+
+1. Open your browser and navigate to "http://localhost:3000"
+2. Log in with your BetaSeries account
+3. Start adding series and movies to your watch list
+4. Mark episodes as watched, explore actor details, and watch trailers
+5. Engage with the community by posting comments on series and movies
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to Previously On, please follow these steps:
+
+1. Fork the repository
+2. Create a new branch: "git checkout -b feature/your-feature-name"
+3. Make your changes and commit them: "git commit -m 'Add some feature'"
+4. Push to the branch: "git push origin feature/your-feature-name"
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Acknowledgments
+
+- Thanks to BetaSeries for providing the API that powers this application.
+- Shout out to the Next.js and shadcn/ui communities for their excellent tools and documentation.`}
+              demo="https://previously-on-eight.vercel.app/"
+            >
+              <Reveal
+                v={{
+                  hidden: { opacity: 0, y: 175, width: "100%" },
+                  visible: { opacity: 1, y: 0 },
+                }}
+              >
+                <div className="flex  w-full cursor-pointer relative flex-col items-start justify-start md:items-end md:justify-end">
+                  <div className="w-full relative h-[20rem]">
+                    <Image
+                      className="rounded-xl"
+                      fill={true}
+                      src={"/assets/previously_on.png"}
+                      alt="Previously_on"
+                    />
+                  </div>
+                  <div className="text-[4vw] font-300 gap-3  flex justify-end flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      REACT.JS
+                    </span>
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      USEQUERY
+                    </span>
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      BETASERIES API
+                    </span>
+                  </div>
+                  <h2 className="text-[5vw] md:text-[2.5vw] lg:text-[1.7vw] flex justify-end font-bold text-white mt-[0.5rem]">
+                    PREVIOUSLY_ON{" "}
+                  </h2>
+                </div>
+              </Reveal>
+            </DialogProject>
+          </div>{" "}
+          <div className="flex flex-col items-start gap-10 lg:flex-row mt-[5vw] mb-[5vw] justify-between w-full">
+            <DialogProject
+              readme={`# Instagram Clone
 ![App Screenshot](./assets/instagram.jpg)
 
 This project is a clone of Instagram built using Next js, Prisma, and Pusher. It aims to replicate some of the core features of Instagram such as posting images, liking and commenting on posts, real-time updates, user authentication, and more.
@@ -67,38 +272,47 @@ Once the development server is running, you can access the application in your w
 
 ## Contributing
 
-Contributions are welcome! If you d like to contribute to this project feel free to fork the repository and submit a pull request Please follow the existing code style and conventions`} code={'https://github.com/lucaszebre/instaclone'} demo={'https://instaclone-gules-one.vercel.app/auth'}>
-                        <Reveal v={{
-                        hidden: {opacity:0 , y:175,width:'100%'},
-                        visible: {opacity:1 , y:0},
-                        
-                        }}
-                        > 
-                            <div className="flex flex-col cursor-pointer w-full relative rounded-3xl rounded-gray-300 items-start justify-start">
-                                    <div className=" w-full relative h-[20rem]">
-                                    <Image className='rounded-xl' fill={true}  src={"/assets/instagram.jpg"} alt="EntertainnementWeb-app" />
-
-                                    </div>
-                                    <div className="text-[4vw] font-300 gap-3 flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
-                                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] "'>
-                                    NEXT.JS
-                                    </span>
-                                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                    SUPABASE AUTH
-                                    </span>
-                                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                    POSTGRESQL
-                                    </span>
-                                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                    PRISMA 
-                                    </span> 
-                                    </div>
-                                    <h2 className="text-[5vw]  md:text-[2.5vw] lg:text-[1.7vw] font-bold text-white mt-[0.5rem]">INSTAGRAM CLONE </h2>
-
-                            </div>
-                            </Reveal>
-                        </DialogProject>
-                        <DialogProject readme={`# Twitter Clone
+Contributions are welcome! If you d like to contribute to this project feel free to fork the repository and submit a pull request Please follow the existing code style and conventions`}
+              code={"https://github.com/lucaszebre/instaclone"}
+              demo={"https://instaclone-gules-one.vercel.app/auth"}
+            >
+              <Reveal
+                v={{
+                  hidden: { opacity: 0, y: 175, width: "100%" },
+                  visible: { opacity: 1, y: 0 },
+                }}
+              >
+                <div className="flex flex-col cursor-pointer w-full relative rounded-3xl rounded-gray-300 items-start justify-start">
+                  <div className=" w-full relative h-[20rem]">
+                    <Image
+                      className="rounded-xl"
+                      fill={true}
+                      src={"/assets/instagram.jpg"}
+                      alt="EntertainnementWeb-app"
+                    />
+                  </div>
+                  <div className="text-[4vw] font-300 gap-3 flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] "'>
+                      NEXT.JS
+                    </span>
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      SUPABASE AUTH
+                    </span>
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      POSTGRESQL
+                    </span>
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      PRISMA
+                    </span>
+                  </div>
+                  <h2 className="text-[5vw]  md:text-[2.5vw] lg:text-[1.7vw] font-bold text-white mt-[0.5rem]">
+                    INSTAGRAM CLONE{" "}
+                  </h2>
+                </div>
+              </Reveal>
+            </DialogProject>
+            <DialogProject
+              readme={`# Twitter Clone
 ![App Screenshot](./assets/twitter.png)
 
 This project is a Twitter clone developed using PHP, MySQL, and jQuery. It aims to replicate some of the core features of Twitter such as posting tweets, following other users, liking and retweeting tweets, user authentication, and more.
@@ -138,40 +352,44 @@ Once the development server is running, you can access the application in your w
 Contributions are welcome! If you'd like to contribute to this project, feel free to fork the repository and submit a pull request. Please follow the existing code style and conventions.
 
 
-`} >
-
-                        <Reveal v={{
-                            hidden: {opacity:0 , y:175,width:'100%'},
-                            visible: {opacity:1 , y:0},
-                            }}
-                            >
-                            <div className="flex  w-full cursor-pointer relative flex-col items-start justify-start md:items-end md:justify-end">
-                                <div className="w-full relative h-[20rem]">
-                                    <Image className='rounded-xl' fill={true} src={"/assets/twitter.png"} alt="KanbanTask-app" />
-
-                                </div>
-                                <div className="text-[4vw] font-300 gap-3  flex justify-end flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
-                                <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                PHP
-                                </span>
-                                <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                JQUERY
-                                </span>
-                                <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                MYSQL
-                                </span> 
-                                </div>
-                                <h2 className="text-[5vw] md:text-[2.5vw] lg:text-[1.7vw] flex justify-end font-bold text-white mt-[0.5rem]">TWITTER CLONE</h2>
-                            </div>  
-                    </Reveal>
-                       
-                    </DialogProject>
-
-                    </div> 
-                    
-                    <div className="flex flex-col items-start gap-10 lg:flex-row mt-[5vw] mb-[5vw]  justify-between w-full">
-                    
-                    <DialogProject readme={`# Kanban Task Manager
+`}
+            >
+              <Reveal
+                v={{
+                  hidden: { opacity: 0, y: 175, width: "100%" },
+                  visible: { opacity: 1, y: 0 },
+                }}
+              >
+                <div className="flex  w-full cursor-pointer relative flex-col items-start justify-start md:items-end md:justify-end">
+                  <div className="w-full relative h-[20rem]">
+                    <Image
+                      className="rounded-xl"
+                      fill={true}
+                      src={"/assets/twitter.png"}
+                      alt="KanbanTask-app"
+                    />
+                  </div>
+                  <div className="text-[4vw] font-300 gap-3  flex justify-end flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      PHP
+                    </span>
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      JQUERY
+                    </span>
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      MYSQL
+                    </span>
+                  </div>
+                  <h2 className="text-[5vw] md:text-[2.5vw] lg:text-[1.7vw] flex justify-end font-bold text-white mt-[0.5rem]">
+                    TWITTER CLONE
+                  </h2>
+                </div>
+              </Reveal>
+            </DialogProject>
+          </div>
+          <div className="flex flex-col items-start gap-10 lg:flex-row mt-[5vw] mb-[5vw]  justify-between w-full">
+            <DialogProject
+              readme={`# Kanban Task Manager
 
 ![App Screenshot](./assets/Kanban.jpg)
 
@@ -228,37 +446,47 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 Special thanks to the open-source community for their amazing contributions and libraries.
 Inspired by the Kanban methodology for project management.
 Happy task managing!
-`} demo={'https://kanbanwithapi.vercel.app/'} code={'https://github.com/lucaszebre/kanbanwithapi'}>
-
-                            <Reveal v={{
-                                hidden: {opacity:0 , y:175,width:'100%'},
-                                visible: {opacity:1 , y:0}
-                                }}
-                                >
-                                <div className="flex flex-col cursor-pointer w-full relative items-start justify-start">
-                                    <div className="w-full relative h-[20rem]">
-                                    <Image className='rounded-xl' fill={true} src={"/assets/Kanban.jpg"} alt="KanbanTask-app" />
-
-                                    </div>
-                                    <div className="text-[4vw] font-300 gap-3 flex justify-start flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
-                                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                    REACT.JS
-                                    </span>
-                                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                    EXPRESS.JS
-                                    </span>
-                                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                    POSTGRESQL
-                                    </span>
-                                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                    MATERIAL UI
-                                    </span> 
-                                    </div>
-                                    <h2 className="text-[5vw] md:text-[2.5vw] lg:text-[1.7vw] flex justify-start font-bold text-white mt-[0.5rem]">KANBAN TASK MANAGER</h2>
-                                </div>  
-                        </Reveal>
-                        </DialogProject>
-                        <DialogProject readme={`# Linkedev - A Developer's Link Tree
+`}
+              demo={"https://kanbanwithapi.vercel.app/"}
+              code={"https://github.com/lucaszebre/kanbanwithapi"}
+            >
+              <Reveal
+                v={{
+                  hidden: { opacity: 0, y: 175, width: "100%" },
+                  visible: { opacity: 1, y: 0 },
+                }}
+              >
+                <div className="flex flex-col cursor-pointer w-full relative items-start justify-start">
+                  <div className="w-full relative h-[20rem]">
+                    <Image
+                      className="rounded-xl"
+                      fill={true}
+                      src={"/assets/Kanban.jpg"}
+                      alt="KanbanTask-app"
+                    />
+                  </div>
+                  <div className="text-[4vw] font-300 gap-3 flex justify-start flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      REACT.JS
+                    </span>
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      EXPRESS.JS
+                    </span>
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      POSTGRESQL
+                    </span>
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      MATERIAL UI
+                    </span>
+                  </div>
+                  <h2 className="text-[5vw] md:text-[2.5vw] lg:text-[1.7vw] flex justify-start font-bold text-white mt-[0.5rem]">
+                    KANBAN TASK MANAGER
+                  </h2>
+                </div>
+              </Reveal>
+            </DialogProject>
+            <DialogProject
+              readme={`# Linkedev - A Developer's Link Tree
 ![App Screenshot](./assets/LinkDev.jpg)
 
 ## Overview
@@ -320,40 +548,49 @@ Acknowledgments
 Special thanks to the open-source community for their amazing contributions and libraries.
 
 Inspired by the idea of link trees for developers.
-`} demo={'https://linkdev2.vercel.app/'} code={'https://github.com/lucaszebre/linkdev2'}>
-                        <Reveal v={{
-                        hidden: {opacity:0 , y:175,width:'100%'},
-                        visible: {opacity:1 , y:0}
-                        }}
-                        >
-                            <div className="flex flex-col w-full cursor-pointer rounded-3xl rounded-gray-300 items-start justify-start md:items-end md:justify-end">
-                                    <div className="w-full relative h-[20rem]" >
-                                        <Image className='rounded-xl' fill={true} src={"/assets/LinkDev.jpg"} alt="EntertainnementWeb-app" />
-                                    </div>
-                                    <div className="text-[4vw] font-300 gap-3  flex flex-row justify-start md:justify-end flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
-                                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                    REACT.JS
-                                    </span>
-                                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                    SUPABASE
-                                    </span>
-                                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                    POSTGRESQL
-                                    </span>
-                                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                    MATERIAL UI
-                                    </span> 
-                                    </div>
-                                    <h2 className="text-[5vw] md:text-[2.5vw] lg:text-[1.7vw] font-bold text-white mt-[0.5rem]">LINK DEV </h2>
-
-                            </div>
-                            </Reveal>
-                            </DialogProject>
-
-                        
-                    </div> 
-                    <div className="flex flex-col items-start gap-10 lg:flex-row mt-[5vw] mb-[5vw]  justify-between w-full">
-                    <DialogProject readme={`# Invoice Manager
+`}
+              demo={"https://linkdev2.vercel.app/"}
+              code={"https://github.com/lucaszebre/linkdev2"}
+            >
+              <Reveal
+                v={{
+                  hidden: { opacity: 0, y: 175, width: "100%" },
+                  visible: { opacity: 1, y: 0 },
+                }}
+              >
+                <div className="flex flex-col w-full cursor-pointer rounded-3xl rounded-gray-300 items-start justify-start md:items-end md:justify-end">
+                  <div className="w-full relative h-[20rem]">
+                    <Image
+                      className="rounded-xl"
+                      fill={true}
+                      src={"/assets/LinkDev.jpg"}
+                      alt="EntertainnementWeb-app"
+                    />
+                  </div>
+                  <div className="text-[4vw] font-300 gap-3  flex flex-row justify-start md:justify-end flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      REACT.JS
+                    </span>
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      SUPABASE
+                    </span>
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      POSTGRESQL
+                    </span>
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      MATERIAL UI
+                    </span>
+                  </div>
+                  <h2 className="text-[5vw] md:text-[2.5vw] lg:text-[1.7vw] font-bold text-white mt-[0.5rem]">
+                    LINK DEV{" "}
+                  </h2>
+                </div>
+              </Reveal>
+            </DialogProject>
+          </div>
+          <div className="flex flex-col items-start gap-10 lg:flex-row mt-[5vw] mb-[5vw]  justify-between w-full">
+            <DialogProject
+              readme={`# Invoice Manager
 
 ![App Screenshot](./assets/Invoice.jpg)
 
@@ -417,37 +654,48 @@ We hope you find the Invoice Manager helpful in streamlining your invoicing proc
 
 Please note that this documentation assumes you already have a Supabase project set up. If not, refer to the Supabase documentation for guidance on setting up your Supabase project.
 
-You can also include additional sections or details as needed for your specific application.`} demo={'https://invoice-lovat.vercel.app/connexion'} code='https://github.com/lucaszebre/invoice'>
-                    <Reveal v={{
-                    hidden: {opacity:0 , y:175,width:'100%'},
-                    visible: {opacity:1 , y:0}
-                    }}
-                    width='100%'
-                    >
-                        <div className="flex w-full relative flex-col cursor-pointer rounded-3xl rounded-gray-300 items-start justify-start">
-                                <div className="w-full relative h-[20rem]">
-                                    <Image className='rounded-xl' fill={true}  src={"/assets/Invoice.jpg"} alt="EntertainnementWeb-app" />
-                                </div>
-                                <div className="text-[4vw] font-300 gap-3  flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
-                                <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                REACT.JS
-                                </span>
-                                <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                FIREBASE
-                                </span>
-                                <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                TYPESCRIPT
-                                </span>
-                                <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                MATERIAL UI
-                                </span> 
-                                </div>
-                                <h2 className="text-[5vw] md:text-[2.5vw] lg:text-[1.7vw] font-bold text-white mt-[0.5rem]">INVOICE APP </h2>
-
-                        </div>
-                        </Reveal>
-                        </DialogProject>
-                        <DialogProject readme={`# Audiophile Ecommerce Web App
+You can also include additional sections or details as needed for your specific application.`}
+              demo={"https://invoice-lovat.vercel.app/connexion"}
+              code="https://github.com/lucaszebre/invoice"
+            >
+              <Reveal
+                v={{
+                  hidden: { opacity: 0, y: 175, width: "100%" },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                width="100%"
+              >
+                <div className="flex w-full relative flex-col cursor-pointer rounded-3xl rounded-gray-300 items-start justify-start">
+                  <div className="w-full relative h-[20rem]">
+                    <Image
+                      className="rounded-xl"
+                      fill={true}
+                      src={"/assets/Invoice.jpg"}
+                      alt="EntertainnementWeb-app"
+                    />
+                  </div>
+                  <div className="text-[4vw] font-300 gap-3  flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      REACT.JS
+                    </span>
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      FIREBASE
+                    </span>
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      TYPESCRIPT
+                    </span>
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      MATERIAL UI
+                    </span>
+                  </div>
+                  <h2 className="text-[5vw] md:text-[2.5vw] lg:text-[1.7vw] font-bold text-white mt-[0.5rem]">
+                    INVOICE APP{" "}
+                  </h2>
+                </div>
+              </Reveal>
+            </DialogProject>
+            <DialogProject
+              readme={`# Audiophile Ecommerce Web App
 ![App Screenshot](./assets/Audiophile.jpg)
 
 Welcome to the Audiophile Ecommerce Web App! This project is a multi-page e-commerce website built using only React.js. It allows users to browse through products, add/remove products from the cart, edit product quantities, fill in checkout details, and more.
@@ -489,34 +737,41 @@ Once the development server is running, you can access the application in your w
 Contributions are welcome! If you'd like to contribute to this project, feel free to fork the repository and submit a pull request. Please follow the existing code style and conventions.
 
 
-`} demo='https://lucaszebre.github.io/AudiophileEcommerce/' code='https://github.com/lucaszebre/AudiophileEcommerce'>
-                        <Reveal v={{
-                            hidden: {opacity:0 , y:175,width:'100%'},
-                            visible: {opacity:1 , y:0}
-                            }}
-                            width='100%'
-                            >
-                            <div className="flex flex-col w-full relative  cursor-pointer items-start justify-start md:items-end md:justify-end">
-                                <div className="w-full relative h-[20rem]">
-                                    <Image className='rounded-xl' fill={true} src={"/assets/Audiophile.jpg"} alt="KanbanTask-app" />
-                                </div>
-                                <div className="text-[4vw] font-300 gap-3 justify-end  flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
-                                <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                REACT.JS
-                                </span>
-                               
-                                
-                                </div>
-                                <h2 className="text-[5vw] md:text-[2.5vw] lg:text-[1.7vw] flex justify-end text-end font-bold text-white mt-[0.5rem]">Audiophile E-Commerce Website</h2>
-                            </div>  
-                    </Reveal>
-                    </DialogProject>
-
-                       
-                        
-                    </div>  
-                    <div className="flex flex-col items-start gap-10 lg:flex-row mt-[5vw] mb-[5vw]  justify-between w-full">
-                    <DialogProject readme={`# Designo Multi Page
+`}
+              demo="https://lucaszebre.github.io/AudiophileEcommerce/"
+              code="https://github.com/lucaszebre/AudiophileEcommerce"
+            >
+              <Reveal
+                v={{
+                  hidden: { opacity: 0, y: 175, width: "100%" },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                width="100%"
+              >
+                <div className="flex flex-col w-full relative  cursor-pointer items-start justify-start md:items-end md:justify-end">
+                  <div className="w-full relative h-[20rem]">
+                    <Image
+                      className="rounded-xl"
+                      fill={true}
+                      src={"/assets/Audiophile.jpg"}
+                      alt="KanbanTask-app"
+                    />
+                  </div>
+                  <div className="text-[4vw] font-300 gap-3 justify-end  flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      REACT.JS
+                    </span>
+                  </div>
+                  <h2 className="text-[5vw] md:text-[2.5vw] lg:text-[1.7vw] flex justify-end text-end font-bold text-white mt-[0.5rem]">
+                    Audiophile E-Commerce Website
+                  </h2>
+                </div>
+              </Reveal>
+            </DialogProject>
+          </div>
+          <div className="flex flex-col items-start gap-10 lg:flex-row mt-[5vw] mb-[5vw]  justify-between w-full">
+            <DialogProject
+              readme={`# Designo Multi Page
 ![App Screenshot](./assets/Designo.jpg)
 
 Welcome to Designo Multi Page, a multi-page website built using React.js. This project aims to closely replicate the provided design, allowing users to view the optimal layout for each page depending on their device's screen size, see hover states for all interactive elements throughout the site, and receive error messages when submitting the contact form.
@@ -550,31 +805,39 @@ Once the development server is running, you can access the website in your web b
 Contributions are welcome! If you'd like to contribute to this project, feel free to fork the repository and submit a pull request. Please follow the existing code style and conventions.
 
 
-`} demo={'https://lucaszebre.github.io/Designo/#/'} code={'https://github.com/lucaszebre/Designo'}>
-
-                    <Reveal v={{
-                    hidden: {opacity:0 , y:175,width:'100%'},
-                    visible: {opacity:1 , y:0}
-                    }}
-                    width='100%'
-                    >
-                        <div className="flex w-full relative flex-col rounded-xl cursor-pointer rounded-3xl rounded-gray-300 items-start justify-start">
-                                <div className="w-full relative h-[20rem]">
-                                <Image className='rounded-xl' fill={true}  src={"/assets/Designo.jpg"} alt="EntertainnementWeb-app" />
-
-                                </div>
-                                <div className="text-[4vw] font-300 gap-3  flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
-                                <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                REACT.JS
-                                </span>
-                             
-                                </div>
-                                <h2 className="text-[5vw] md:text-[2.5vw] lg:text-[1.7vw] font-bold text-white mt-[0.5rem]">Designo MultiPage Website</h2>
-
-                        </div>
-                        </Reveal>
-                        </DialogProject>
-                        <DialogProject readme={`# Art Gallery Showcase
+`}
+              demo={"https://lucaszebre.github.io/Designo/#/"}
+              code={"https://github.com/lucaszebre/Designo"}
+            >
+              <Reveal
+                v={{
+                  hidden: { opacity: 0, y: 175, width: "100%" },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                width="100%"
+              >
+                <div className="flex w-full relative flex-col rounded-xl cursor-pointer rounded-3xl rounded-gray-300 items-start justify-start">
+                  <div className="w-full relative h-[20rem]">
+                    <Image
+                      className="rounded-xl"
+                      fill={true}
+                      src={"/assets/Designo.jpg"}
+                      alt="EntertainnementWeb-app"
+                    />
+                  </div>
+                  <div className="text-[4vw] font-300 gap-3  flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      REACT.JS
+                    </span>
+                  </div>
+                  <h2 className="text-[5vw] md:text-[2.5vw] lg:text-[1.7vw] font-bold text-white mt-[0.5rem]">
+                    Designo MultiPage Website
+                  </h2>
+                </div>
+              </Reveal>
+            </DialogProject>
+            <DialogProject
+              readme={`# Art Gallery Showcase
 
 Welcome to Art Gallery Showcase, an art gallery slideshow site built to showcase paintings. This project aims to closely replicate the provided design, allowing users to navigate the slideshow, view each painting in a lightbox, and experience the optimal layout for the app based on their device's screen size. Additionally, users can see hover states for all interactive elements on the page.
 
@@ -608,38 +871,42 @@ Once the webpage is open in your browser, you can navigate through the slideshow
 Contributions are welcome! If you'd like to contribute to this project, feel free to fork the repository and submit a pull request. Please follow the existing code style and conventions.
 
 
-`} demo={'https://lucaszebre.github.io/Galleria-App/'} code={'https://github.com/lucaszebre/Galleria-App'}>
-
-                        <Reveal v={{
-                            hidden: {opacity:0 , y:175, width:'100%'},
-                            visible: {opacity:1 , y:0}
-                            }}
-                            width='100%'
-                            >
-                            <div className="flex flex-col w-full relative rounded-xl cursor-pointer items-start justify-start md:items-end md:justify-end">
-                                <div className="w-full relative h-[20rem]">
-                                    <Image className='rounded-xl' fill={true} src={"/assets/images/thumbnail-project-6-large.webp"} alt="KanbanTask-app" />
-                                </div>
-                                <div className="text-[4vw] font-300 gap-3 justify-end  flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
-                                <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
-                                REACT.JS
-                                </span>
-                               
-                                
-                                </div>
-                                <h2 className="text-[5vw] md:text-[2.5vw] lg:text-[1.7vw] flex justify-end text-end font-bold text-white mt-[0.5rem]">ART GALLERY SHOWCASE</h2>
-                            </div>  
-                    </Reveal>
-                    </DialogProject>
-
-                       
-                        
-                    </div> 
-                     
+`}
+              demo={"https://lucaszebre.github.io/Galleria-App/"}
+              code={"https://github.com/lucaszebre/Galleria-App"}
+            >
+              <Reveal
+                v={{
+                  hidden: { opacity: 0, y: 175, width: "100%" },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                width="100%"
+              >
+                <div className="flex flex-col w-full relative rounded-xl cursor-pointer items-start justify-start md:items-end md:justify-end">
+                  <div className="w-full relative h-[20rem]">
+                    <Image
+                      className="rounded-xl"
+                      fill={true}
+                      src={"/assets/images/thumbnail-project-6-large.webp"}
+                      alt="KanbanTask-app"
+                    />
+                  </div>
+                  <div className="text-[4vw] font-300 gap-3 justify-end  flex flex-row flex-wrap text-white mt-[0.5em] mb-[1em] md:text-[2.5vw] lg:text-[1vw] md:font-600">
+                    <span className='bg-[#201726]  rounded-lg border px-3 py-1 border-[rgba(255,255,255,.02)] opacity-80"'>
+                      REACT.JS
+                    </span>
+                  </div>
+                  <h2 className="text-[5vw] md:text-[2.5vw] lg:text-[1.7vw] flex justify-end text-end font-bold text-white mt-[0.5rem]">
+                    ART GALLERY SHOWCASE
+                  </h2>
                 </div>
-            </div>
+              </Reveal>
+            </DialogProject>
+          </div>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default Projets
+export default Projets;
