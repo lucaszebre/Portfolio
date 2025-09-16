@@ -1,30 +1,29 @@
-"use client"
+"use client";
 
-import { Dialog, Transition } from '@headlessui/react'
-import { Fragment, useState } from 'react'
-import Login from './Login';
-import Auth from './Auth';
-interface Props{
-  children:React.ReactNode;
-  readme?:string;
-  code?:string;
-  demo?:string;
+import { Dialog, Transition } from "@headlessui/react";
+import { Fragment, useState } from "react";
+import { Auth } from "./Auth";
+interface Props {
+  children: React.ReactNode;
+  readme?: string;
+  code?: string;
+  demo?: string;
 }
-export default function DialogLogin(props:Props) { 
-  let [isOpen, setIsOpen] = useState(false)
+export default function DialogLogin(props: Props) {
+  let [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
-    setIsOpen(false)
+    setIsOpen(false);
   }
 
   function openModal() {
-    setIsOpen(true)
+    setIsOpen(true);
   }
 
   return (
     <>
       <div onClick={openModal} className="w-full">
-        {props.children} 
+        {props.children}
       </div>
 
       <Transition appear show={isOpen} as={Fragment}>
@@ -53,13 +52,9 @@ export default function DialogLogin(props:Props) {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className=" h-[80%] w-[40%] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                
                   <div className="mt-2">
-                    
-                    <Auth  />
+                    <Auth />
                   </div>
-
-                  
                 </Dialog.Panel>
               </Transition.Child>
             </div>
@@ -67,5 +62,5 @@ export default function DialogLogin(props:Props) {
         </Dialog>
       </Transition>
     </>
-  )
+  );
 }

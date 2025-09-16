@@ -1,10 +1,9 @@
-"use client"
-
-import type { Metadata } from "next";
+import ReactQueryProvider from "@/providers/ReactProvidersQuery";
+import { GoogleTagManager } from "@next/third-parties/google";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { GoogleTagManager } from '@next/third-parties/google' 
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,22 +12,26 @@ const inter = Inter({ subsets: ["latin"] });
 //   description: "The blog an portfolio of lucaszebre",
 // };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
 
-  const queryClient = new QueryClient()
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages();
 
-  
   return (
-    <html lang="en">
-          <QueryClientProvider client={queryClient}>
-            <GoogleTagManager gtmId="G-RL71428SMP" />
-            
-            <body className={inter.className}>{children}</body>
-          </QueryClientProvider>
+    <html lang={locale}>
+      <NextIntlClientProvider messages={messages}>
+        <ReactQueryProvider>
+          <GoogleTagManager gtmId="G-RL71428SMP" />
+
+          <body className={inter.className}>{children}</body>
+        </ReactQueryProvider>
+      </NextIntlClientProvider>
     </html>
   );
 }

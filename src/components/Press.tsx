@@ -1,13 +1,46 @@
-"use client"
+"use client";
 
-import React, { useEffect } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import { Fragment, useState } from 'react'
+import { Dialog, Transition } from "@headlessui/react";
 import MarkdownPreview from "@uiw/react-markdown-preview";
+import { useTranslations } from "next-intl";
+import { Fragment, useEffect, useState } from "react";
+type PressPropsType = {
+  isHover: boolean;
+};
+const Press = ({ isHover }: PressPropsType) => {
+  const t = useTranslations("Press");
 
-const Press = () => {
+  const generateReadme = () => {
+    return `# ${t("journey.title")}\n\
+\n\
+## ${t("journey.introduction.title")}\n\
+${t("journey.introduction.content")}\n\
+![App Screenshot](./assets/sorbonne.jpg)\n\
+\n\
+## ${t("journey.exploration.title")}\n\
+${t("journey.exploration.content")}\n\
+![App Screenshot](./assets/exploring.jpg)\n\
+\n\
+## ${t("journey.transition.title")}\n\
+${t("journey.transition.content")}\n\
+![App Screenshot](./assets/server.jpg)\n\
+\n\
+## ${t("journey.webDev.title")}\n\
+${t("journey.webDev.content")}\n\
+\n\
+## ${t("journey.academy.title")}\n\
+${t("journey.academy.content")}\n\
+\n\
+## ${t("journey.progress.title")}\n\
+${t("journey.progress.content")}\n\
+<video width='200px' height='200px' autoPlay loop muted><source src='./assets/video.mp4' type='video/mp4' />Your browser does not support the video tag.</video>\n\
+## ${t("journey.competitive.title")}\n\
+${t("journey.competitive.content")}\n\
+`;
+  };
 
-  let readme = "# My Developer Journey\n\
+  const readme = generateReadme();
+  ("# My Developer Journey\n\
 \n\
 ## Introduction\n\
 In 2019, I embarked on my developer journey as a computer science student at Sorbonne University. Delving into a Python clone, my journey began with practical duo sessions, igniting  my passion for problem-solving  and pushing me to constantly seek solutions.\n\
@@ -32,112 +65,106 @@ Fast forward to April 2024, and I find myself collaborating on cutting-edge proj
 <video width='200px' height='200px' autoPlay loop muted><source src='./assets/video.mp4' type='video/mp4' />Your browser does not support the video tag.</video>\n\
 ## Conpetetive spirit\n\
 Also i like competition , i did a lot of sport in my life from basketball to football to surf to beach-tennis , etc . I ended , doing a lot a skate , this sport it's my my go to , just a way to challenge myself , learning new thing , just being focus one thing for few hours . Progressing everyday , fall , hurting my self . Could sounds sadomasochist but  for those reason i really like to skate . To do parallele with web develloper in skate we always fail before landing a tricks , i think it's the same in life , the most important is that you stay consistant and keep trying smartly \n\
-";
+");
 
+  const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    const handleKeyPress = (event: { key: string }) => {
+      if (!isHover) {
+        if (event.key == "a" || event.key == "A") {
+          setIsOpen((isOpen) => !isOpen);
+        }
+      }
+    };
 
-    let [isOpen, setIsOpen] = useState(false)
+    document.addEventListener("keydown", handleKeyPress);
 
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
 
- 
+  function closeModal() {
+    setIsOpen(false);
+  }
 
-    useEffect(() => {
-        const handleKeyPress = (event: { key: string; }) => {
-          if(event.key=='a' || event.key=='A'){
-            setIsOpen(isOpen=>!isOpen)
-          }
-        };
-    
-        document.addEventListener('keydown', handleKeyPress);
-    
-        return () => {
-          document.removeEventListener('keydown', handleKeyPress);
-        };
-      }, []);
-    
-    function closeModal() {
-        setIsOpen(false)
-    }
-
-    function openModal() {
-        setIsOpen(true)
-    }
-
-  return (
-    <>
-   <div className='fixed top-4 right-4 lg:flex hidden flex-row  gap-2 z-10 items-end text-white bg-[#00ff80] rounded p-2'>
-      press  <div className='p-1 px-2 border-1 bg-black flex justify-center items-center border-gray rounded '>
-        A
-      </div> 
-      to know more about me
-    </div>  
-    <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-black/25" />
-          </Transition.Child>
-
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <Dialog.Panel className=" h-[80%] w-[80%] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                
-                  <div className="mt-2">
-                    
-                    <MarkdownPreview source={readme}  />
-                  </div>
-
-                  <div className="mt-4 flex flex-row gap-4">
-                    <a
-                      href="/assets/cv.pdf"
-                      target='_blank'
-                      type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                      onClick={closeModal}
-                    >
-                      Download my cv
-                    </a>
-                    <a
-                      type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                      onClick={closeModal}
-                    >
-                      Contact me
-                    </a>
-                    <button
-                      type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                      onClick={closeModal}
-                    >
-                      Got it, thanks!
-                    </button> 
-                   
-                  </div>
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
+  if (!isHover) {
+    return (
+      <>
+        <div className="fixed top-4 right-4 lg:flex hidden flex-row  gap-2 z-10 items-end text-white bg-[#00ff80] rounded p-2">
+          {t("instruction.prefix")}{" "}
+          <div className="p-1 px-2 border-1 bg-black flex justify-center items-center border-gray rounded ">
+            {t("instruction.key")}
           </div>
-        </Dialog>
-      </Transition>
-    </>
-   
-  )
-}
+          {t("instruction.suffix")}
+        </div>
+        <Transition appear show={isOpen} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black/25" />
+            </Transition.Child>
 
-export default Press
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+                <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className=" h-[80%] w-[80%] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <div className="mt-2">
+                      <MarkdownPreview source={readme} />
+                    </div>
+
+                    <div className="mt-4 flex flex-row gap-4">
+                      <a
+                        href="/assets/cv.pdf"
+                        target="_blank"
+                        type="button"
+                        className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        onClick={closeModal}
+                      >
+                        {t("buttons.downloadCv")}
+                      </a>
+                      <a
+                        type="button"
+                        className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        onClick={closeModal}
+                      >
+                        {t("buttons.contactMe")}
+                      </a>
+                      <button
+                        type="button"
+                        className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        onClick={closeModal}
+                      >
+                        {t("buttons.close")}
+                      </button>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+      </>
+    );
+  }
+
+  return null;
+};
+
+export default Press;

@@ -1,0 +1,129 @@
+{
+  "Top": {
+    "navigation": {
+      "projects": "projets",
+      "contact": "contact",
+      "blog": "blog",
+      "login": "Connexion"
+    },
+    "lang": "FR",
+    "greeting": "Ravi de vous rencontrer! Je suis Lucas Zebre.",
+    "contactMe": "ME CONTACTER",
+    "alt": {
+      "github": "icône github",
+      "frontend": "icône frontend",
+      "linkedin": "icône linkedin",
+      "twitter": "icône twitter",
+      "profile": "Photo de lucas zebre"
+    }
+  },
+  "Press": {
+    "instruction": {
+      "prefix": "appuyez sur",
+      "key": "A",
+      "suffix": "pour en savoir plus sur moi"
+    },
+    "buttons": {
+      "downloadCv": "Télécharger mon CV",
+      "contactMe": "Me contacter",
+      "close": "Compris, merci !"
+    },
+    "journey": {
+      "title": "Mon Parcours de Développeur",
+      "introduction": {
+        "title": "Introduction",
+        "content": "En 2019, j'ai commencé mon parcours de développeur en tant qu'étudiant en informatique à l'Université de la Sorbonne. En travaillant sur un clone de Python, mon voyage a débuté par des sessions pratiques en binôme, éveillant ma passion pour la résolution de problèmes et me poussant à chercher constamment des solutions."
+      },
+      "exploration": {
+        "title": "Premiers Doutes et Exploration",
+        "content": "En naviguant dans la ville vibrante de Paris, des doutes ont obscurci mon chemin. Incertain de ma trajectoire professionnelle, j'ai lutté contre les distractions, tout en restant déterminé à explorer mon potentiel. Ce fut une période de découverte de soi, où la compréhension de la valeur de l'argent est venue à travers des leçons durement apprises."
+      },
+      "transition": {
+        "title": "Transition vers le Travail",
+        "content": "L'abandon de ma deuxième année universitaire n'était pas dû à un manque d'intelligence mais à un sentiment d'errance. C'est dans le monde du travail que l'importance des compétences en programmation et de la résolution de problèmes m'est réellement apparue. Les rôles peu inspirants ont renforcé ma gratitude pour mes capacités."
+      },
+      "webDev": {
+        "title": "Décision de Devenir Développeur Web",
+        "content": "En 2022, j'ai pris une décision cruciale : je me forgerais un chemin en tant que développeur web. Armé de connaissances en HTML, CSS et JS, j'ai d'abord cherché des opportunités d'emploi. Réalisant la nécessité de React, j'ai fait la transition vers les stages, malgré les défis posés par le marché du travail français."
+      },
+      "academy": {
+        "title": "Découverte de la Web Academy",
+        "content": "La Web Academy d'Epitech est apparue comme un phare d'apprentissage sur mesure. Pendant dix mois, j'ai perfectionné mes compétences, plongé dans SQL et PHP, et vaincu des projets qui semblaient insurmontables au début. De novice en SQL à la création d'un clone de Twitter en PHP en six mois, ma progression était tangible."
+      },
+      "progress": {
+        "title": "Progression Actuelle",
+        "content": "Avance rapide jusqu'en avril 2024, et je me retrouve à collaborer sur des projets de pointe. En utilisant des outils comme Docker, je dirige des solutions innovantes comme un clone de Spotify. Chaque étape réaffirme ma détermination et me pousse vers la réalisation de ma vision : je veux créer et faire des choses qui m'excitent."
+      },
+      "competitive": {
+        "title": "Esprit Compétitif",
+        "content": "J'aime aussi la compétition, j'ai pratiqué beaucoup de sports dans ma vie, du basketball au football en passant par le surf et le beach-tennis. J'ai fini par faire beaucoup de skateboard, ce sport est devenu mon échappatoire, juste une façon de me mettre au défi, d'apprendre de nouvelles choses, d'être concentré sur une chose pendant quelques heures. Progresser chaque jour, tomber, me faire mal. Cela peut sembler sadomasochiste mais c'est pour ces raisons que j'aime vraiment le skate. Pour faire un parallèle avec le développement web, en skate on échoue toujours avant de réussir un trick, je pense que c'est pareil dans la vie, le plus important est de rester constant et de continuer à essayer intelligemment."
+      }
+    }
+  },
+  "Projects": {
+    "title": "Projets",
+    "contactMe": "ME CONTACTER",
+    "lang": "FR"
+  },
+  "Bottom": {
+    "title": "Contact",
+    "description": "J'aimerais en savoir plus sur votre projet et comment je pourrais vous aider. Veuillez remplir le formulaire et je vous répondrai dès que possible.",
+    "form": {
+      "name": "NOM",
+      "email": "EMAIL",
+      "message": "MESSAGE",
+      "submit": "ENVOYER LE MESSAGE"
+    },
+    "toasts": {
+      "success": "Message envoyé avec succès",
+      "error": "Erreur lors de l'envoi du message"
+    },
+    "alt": {
+      "backgroundPattern": "motif d'arrière-plan",
+      "github": "logo github",
+      "frontend": "logo frontend",
+      "linkedin": "linkedin",
+      "twitter": "logo twitter"
+    }
+  },
+  "Auth": {
+    "privacyPolicy": "Police de confidentialité",
+    "continue": "En continuant vous acceptez notre",
+    "and": "et",
+    "termsOfService": "Conditions d'utilisation"
+  },
+  "Button": {
+    "signInWithGoogle": "Connexion avec Google",
+    "signInWithGithub": "Connexion avec Github",
+    "signInWithLinkedin": "Connexion avec Linkedin"
+  },
+  "language": {
+    "label": "fr"
+  },
+  "Preview": {
+    "back": "Retour"
+  },
+  "not-found": {
+    "PageNotAvailable": "Page non disponible",
+    "LinkBroken": "Le lien que vous avez suivi est peut-être rompu, ou la page a été supprimée."
+  },
+  "Dashboard": {
+    "error": "Une erreur est apparu :"
+  },
+  "AuthPage": {
+    "metaTitle": "LucasZebre | Authentification",
+    "metaDescription": "Portfolio de Lucas Zebre"
+  },
+  "UserNav": {
+    "openUserMenu": "Ouvrir le menu utilisateur",
+    "userAvatar": "Avatar de {name}",
+    "profile": "Profil",
+    "profileShortcut": "⇧⌘P",
+    "signOutShortcut": "⇧⌘Q",
+    "billing": "Facturation",
+    "billingShortcut": "⌘B",
+    "settings": "Paramètres",
+    "settingsShortcut": "⌘S"
+  },
+  "lang": "FR"
+}
