@@ -17,9 +17,9 @@ datasource db {
 model User {
   id            String    @id @default(uuid())
   email         String    @unique
-  UserName      String
+  UserName      String?
   isAdmin       Boolean   @default(false)
-  avatar        String
+  avatar        String?
   comment       Comment[]
   name          String
   emailVerified Boolean   @default(false)
