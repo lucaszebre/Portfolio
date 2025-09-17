@@ -1,7 +1,7 @@
+import { auth } from "@/auth";
+import { authClient } from "@/lib/auth-client";
 import { ChromeIcon, Github, Linkedin } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { cookies } from "next/headers";
-import { signIn, signOut } from "../../auth";
 import { Button } from "../ui/button";
 
 export function SignIn({
@@ -15,7 +15,11 @@ export function SignIn({
       <form
         action={async () => {
           "use server";
-          await signIn(provider, { redirectTo: "/" });
+          await auth.api.signInSocial({
+            body: {
+              provider: "google",
+            },
+          });
         }}
       >
         {/* <Button {...props}>Sign In</Button> */}
@@ -30,7 +34,11 @@ export function SignIn({
       <form
         action={async () => {
           "use server";
-          await signIn(provider, { redirectTo: "/" });
+          await auth.api.signInSocial({
+            body: {
+              provider: "github",
+            },
+          });
         }}
       >
         <Button variant="outline" className="w-full">
@@ -44,7 +52,9 @@ export function SignIn({
       <form
         action={async () => {
           "use server";
-          await signIn(provider, { redirectTo: "/" });
+          const data = await authClient.signIn.social({
+            provider: "linkeding",
+          });
         }}
       >
         <Button variant="outline" className="w-full">
@@ -61,10 +71,7 @@ export function SignOut(props: React.ComponentPropsWithRef<typeof Button>) {
     <form
       action={async () => {
         "use server";
-        const cookieStore = cookies();
-        console.log("did it");
-        cookieStore.set("logout", "true");
-        await signOut();
+        const data = await authClient.signOut();
       }}
       className="w-full"
     >

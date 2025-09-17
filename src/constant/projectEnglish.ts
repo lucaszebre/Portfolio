@@ -14,7 +14,7 @@ export const ALL_PROJECT_ENGLISH: ProjectType[] = [
     id: "3c250198-0dd9-4dfb-b02a-6ebd9dbee4bde",
     readme: `# Letter Easy
 
-![App Screenshot](./assets/letter.png)
+![App Screenshot](./assets/guesswhat.png)
 
 Letter Easy is an innovative SaaS (Software as a Service) application designed to simplify the process of creating motivation letters. Leveraging AI technology, this tool enables users to generate personalized and compelling motivation letters for various purposes, including job applications, university admissions, and more.
 
@@ -57,10 +57,10 @@ After logging in to your Letter Easy account:
 5. Export your finished letter in your preferred format
 `,
     demo: "https://lettereasy.co/",
-    image: "/assets/letter.png",
+    image: "/assets/guesswhat.png",
     alt: "lettereasy-app",
     tags: ["GO", "REACT", "WEBSOCKET"],
-    name: "LETTEREASY - SASS",
+    name: "GUESSWHAT",
   },
   {
     id: "acbaf2b4-8f0a-4520-9987-0c8d57a4b3d0de",
@@ -141,7 +141,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 - Shout out to the Next.js and shadcn/ui communities for their excellent tools and documentation.`,
     alt: "CHAT_PET",
     demo: "https://previously-on-eight.vercel.app/",
-    image: "/assets/previously_on.png",
+    image: "/assets/chatpet.png",
     tags: ["REACT.JS", "NODEJS", "LLM", "PRISMA"],
     name: "CHAT PET",
   },

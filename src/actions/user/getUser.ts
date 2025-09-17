@@ -2,6 +2,7 @@
 
 import { auth } from "@/auth";
 import { prisma } from "@/config/db";
+import { headers } from "next/headers";
 
 export async function getUser(email?: string) {
   if (email) {
@@ -11,7 +12,9 @@ export async function getUser(email?: string) {
 
     return user;
   }
-  const session = await auth();
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
 
   if (!session?.user?.email) {
     throw new Error("not auth");
