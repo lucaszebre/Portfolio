@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <>
       <Press isHover={isHover} />
-      <Top user={currentUser.data} onClick={scrollTo} />
+      <Top onClick={scrollTo} />
 
       <Skill />
       <div className="w-full " ref={project}>

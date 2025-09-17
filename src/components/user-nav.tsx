@@ -10,18 +10,15 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { getFirstLetters } from "@/lib/utils";
-import { User } from "@prisma/client";
 import { useTranslations } from "next-intl";
 
+import { authClient } from "@/lib/auth-client";
 import { signOut } from "next-auth/react";
 
-type UserNavPropsType = {
-  user: User;
-};
-
-export const UserNav = ({ user }: UserNavPropsType) => {
+export const UserNav = () => {
   const t = useTranslations("UserNav");
+
+  const user = authClient.useSession().data?.user;
 
   return (
     <div className="flex flex-row justify-between w-full small:justify-normal gap-2">
@@ -34,12 +31,10 @@ export const UserNav = ({ user }: UserNavPropsType) => {
           >
             <Avatar className="h-8 w-8">
               <AvatarImage
-                src={user?.avatar ?? "https://github.com/shadcn.png"}
-                alt={t("userAvatar", { name: user?.UserName || "User" })}
+                src={user?.image ?? "https://github.com/shadcn.png"}
+                alt={t("userAvatar", { name: user?.name || "User" })}
               />
-              <AvatarFallback>
-                {getFirstLetters(user?.UserName ?? "AZ")}
-              </AvatarFallback>
+              <AvatarFallback>{user?.name}</AvatarFallback>
             </Avatar>
           </Button>
         </DropdownMenuTrigger>

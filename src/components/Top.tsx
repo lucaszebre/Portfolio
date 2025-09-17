@@ -1,6 +1,6 @@
 "use client";
 
-import { User } from "@prisma/client";
+import { authClient } from "@/lib/auth-client";
 import { useAnimate, useInView, useScroll } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -18,10 +18,9 @@ import { UserNav } from "./user-nav";
 
 type TopPropsType = {
   onClick: (arg0: string) => void;
-  user?: User;
 };
 
-const Top = ({ onClick, user }: TopPropsType) => {
+const Top = ({ onClick }: TopPropsType) => {
   const [isActive, setIsActive] = useState(false);
   const [scope, animate] = useAnimate();
   const t = useTranslations("Top");
@@ -29,6 +28,7 @@ const Top = ({ onClick, user }: TopPropsType) => {
   const { scrollYProgress } = useScroll({ target: scope });
 
   const isInView = useInView(scope);
+  const user = authClient.useSession();
 
   useEffect(() => {
     if (isInView) {
@@ -72,8 +72,8 @@ const Top = ({ onClick, user }: TopPropsType) => {
               {t("navigation.contact")}
             </span>
 
-            {user ? (
-              <UserNav user={user} />
+            {user.data?.session.id ? (
+              <UserNav />
             ) : (
               <Button asChild>
                 <Link href={"/auth"}>{t("navigation.login")}</Link>

@@ -2,6 +2,7 @@
 
 import { auth } from "@/auth";
 import { prisma } from "@/config/db";
+import { headers } from "next/headers";
 
 export type PostCommentType = {
   id: string;
@@ -9,8 +10,9 @@ export type PostCommentType = {
   content: string;
 };
 export async function postComments({ id, postId, content }: PostCommentType) {
-  const session = await auth();
-
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
   if (!session?.user?.email) {
     throw new Error("not auth");
   }
