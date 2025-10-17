@@ -7,6 +7,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import MarkdownPreview from "@uiw/react-markdown-preview";
+import { useTranslations } from "next-intl";
 import { Fragment, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -32,6 +33,7 @@ export const DialogProject = ({
   demo,
   id,
 }: DialogProjectProps) => {
+  const t = useTranslations("DialogProject");
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -45,34 +47,27 @@ export const DialogProject = ({
 
   const queryClient = useQueryClient();
 
-  const Comments = useQuery({
-    queryFn: async () => {
-      const comments = await getComments(id);
-      setAllComments(comments);
-      return comments;
-    },
+  const { data: comments, isLoading: commentsLoading } = useQuery({
     queryKey: [`project-${id}`],
-    enabled: true,
+    queryFn: () => getComments(id),
   });
 
   const postCommentMutation = useMutation({
     mutationFn: async (content: string) => {
       setIsLoading(true);
       await postComments({ id: crypto.randomUUID(), postId: id, content });
-      setIsLoading(false);
     },
-    onSuccess: async () => {
-      form.reset({
-        content: "",
-      });
+    onSuccess: () => {
+      form.reset({ content: "" });
       queryClient.invalidateQueries({ queryKey: [`project-${id}`] });
       setIsLoading(false);
     },
-    onError: async () => {
+    onError: () => {
       setIsLoading(false);
-      toast.error("Could not create the comment");
+      toast.error(t("toast.errorCreateComment"));
     },
   });
+
   const form = useForm<z.infer<typeof PostCommentSchema>>({
     resolver: zodResolver(PostCommentSchema),
     defaultValues: {
@@ -83,8 +78,6 @@ export const DialogProject = ({
   async function onSubmit(values: z.infer<typeof PostCommentSchema>) {
     postCommentMutation.mutate(values.content);
   }
-
-  const [allComments, setAllComments] = useState(Comments.data ?? []);
 
   return (
     <>
@@ -117,29 +110,35 @@ export const DialogProject = ({
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className=" h-[80%] w-[80%] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className=" h-[80%] w-[80%] flex flex-col gap-4 transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <div className="mt-2">
                     <MarkdownPreview source={readme} />
                   </div>
 
-                  <div>
-                    <h1 className="font-bold text-xl">COMMENTS</h1>
-                    {allComments && allComments.length ? (
-                      <ScrollArea className="h-[200px] w-full gap-8 rounded-md border p-8">
-                        {allComments.map((comment) => (
-                          <CommentCard
-                            key={comment.id}
-                            content={comment.content}
-                            avatar={comment.User?.avatar ?? ""}
-                            userName={comment.User?.UserName ?? "user"}
-                          />
-                        ))}
+                  <div className="flex flex-col gap-4">
+                    <h1 className="font-bold text-xl underline">
+                      {t("comments.title")}
+                    </h1>
+                    {commentsLoading ? (
+                      <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+                    ) : comments && comments.length > 0 ? (
+                      <ScrollArea className="h-[200px] w-full  rounded-md  p-8">
+                        <div className="flex flex-col gap-8">
+                          {comments.map((comment) => (
+                            <CommentCard
+                              key={comment.id}
+                              content={comment.content}
+                              avatar={comment.User?.image ?? ""}
+                              userName={comment.User?.name ?? "user"}
+                              createdAt={comment.createdAt}
+                            />
+                          ))}
+                        </div>
                       </ScrollArea>
                     ) : (
                       <div className="w-full">
                         <span className="bg-slate-400 text-white w-full">
-                          I got no comments be the first to critisize my project
-                          -ç-
+                          {t("comments.noComments")}
                         </span>
                       </div>
                     )}
@@ -147,7 +146,7 @@ export const DialogProject = ({
                     <Form {...form}>
                       <form
                         onSubmit={form.handleSubmit(onSubmit)}
-                        className="flex flex-col items-end mt-[1em] border"
+                        className="flex flex-col items-end mt-[1em] "
                       >
                         <FormField
                           control={form.control}
@@ -158,7 +157,7 @@ export const DialogProject = ({
                                 <Textarea
                                   {...field}
                                   className="w-full mb-[1.5em] text-black border-white border-b-[1px] h-[5vw] outline-0 bg-none bg-transparent"
-                                  placeholder="Tell me what you think about my project"
+                                  placeholder={t("comments.placeholder")}
                                   id="name-input"
                                   maxLength={300}
                                 />
@@ -171,12 +170,12 @@ export const DialogProject = ({
 
                         <Button
                           type="submit"
-                          className="mt-[1em] hover:text-white text-black font-bold bg-none bg-transparent outline-0 border-0 cursor-pointe underline "
+                          className=" font-bold  cursor-pointer  "
                         >
                           {isLoading && (
                             <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
                           )}
-                          ADD Comment
+                          {t("comments.addButton")}
                         </Button>
                       </form>
                     </Form>
@@ -189,7 +188,7 @@ export const DialogProject = ({
                         target="_blank"
                         className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       >
-                        See the code
+                        {t("buttons.seeCode")}
                       </a>
                     )}
                     {demo && (
@@ -198,7 +197,7 @@ export const DialogProject = ({
                         target="_blank"
                         className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       >
-                        See the demo
+                        {t("buttons.seeDemo")}
                       </a>
                     )}
                     <button
@@ -206,7 +205,7 @@ export const DialogProject = ({
                       className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={closeModal}
                     >
-                      Got it, thanks!
+                      {t("buttons.close")}
                     </button>
                   </div>
                 </Dialog.Panel>

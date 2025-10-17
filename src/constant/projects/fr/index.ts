@@ -1,0 +1,12 @@
+export { ART_GALLERY_FR } from "./art-gallery";
+export { AUDIOPHILE_FR } from "./audiophile";
+export { CHATPET_FR } from "./chatpet";
+export { DESIGNO_FR } from "./designo";
+export { GUESSWHAT_FR } from "./guesswhat";
+export { INSTAGRAM_CLONE_FR } from "./instagram-clone";
+export { INVOICE_APP_FR } from "./invoice-app";
+export { KANBAN_TASK_MANAGER_FR } from "./kanban-task-manager";
+export { LETTEREASY_FR } from "./lettereasy";
+export { LINK_DEV_FR } from "./link-dev";
+export { PREVIOUSLY_ON_FR } from "./previously-on";
+export { TWITTER_CLONE_FR } from "./twitter-clone";

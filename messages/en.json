@@ -1,0 +1,152 @@
+{
+  "DialogProject": {
+    "comments": {
+      "title": "COMMENTS",
+      "noComments": "I got no comments be the first to criticize my project",
+      "placeholder": "Tell me what you think about my project",
+      "addButton": "ADD Comment"
+    },
+    "buttons": {
+      "seeCode": "See the code",
+      "seeDemo": "See the demo",
+      "close": "Got it, thanks!"
+    },
+    "toast": {
+      "errorCreateComment": "Could not create the comment"
+    }
+  },
+  "Top": {
+    "navigation": {
+      "projects": "projects",
+      "contact": "contact",
+      "blog": "blog",
+      "login": "Login"
+    },
+    "lang": "EN",
+    "greeting": "Nice to meet you! I'm Lucas Zebre.",
+    "contactMe": "CONTACT ME",
+    "alt": {
+      "github": "github-icon",
+      "frontend": "frontend-icon",
+      "linkedin": "linkedin-icon",
+      "twitter": "twitter-icon",
+      "profile": "Photo de lucas zebre"
+    }
+  },
+  "Press": {
+    "lang": "EN",
+    "instruction": {
+      "prefix": "press",
+      "key": "A",
+      "suffix": "to know more about me"
+    },
+    "buttons": {
+      "downloadCv": "Download my cv",
+      "contactMe": "Contact me",
+      "close": "Got it, thanks!"
+    },
+    "journey": {
+      "title": "My Developer Journey",
+      "introduction": {
+        "title": "Introduction",
+        "content": "In 2019, I embarked on my developer journey as a computer science student at Sorbonne University. Delving into a Python clone, my journey began with practical duo sessions, igniting my passion for problem-solving and pushing me to constantly seek solutions."
+      },
+      "exploration": {
+        "title": "Early Doubts and Exploration",
+        "content": "Navigating the vibrant city of Paris, doubts clouded my path. Unsure of my career trajectory, I grappled with distractions, yet remained determined to explore my potential. It was a period of self-discovery, where understanding the value of money came through hard-earned lessons."
+      },
+      "transition": {
+        "title": "Transition to Working",
+        "content": "Opting out of my second university year wasn't due to lack of intelligence but a sense of aimlessness. It was in the realm of work that the importance of coding skills and problem-solving prowess truly dawned on me. Enduring uninspiring roles reinforced my gratitude for my capabilities."
+      },
+      "webDev": {
+        "title": "Decision to Become a Web Developer",
+        "content": "In 2022, a pivotal decision was made: I would forge a path as a web developer. Armed with HTML, CSS, and JS knowledge, I initially sought employment opportunities. Realizing the necessity of React, I transitioned to internships, despite the challenges posed by the French job market."
+      },
+      "academy": {
+        "title": "Discovering the Web Academy",
+        "content": "The Web Academy by Epitech emerged as a beacon of tailored learning. Over ten months, I honed my skills, delved into SQL and PHP, and conquered projects that seemed insurmountable at first. From SQL novitiate to crafting a PHP Twitter clone in six months, my growth was tangible."
+      },
+      "holis": {
+        "title": "From Academy to Startup: The Holis Journey",
+        "content": "My work at the Web Academy paved the way for my next great challenge: securing an alternance (apprenticeship) to finally start my career. The search in September 2023 was hard and frustrating, but I refused to give up. My persistence paid off. I landed a developer role at Holis, a purpose-driven startup building a SaaS platform for product life-cycle assessments. For the past 14 months, I've been on the 7-person \"root team,\" where theory met reality. Working in a fast-paced, challenging, and sometimes stressful startup environment has been an incredible accelerator. I've moved from an aspiring developer to a professional, mastering production-level Git workflows, rigorous coding practices, and the resilience required to add features and solve complex bugs on a live product."
+      },
+      "ambitions": {
+        "title": "Current Ambitions: Polyvalence and Creation",
+        "content": "My 14 months at Holis have only deepened my curiosity. My plan is to continue growing with the team while simultaneously starting a Bachelor's degree in Network Systems and Cloud at ESGI. In a world being rapidly reshaped by AI, I believe polyvalence is the key to the future. I want to understand the entire ecosystem—from DevOps and cloud architecture down to the software itself. This drive to \"build stuff\" is stronger than ever, pushing me to start my journey as an \"indie hacker\" and, unlike many developers, actually finish my side projects. I recently completed a pet-oriented chatbot, leveraging the Gemini API and careful prompting to keep it on track."
+      },
+      "competitive": {
+        "title": "Competitive Spirit",
+        "content": "I've always had a competitive spirit, cultivated through years of sports like basketball, football, and surfing. But my true parallel for development is skateboarding. It's my go-to way to challenge myself, focus intently, and learn new things—progressing every day, falling, and getting hurt. It might sound masochistic, but I love it for a reason: in skateboarding, you always fail before you land a trick. I think it's the same in life and in code. This metaphor felt especially real recently. After a significant injury, I just got back on my board this summer. The process wasn't just about competition; it was about patience, recovery, and finding mental and physical peace. It reinforced my core belief: whether you're recovering from a fall or navigating a high-stress bug at a startup, the most important thing is that you stay consistent and keep trying smartly."
+      }
+    }
+  },
+  "Projects": {
+    "title": "Projects",
+    "contactMe": "CONTACT ME",
+    "lang": "EN"
+  },
+  "Bottom": {
+    "lang": "EN",
+    "title": "Contact",
+    "description": "I would love to hear about your project and how I could help. Please fill the form and I'll get back to you as soon as possible.",
+    "form": {
+      "name": "NAME",
+      "email": "EMAIL",
+      "message": "MESSAGE",
+      "submit": "SEND MESSAGE"
+    },
+    "toasts": {
+      "success": "Successfully sent the message",
+      "error": "Error sending the message"
+    },
+    "alt": {
+      "backgroundPattern": "background-pattern",
+      "github": "github-logo",
+      "frontend": "frontend-logo",
+      "linkedin": "linkedin",
+      "twitter": "twitter-logo"
+    }
+  },
+  "Auth": {
+    "privacyPolicy": "Privacy Policy",
+    "continue": "By continuing you agree to our",
+    "and": "and",
+    "termsOfService": "Terms of Service"
+  },
+  "Button": {
+    "signInWithGoogle": "Sign in with Google",
+    "signInWithGithub": "Sign in with Github",
+    "signInWithLinkedin": "Sign in with Linkedin"
+  },
+  "language": {
+    "label": "en"
+  },
+  "Preview": {
+    "back": "Back"
+  },
+  "not-found": {
+    "PageNotAvailable": "Sorry, this page is not available.",
+    "LinkBroken": "The link you followed may be broken, or the page may have been removed."
+  },
+  "Dashboard": {
+    "error": "A error occured :"
+  },
+  "AuthPage": {
+    "metaTitle": "LetterEasy | Auth",
+    "metaDescription": "LetterEasy is a simple and easy to use email marketing tool."
+  },
+  "UserNav": {
+    "openUserMenu": "Open user menu",
+    "userAvatar": "{name}'s avatar",
+    "profile": "Profile",
+    "profileShortcut": "⇧⌘P",
+    "signOutShortcut": "⇧⌘Q",
+    "billing": "Billing",
+    "billingShortcut": "⌘B",
+    "settings": "Settings",
+    "settingsShortcut": "⌘S",
+    "signOut": "Sign Out"
+  },
+  "lang": "EN"
+}

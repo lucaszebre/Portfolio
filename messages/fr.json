@@ -1,4 +1,20 @@
 {
+  "DialogProject": {
+    "comments": {
+      "title": "COMMENTAIRES",
+      "noComments": "Je n'ai pas de commentaires, soyez le premier à critiquer mon projet",
+      "placeholder": "Dites-moi ce que vous pensez de mon projet",
+      "addButton": "AJOUTER un commentaire"
+    },
+    "buttons": {
+      "seeCode": "Voir le code",
+      "seeDemo": "Voir la démo",
+      "close": "Compris, merci !"
+    },
+    "toast": {
+      "errorCreateComment": "Impossible de créer le commentaire"
+    }
+  },
   "Top": {
     "navigation": {
       "projects": "projets",
@@ -18,6 +34,7 @@
     }
   },
   "Press": {
+    "lang": "FR",
     "instruction": {
       "prefix": "appuyez sur",
       "key": "A",
@@ -50,13 +67,17 @@
         "title": "Découverte de la Web Academy",
         "content": "La Web Academy d'Epitech est apparue comme un phare d'apprentissage sur mesure. Pendant dix mois, j'ai perfectionné mes compétences, plongé dans SQL et PHP, et vaincu des projets qui semblaient insurmontables au début. De novice en SQL à la création d'un clone de Twitter en PHP en six mois, ma progression était tangible."
       },
-      "progress": {
-        "title": "Progression Actuelle",
-        "content": "Avance rapide jusqu'en avril 2024, et je me retrouve à collaborer sur des projets de pointe. En utilisant des outils comme Docker, je dirige des solutions innovantes comme un clone de Spotify. Chaque étape réaffirme ma détermination et me pousse vers la réalisation de ma vision : je veux créer et faire des choses qui m'excitent."
+      "holis": {
+        "title": "De l'Académie à la Startup : Le Parcours Holis",
+        "content": "Mon travail à la Web Academy a ouvert la voie à mon prochain grand défi : décrocher une alternance pour enfin commencer ma carrière. La recherche en septembre 2023 a été difficile et frustrante, mais j'ai refusé d'abandonner. Ma persévérance a payé. J'ai décroché un poste de développeur chez Holis, une startup engagée qui construit une plateforme SaaS pour les évaluations de cycle de vie des produits. Depuis 14 mois, je fais partie de la \"root team\" de 7 personnes, où la théorie rencontre la réalité. Travailler dans un environnement de startup rapide, exigeant et parfois stressant a été un accélérateur incroyable. Je suis passé de développeur aspirant à professionnel, maîtrisant les workflows Git de niveau production, les pratiques de codage rigoureuses et la résilience nécessaire pour ajouter des fonctionnalités et résoudre des bugs complexes sur un produit en ligne."
+      },
+      "ambitions": {
+        "title": "Ambitions Actuelles : Polyvalence et Création",
+        "content": "Mes 14 mois chez Holis n'ont fait qu'approfondir ma curiosité. Mon plan est de continuer à grandir avec l'équipe tout en commençant simultanément une licence en Systèmes Réseaux et Cloud à l'ESGI. Dans un monde rapidement transformé par l'IA, je crois que la polyvalence est la clé de l'avenir. Je veux comprendre tout l'écosystème—du DevOps et de l'architecture cloud jusqu'au logiciel lui-même. Cette envie de \"construire des choses\" est plus forte que jamais, me poussant à commencer mon parcours en tant qu'\"indie hacker\" et, contrairement à beaucoup de développeurs, à réellement terminer mes projets personnels. J'ai récemment terminé un chatbot orienté animaux de compagnie, exploitant l'API Gemini et des prompts soignés pour le maintenir sur la bonne voie."
       },
       "competitive": {
         "title": "Esprit Compétitif",
-        "content": "J'aime aussi la compétition, j'ai pratiqué beaucoup de sports dans ma vie, du basketball au football en passant par le surf et le beach-tennis. J'ai fini par faire beaucoup de skateboard, ce sport est devenu mon échappatoire, juste une façon de me mettre au défi, d'apprendre de nouvelles choses, d'être concentré sur une chose pendant quelques heures. Progresser chaque jour, tomber, me faire mal. Cela peut sembler sadomasochiste mais c'est pour ces raisons que j'aime vraiment le skate. Pour faire un parallèle avec le développement web, en skate on échoue toujours avant de réussir un trick, je pense que c'est pareil dans la vie, le plus important est de rester constant et de continuer à essayer intelligemment."
+        "content": "J'ai toujours eu un esprit compétitif, cultivé à travers des années de sports comme le basketball, le football et le surf. Mais mon véritable parallèle pour le développement est le skateboard. C'est ma façon privilégiée de me défier, de me concentrer intensément et d'apprendre de nouvelles choses—progressant chaque jour, tombant et me blessant. Cela peut sembler masochiste, mais je l'aime pour une raison : en skateboard, on échoue toujours avant de réussir un trick. Je pense que c'est pareil dans la vie et dans le code. Cette métaphore est devenue particulièrement réelle récemment. Après une blessure importante, je viens de remonter sur ma planche cet été. Le processus n'était pas seulement une question de compétition ; c'était une question de patience, de récupération et de trouver la paix mentale et physique. Cela a renforcé ma conviction fondamentale : que vous vous remettiez d'une chute ou que vous naviguiez dans un bug stressant dans une startup, le plus important est de rester constant et de continuer à essayer intelligemment."
       }
     }
   },
@@ -66,6 +87,7 @@
     "lang": "FR"
   },
   "Bottom": {
+    "lang": "FR",
     "title": "Contact",
     "description": "J'aimerais en savoir plus sur votre projet et comment je pourrais vous aider. Veuillez remplir le formulaire et je vous répondrai dès que possible.",
     "form": {
@@ -123,7 +145,8 @@
     "billing": "Facturation",
     "billingShortcut": "⌘B",
     "settings": "Paramètres",
-    "settingsShortcut": "⌘S"
+    "settingsShortcut": "⌘S",
+    "signOut": "Déconnexion"
   },
   "lang": "FR"
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { CV_ENGLISH_LINK, CV_FRENCH_LINK } from "@/constant/cvLinks";
 import { Dialog, Transition } from "@headlessui/react";
 import MarkdownPreview from "@uiw/react-markdown-preview";
 import { useTranslations } from "next-intl";
@@ -31,9 +32,14 @@ ${t("journey.webDev.content")}\n\
 ## ${t("journey.academy.title")}\n\
 ${t("journey.academy.content")}\n\
 \n\
-## ${t("journey.progress.title")}\n\
-${t("journey.progress.content")}\n\
+## ${t("journey.holis.title")}\n\
+${t("journey.holis.content")}\n\
+![App Screenshot](./assets/holis_team.jpg)\n\
+\n\
+## ${t("journey.ambitions.title")}\n\
+${t("journey.ambitions.content")}\n\
 <video width='200px' height='200px' autoPlay loop muted><source src='./assets/video.mp4' type='video/mp4' />Your browser does not support the video tag.</video>\n\
+\n\
 ## ${t("journey.competitive.title")}\n\
 ${t("journey.competitive.content")}\n\
 `;
@@ -70,11 +76,15 @@ Also i like competition , i did a lot of sport in my life from basketball to foo
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const handleKeyPress = (event: { key: string }) => {
-      if (!isHover) {
-        if (event.key == "a" || event.key == "A") {
-          setIsOpen((isOpen) => !isOpen);
-        }
+    const handleKeyPress = (event: KeyboardEvent) => {
+      const target = event.target as HTMLElement;
+      if (
+        !isHover &&
+        (event.key === "a" || event.key === "A") &&
+        target.tagName !== "INPUT" &&
+        target.tagName !== "TEXTAREA"
+      ) {
+        setIsOpen((isOpen) => !isOpen);
       }
     };
 
@@ -83,7 +93,7 @@ Also i like competition , i did a lot of sport in my life from basketball to foo
     return () => {
       document.removeEventListener("keydown", handleKeyPress);
     };
-  }, []);
+  }, [isHover]);
 
   function closeModal() {
     setIsOpen(false);
@@ -124,14 +134,29 @@ Also i like competition , i did a lot of sport in my life from basketball to foo
                   leaveFrom="opacity-100 scale-100"
                   leaveTo="opacity-0 scale-95"
                 >
-                  <Dialog.Panel className=" h-[80%] w-[80%] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                    <div className="mt-2">
-                      <MarkdownPreview source={readme} />
+                  <Dialog.Panel className="h-[80vh] pt-10 w-[90%] max-w-6xl transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all">
+                    <div className="h-full overflow-y-auto px-8 py-6 md:px-12 md:py-10">
+                      <MarkdownPreview
+                        source={readme}
+                        style={{
+                          backgroundColor: "white",
+                          color: "#1f2937",
+                          fontFamily: 'Georgia, "Times New Roman", serif',
+                          fontSize: "1.125rem",
+                          lineHeight: "1.8",
+                        }}
+                        wrapperElement={{
+                          "data-color-mode": "light",
+                        }}
+                        className="article-content"
+                      />
                     </div>
 
-                    <div className="mt-4 flex flex-row gap-4">
+                    <div className="border-t border-gray-200 px-8 py-4 flex flex-row gap-4 bg-gray-50">
                       <a
-                        href="/assets/cv.pdf"
+                        href={
+                          t("lang") === "FR" ? CV_FRENCH_LINK : CV_ENGLISH_LINK
+                        }
                         target="_blank"
                         type="button"
                         className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"

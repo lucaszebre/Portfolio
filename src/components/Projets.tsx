@@ -1,7 +1,6 @@
 "use client";
 
-import { ALL_PROJECT_ENGLISH } from "@/constant/projectEnglish";
-import { ALL_PROJECT_FRENCH } from "@/constant/projectFrench";
+import { ALL_PROJECTS } from "@/constant/projects/index";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { DialogProject } from "./DialogProject";
@@ -9,8 +8,7 @@ import Reveal from "./Reveal";
 const Projets = () => {
   const t = useTranslations("Projects");
 
-  const ALL_PROJECT =
-    t("lang") === "FR" ? ALL_PROJECT_FRENCH : ALL_PROJECT_ENGLISH;
+  const locale: "en" | "fr" = t("lang") === "FR" ? "fr" : "en";
   return (
     <div className="flex flex-col items-center  justify-center w-full">
       <div className="mt-[5vw]  max-w-[1440px] w-[80%] flex flex-col justify-center items-center">
@@ -39,14 +37,14 @@ const Projets = () => {
             </Reveal>
           </div>
           <div className="flex flex-col items-start gap-10 lg:flex-row mt-[5vw] mb-[5vw] justify-between w-full">
-            {ALL_PROJECT.slice(0, 2).map(
+            {ALL_PROJECTS.slice(0, 2).map(
               ({ readme, id, demo, image, alt, tags, name, code }) => {
                 return (
                   <DialogProject
                     id={id}
                     key={id}
                     code={code}
-                    readme={readme}
+                    readme={readme[locale]}
                     demo={demo}
                   >
                     <Reveal
@@ -58,8 +56,8 @@ const Projets = () => {
                       <div className="flex flex-col cursor-pointer w-full relative rounded-3xl rounded-gray-300 items-start justify-start">
                         <div className=" w-full relative h-[20rem]">
                           <Image
-                            className="rounded-xl"
-                            fill={true}
+                            className="rounded-xl "
+                            fill
                             src={image}
                             alt={alt}
                           />
@@ -85,14 +83,14 @@ const Projets = () => {
             )}
           </div>{" "}
           <div className="flex flex-col items-start gap-10 lg:flex-row mt-[5vw] mb-[5vw] justify-between w-full">
-            {ALL_PROJECT.slice(2, 4).map(
+            {ALL_PROJECTS.slice(2, 4).map(
               ({ readme, id, demo, image, alt, tags, name, code }) => {
                 return (
                   <DialogProject
                     id={id}
                     key={id}
                     code={code}
-                    readme={readme}
+                    readme={readme[locale]}
                     demo={demo}
                   >
                     <Reveal
@@ -105,7 +103,7 @@ const Projets = () => {
                         <div className=" w-full relative h-[20rem]">
                           <Image
                             className="rounded-xl"
-                            fill={true}
+                            fill
                             src={image}
                             alt={alt}
                           />
@@ -131,14 +129,14 @@ const Projets = () => {
             )}
           </div>
           <div className="flex flex-col items-start gap-10 lg:flex-row mt-[5vw] mb-[5vw]  justify-between w-full">
-            {ALL_PROJECT.slice(4, 6).map(
+            {ALL_PROJECTS.slice(4, 6).map(
               ({ readme, id, demo, image, alt, tags, name, code }) => {
                 return (
                   <DialogProject
                     id={id}
                     key={id}
                     code={code}
-                    readme={readme}
+                    readme={readme[locale]}
                     demo={demo}
                   >
                     <Reveal
@@ -151,7 +149,7 @@ const Projets = () => {
                         <div className=" w-full relative h-[20rem]">
                           <Image
                             className="rounded-xl"
-                            fill={true}
+                            fill
                             src={image}
                             alt={alt}
                           />
@@ -177,14 +175,14 @@ const Projets = () => {
             )}
           </div>
           <div className="flex flex-col items-start gap-10 lg:flex-row mt-[5vw] mb-[5vw]  justify-between w-full">
-            {ALL_PROJECT.slice(6, 8).map(
+            {ALL_PROJECTS.slice(6, 8).map(
               ({ readme, id, demo, image, alt, tags, name, code }) => {
                 return (
                   <DialogProject
                     id={id}
                     key={id}
                     code={code}
-                    readme={readme}
+                    readme={readme[locale]}
                     demo={demo}
                   >
                     <Reveal
@@ -197,7 +195,7 @@ const Projets = () => {
                         <div className=" w-full relative h-[20rem]">
                           <Image
                             className="rounded-xl"
-                            fill={true}
+                            fill
                             src={image}
                             alt={alt}
                           />
@@ -223,14 +221,14 @@ const Projets = () => {
             )}
           </div>
           <div className="flex flex-col items-start gap-10 lg:flex-row mt-[5vw] mb-[5vw]  justify-between w-full">
-            {ALL_PROJECT.slice(8, 10).map(
+            {ALL_PROJECTS.slice(8, 10).map(
               ({ readme, id, demo, image, alt, tags, name, code }) => {
                 return (
                   <DialogProject
                     id={id}
                     key={id}
                     code={code}
-                    readme={readme}
+                    readme={readme[locale]}
                     demo={demo}
                   >
                     <Reveal
@@ -243,7 +241,7 @@ const Projets = () => {
                         <div className=" w-full relative h-[20rem]">
                           <Image
                             className="rounded-xl"
-                            fill={true}
+                            fill
                             src={image}
                             alt={alt}
                           />

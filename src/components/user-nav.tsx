@@ -2,28 +2,25 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { useTranslations } from "next-intl";
 
 import { authClient } from "@/lib/auth-client";
-import { signOut } from "next-auth/react";
+import { SignOutButton } from "./auth/SignOutButton";
 
 export const UserNav = () => {
   const t = useTranslations("UserNav");
 
-  const user = authClient.useSession().data?.user;
+  const { data, refetch } = authClient.useSession();
 
+  const user = data?.user;
   return (
-    <div className="flex flex-row justify-between w-full small:justify-normal gap-2">
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
+    <div className="flex flex-row justify-between w-full max-md:justify-center gap-2">
+      <Popover>
+        <PopoverTrigger asChild>
           <Button
             variant="ghost"
             className="relative h-8 w-8 rounded-full"
@@ -37,29 +34,20 @@ export const UserNav = () => {
               <AvatarFallback>{user?.name}</AvatarFallback>
             </Avatar>
           </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-56" align="end">
-          <DropdownMenuLabel className="font-normal">
+        </PopoverTrigger>
+        <PopoverContent className="w-56" align="center">
+          <div className="font-normal">
             <div className="flex flex-col space-y-1">
               <p className="text-xs leading-none text-muted-foreground">
                 {user?.email}
               </p>
             </div>
-          </DropdownMenuLabel>
-          <DropdownMenuSeparator />
+          </div>
+          <hr className="my-2" />
 
-          <DropdownMenuItem>
-            <Button
-              variant="ghost"
-              onClick={() => signOut({ redirectTo: "/" })}
-              className="w-full p-0"
-            >
-              Sign Out
-            </Button>
-            <DropdownMenuShortcut>{t("signOutShortcut")}</DropdownMenuShortcut>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+          <SignOutButton />
+        </PopoverContent>
+      </Popover>
     </div>
   );
 };

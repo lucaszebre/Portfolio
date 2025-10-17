@@ -3,6 +3,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/jsx-no-undef */
 import { Button } from "@/components/ui/button";
+import { CV_ENGLISH_LINK, CV_FRENCH_LINK } from "@/constant/cvLinks";
 import { SchemaContact } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
@@ -267,7 +268,7 @@ export const Bottom = () => {
               </a>
               <a
                 className="text-2xl text-white font-bold"
-                href="/assets/cv.pdf"
+                href={t("lang") === "FR" ? CV_FRENCH_LINK : CV_ENGLISH_LINK}
                 target="_blank"
               >
                 CV

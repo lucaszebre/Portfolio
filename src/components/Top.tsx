@@ -1,5 +1,14 @@
 "use client";
 
+import { setUserLocale } from "@/actions/locales";
+import { CV_ENGLISH_LINK, CV_FRENCH_LINK } from "@/constant/cvLinks";
+import {
+  FRONTEND_MENTOR_LINK,
+  GITHUB_LINK,
+  LINKEDIN_LINK,
+  TWITTER_LINK,
+} from "@/constant/socialLink";
+import { locales } from "@/i18n/config";
 import { authClient } from "@/lib/auth-client";
 import { useAnimate, useInView, useScroll } from "framer-motion";
 import { useTranslations } from "next-intl";
@@ -12,6 +21,7 @@ import linkedin from "../../public/assets/images/icon-linkedin.svg";
 import twitter from "../../public/assets/images/icon-twitter.svg";
 import PhotoProfileDesktop from "../../public/assets/images/portfolio-image.png";
 import Cursor from "./cursor";
+import { Icons } from "./icons";
 import Reveal from "./Reveal";
 import { Button } from "./ui/button";
 import { UserNav } from "./user-nav";
@@ -28,7 +38,7 @@ const Top = ({ onClick }: TopPropsType) => {
   const { scrollYProgress } = useScroll({ target: scope });
 
   const isInView = useInView(scope);
-  const user = authClient.useSession();
+  const { isPending, data } = authClient.useSession();
 
   useEffect(() => {
     if (isInView) {
@@ -42,12 +52,12 @@ const Top = ({ onClick }: TopPropsType) => {
     <>
       <div
         ref={scope}
-        className="flex flex-col items-center justify-center w-full h-full"
+        className="flex flex-col gap-2 items-center justify-center w-full h-full"
       >
         <Cursor isActive={isActive} />
 
         <div className="flex flex-col items-center justify-center max-w-[1440px] w-[80%] relative">
-          <div className="flex md:flex-row md:gap-10 flex-col  items-center text-start justify-center lg:justify-start w-full ">
+          <div className="flex md:flex-row md:gap-10 flex-col  gap-4 items-center text-start justify-center lg:justify-start w-full ">
             <Reveal
               v={{
                 hidden: { opacity: 0, x: -75 },
@@ -58,7 +68,13 @@ const Top = ({ onClick }: TopPropsType) => {
                 lucaszebre
               </h1>
             </Reveal>
-
+            <Button
+              onClick={() =>
+                setUserLocale(t("lang") === "FR" ? locales[0] : locales[1])
+              }
+            >
+              {t("lang") === "FR" ? "EN" : "FR"}
+            </Button>
             <span
               onClick={() => onClick("projects")}
               className="text-white hover:underline font-bold md:flex hidden cursor-pointer hover:decoration-1  hover:decoration-[#00ff80]"
@@ -72,7 +88,9 @@ const Top = ({ onClick }: TopPropsType) => {
               {t("navigation.contact")}
             </span>
 
-            {user.data?.session.id ? (
+            {isPending ? (
+              <Icons.spinner className="animate-spin  text-white" />
+            ) : data?.session.id ? (
               <UserNav />
             ) : (
               <Button asChild>
@@ -88,34 +106,28 @@ const Top = ({ onClick }: TopPropsType) => {
               width="fit-content"
             >
               <div className="flex flex-row gap-2  md:hidden items-center justify-between">
-                <a href="https://github.com/lucaszebre" target="_blank">
+                <a href={GITHUB_LINK} target="_blank">
                   <Image
                     className="w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]"
                     src={github}
                     alt={t("alt.github")}
                   />
                 </a>
-                <a
-                  href="https://www.frontendmentor.io/profile/Kihura"
-                  target="_blank"
-                >
+                <a href={FRONTEND_MENTOR_LINK} target="_blank">
                   <Image
                     className="w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]"
                     src={frontend}
                     alt={t("alt.frontend")}
                   />
                 </a>
-                <a
-                  href="https://www.linkedin.com/in/lucas-zebre-22305a191/"
-                  target="_blank"
-                >
+                <a href={LINKEDIN_LINK} target="_blank">
                   <Image
                     className="w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]"
                     src={linkedin}
                     alt={t("alt.linkedin")}
                   />
                 </a>
-                <a href="https://twitter.com/ZebreLucas" target="_blank">
+                <a href={TWITTER_LINK} target="_blank">
                   <Image
                     className="w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]"
                     src={twitter}
@@ -124,7 +136,7 @@ const Top = ({ onClick }: TopPropsType) => {
                 </a>
                 <a
                   className="text-2xl text-white font-bold"
-                  href="/assets/cv.pdf"
+                  href={t("lang") === "FR" ? CV_FRENCH_LINK : CV_ENGLISH_LINK}
                   target="_blank"
                 >
                   CV
@@ -148,34 +160,28 @@ const Top = ({ onClick }: TopPropsType) => {
                 display="flex"
               >
                 <div className="flex flex-row gap-2  md:flex items-center justify-between">
-                  <a href="https://github.com/lucaszebre" target="_blank">
+                  <a href={GITHUB_LINK} target="_blank">
                     <Image
                       className="w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]"
                       src={github}
                       alt={t("alt.github")}
                     />
                   </a>
-                  <a
-                    href="https://www.frontendmentor.io/profile/Kihura"
-                    target="_blank"
-                  >
+                  <a href={FRONTEND_MENTOR_LINK} target="_blank">
                     <Image
                       className="w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]"
                       src={frontend}
                       alt={t("alt.frontend")}
                     />
                   </a>
-                  <a
-                    href="https://www.linkedin.com/in/lucas-zebre-22305a191/"
-                    target="_blank"
-                  >
+                  <a href={LINKEDIN_LINK} target="_blank">
                     <Image
                       className="w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]"
                       src={linkedin}
                       alt={t("alt.linkedin")}
                     />
                   </a>
-                  <a href="https://twitter.com/ZebreLucas" target="_blank">
+                  <a href={TWITTER_LINK} target="_blank">
                     <Image
                       className="w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]"
                       src={twitter}
@@ -184,7 +190,7 @@ const Top = ({ onClick }: TopPropsType) => {
                   </a>
                   <a
                     className="text-2xl text-white font-bold"
-                    href="/assets/cv.pdf"
+                    href={t("lang") === "FR" ? CV_FRENCH_LINK : CV_ENGLISH_LINK}
                     target="_blank"
                   >
                     CV

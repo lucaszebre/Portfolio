@@ -6,7 +6,12 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getFirstLetters(avatar: string) {
+  if (!avatar) {
+    return [""];
+  }
   const [firstName, lastName] = avatar.split(" ");
-  console.log(firstName, lastName, "last");
-  return [firstName.charAt(0), lastName.charAt(0)];
+  if (lastName) {
+    return [firstName.charAt(0), lastName.charAt(0)];
+  }
+  return [firstName.charAt(0)];
 }
