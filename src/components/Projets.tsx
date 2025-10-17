@@ -11,7 +11,7 @@ const Projets = () => {
   const locale: "en" | "fr" = t("lang") === "FR" ? "fr" : "en";
   return (
     <div className="flex flex-col items-center  justify-center w-full">
-      <div className="mt-[5vw]  max-w-[1440px] w-[80%] flex flex-col justify-center items-center">
+      <div className="mt-[5vw]  max-w-[1440px] md:w-[80%] w-[90%] flex flex-col justify-center items-center">
         <div className="flex flex-col  justify-center items-center w-full ">
           <div className="flex items-end justify-between w-full">
             <Reveal

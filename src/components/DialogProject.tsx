@@ -100,7 +100,7 @@ export const DialogProject = ({
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <div className="flex min-h-full w-full items-center justify-center py-6 md:p-4 text-center">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -110,7 +110,7 @@ export const DialogProject = ({
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className=" h-[80%] w-[80%] flex flex-col gap-4 transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className=" h-[80%] w-[90%] md:w-[80%] flex flex-col gap-4 transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <div className="mt-2">
                     <MarkdownPreview source={readme} />
                   </div>
