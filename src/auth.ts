@@ -8,7 +8,14 @@ export const auth = betterAuth({
   database: prismaAdapter(prisma, {
     provider: "postgresql",
   }),
-  plugins: [jwt(), nextCookies()],
+  plugins: [
+    jwt({
+      jwks: {
+        disablePrivateKeyEncryption: true,
+      },
+    }),
+    nextCookies(),
+  ],
   socialProviders: {
     github: {
       clientId: process.env.AUTH_GITHUB_ID as string,
