@@ -8,6 +8,7 @@ export const auth = betterAuth({
   database: prismaAdapter(prisma, {
     provider: "postgresql",
   }),
+  secret: process.env.BETTER_AUTH_SECRET,
   plugins: [
     jwt({
       jwks: {
@@ -27,7 +28,7 @@ export const auth = betterAuth({
     },
   },
   logger: {
-    level: "debug",
+    level: process.env.NODE_ENV === "production" ? "error" : "debug",
   },
-  debug: true,
+  debug: process.env.NODE_ENV !== "production",
 });
