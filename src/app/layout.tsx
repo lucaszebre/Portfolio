@@ -1,5 +1,4 @@
 import ReactQueryProvider from "@/providers/ReactProvidersQuery";
-import { GoogleTagManager } from "@next/third-parties/google";
 import { Space_Grotesk } from "next/font/google";
 
 import { cn } from "@/lib/utils";
@@ -35,8 +34,6 @@ export default async function RootLayout({
     <html lang={locale}>
       <NextIntlClientProvider messages={messages}>
         <ReactQueryProvider>
-          <GoogleTagManager gtmId="G-RL71428SMP" />
-
           <body className={cn(inter.className, spaceGrotesk.className)}>
             {children}
           </body>
