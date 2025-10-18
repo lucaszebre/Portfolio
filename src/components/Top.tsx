@@ -111,7 +111,6 @@ const Top = ({ onClick }: TopPropsType) => {
                     className="w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]"
                     src={github}
                     alt={t("alt.github")}
-                    fetchPriority="high"
                     loading="lazy"
                   />
                 </a>
@@ -120,7 +119,6 @@ const Top = ({ onClick }: TopPropsType) => {
                     className="w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]"
                     src={frontend}
                     alt={t("alt.frontend")}
-                    fetchPriority="high"
                     loading="lazy"
                   />
                 </a>
@@ -129,7 +127,6 @@ const Top = ({ onClick }: TopPropsType) => {
                     className="w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]"
                     src={linkedin}
                     alt={t("alt.linkedin")}
-                    fetchPriority="high"
                     loading="lazy"
                   />
                 </a>
@@ -138,7 +135,6 @@ const Top = ({ onClick }: TopPropsType) => {
                     className="w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]"
                     src={twitter}
                     alt={t("alt.twitter")}
-                    fetchPriority="high"
                     loading="lazy"
                   />
                 </a>
@@ -173,7 +169,6 @@ const Top = ({ onClick }: TopPropsType) => {
                       className="w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]"
                       src={github}
                       alt={t("alt.github")}
-                      fetchPriority="high"
                       loading="lazy"
                     />
                   </a>
@@ -182,7 +177,6 @@ const Top = ({ onClick }: TopPropsType) => {
                       className="w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]"
                       src={frontend}
                       alt={t("alt.frontend")}
-                      fetchPriority="high"
                       loading="lazy"
                     />
                   </a>
@@ -191,7 +185,6 @@ const Top = ({ onClick }: TopPropsType) => {
                       className="w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]"
                       src={linkedin}
                       alt={t("alt.linkedin")}
-                      fetchPriority="high"
                       loading="lazy"
                     />
                   </a>
@@ -200,7 +193,6 @@ const Top = ({ onClick }: TopPropsType) => {
                       className="w-[3vw] mr-[1vw] min-w-[19.2px] lg:w-[2vw]"
                       src={twitter}
                       alt={t("alt.twitter")}
-                      fetchPriority="high"
                       loading="lazy"
                     />
                   </a>
@@ -231,14 +223,9 @@ const Top = ({ onClick }: TopPropsType) => {
               height={400}
               src={PhotoProfileDesktop}
               alt={t("alt.profile")}
-              fetchPriority="high"
-              loading="lazy"
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 408px"
             />
-
-            {/* <div className='lg:hidden md:block hidden w-[25.445vw] relative h-[26.594vw] '>
-                    <Image fill={true} src={PhotoProfileDesktop} alt="Photo de lucas zebre " />
-
-                </div> */}
           </div>
         </div>
       </div>

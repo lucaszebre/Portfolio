@@ -78,6 +78,7 @@ export const Bottom = () => {
             fill={true}
             src={"./assets/images/pattern-rings.svg"}
             alt={t("alt.backgroundPattern")}
+            loading="lazy"
           />
         </div>
 
@@ -237,6 +238,7 @@ export const Bottom = () => {
                   src={github}
                   alt={t("alt.github")}
                   className="max-md:w-[3vw] mr-[1vw] max-md:min-w-[19.2px] md:w-[3vw] lg:w-[2vw]"
+                  loading="lazy"
                 />
               </a>
               <a
@@ -247,6 +249,7 @@ export const Bottom = () => {
                   src={frontend}
                   alt={t("alt.frontend")}
                   className="max-md:w-[3vw] mr-[1vw] max-md:min-w-[19.2px] md:w-[3vw] lg:w-[2vw]"
+                  loading="lazy"
                 />
               </a>
               <a
@@ -257,6 +260,7 @@ export const Bottom = () => {
                   src={linkedin}
                   alt={t("alt.linkedin")}
                   className="max-md:w-[3vw] mr-[1vw] max-md:min-w-[19.2px] md:w-[3vw] lg:w-[2vw]"
+                  loading="lazy"
                 />
               </a>
               <a href="https://twitter.com/ZebreLucas" target="_blank">
@@ -264,6 +268,7 @@ export const Bottom = () => {
                   src={twitter}
                   alt={t("alt.twitter")}
                   className="max-md:w-[3vw] mr-[1vw] max-md:min-w-[19.2px] md:w-[3vw] lg:w-[2vw]"
+                  loading="lazy"
                 />
               </a>
               <a

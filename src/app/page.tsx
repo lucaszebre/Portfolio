@@ -1,16 +1,30 @@
 "use client";
 import { getUser } from "@/actions/user/getUser";
 /* eslint-disable react/jsx-no-undef */
-import { Bottom } from "@/components/Bottom";
 import Press from "@/components/Press";
-import Projets from "@/components/Projets";
-import Skill from "@/components/Skill";
 import Top from "@/components/Top";
-import Youtube from "@/components/Youtube";
 import { User } from "@prisma/client";
 import { useQuery } from "@tanstack/react-query";
+import dynamic from "next/dynamic";
 import { useRef } from "react";
 import { useHover } from "usehooks-ts";
+
+// Lazy load components below the fold
+const Bottom = dynamic(
+  () => import("@/components/Bottom").then((mod) => ({ default: mod.Bottom })),
+  {
+    loading: () => <div className="min-h-[400px]" />,
+  }
+);
+const Skill = dynamic(() => import("@/components/Skill"), {
+  loading: () => <div className="min-h-[200px]" />,
+});
+const Youtube = dynamic(() => import("@/components/Youtube"), {
+  loading: () => <div className="min-h-[700px]" />,
+});
+const Projets = dynamic(() => import("@/components/Projets"), {
+  loading: () => <div className="min-h-[800px]" />,
+});
 
 export default function Home() {
   const bottom = useRef<HTMLDivElement>(null);
