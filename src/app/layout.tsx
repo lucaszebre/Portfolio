@@ -1,7 +1,6 @@
 import ReactQueryProvider from "@/providers/ReactProvidersQuery";
 import { Space_Grotesk } from "next/font/google";
 
-import { cn } from "@/lib/utils";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import "./globals.css";
@@ -31,9 +30,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <NextIntlClientProvider messages={messages}>
         <ReactQueryProvider>
-          <body className={spaceGrotesk.className}>
-            {children}
-          </body>
+          <body className={spaceGrotesk.className}>{children}</body>
         </ReactQueryProvider>
       </NextIntlClientProvider>
     </html>
