@@ -13,8 +13,10 @@ export async function getUser(email?: string) {
 
       return user;
     }
+
+    const currentHeaders = headers();
     const session = await auth.api.getSession({
-      headers: await headers(),
+      headers: currentHeaders,
     });
     if (!session?.user?.email) {
       throw new Error("not auth");
