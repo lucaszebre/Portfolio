@@ -37,6 +37,7 @@ module.exports = {
       "external-content.duckduckgo.com",
     ],
   },
+  productionBrowserSourceMaps: true,
 };
 const withMDX = require("@next/mdx")();
 
