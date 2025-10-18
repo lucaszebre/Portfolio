@@ -9,6 +9,7 @@ import "./globals.css";
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  display: "swap", // Ensures text is visible during font loading (improves FCP)
 });
 
 export async function generateMetadata(): Promise<Metadata> {
