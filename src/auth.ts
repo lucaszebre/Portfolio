@@ -9,14 +9,7 @@ export const auth = betterAuth({
     provider: "postgresql",
   }),
   secret: process.env.BETTER_AUTH_SECRET,
-  plugins: [
-    jwt({
-      jwks: {
-        disablePrivateKeyEncryption: true,
-      },
-    }),
-    nextCookies(),
-  ],
+  plugins: [jwt(), nextCookies()],
   socialProviders: {
     github: {
       clientId: process.env.AUTH_GITHUB_ID as string,
