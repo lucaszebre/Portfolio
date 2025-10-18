@@ -19,6 +19,23 @@ export const auth = betterAuth({
       clientSecret: process.env.AUTH_GOOGLE_SECRET as string,
     },
   },
+  // Cookie configuration to prepare for third-party cookie restrictions
+  session: {
+    cookieCache: {
+      enabled: true,
+      maxAge: 60 * 5, // 5 minutes
+    },
+  },
+  advanced: {
+    // Use SameSite=Lax for better compatibility with third-party cookie restrictions
+    // This ensures cookies work in same-site contexts
+    cookiePrefix: "better-auth",
+    defaultCookieAttributes: {
+      sameSite: "lax" as const,
+      secure: process.env.NODE_ENV === "production",
+      httpOnly: true,
+    },
+  },
   logger: {
     level: process.env.NODE_ENV === "production" ? "error" : "debug",
   },
