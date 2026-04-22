@@ -11,7 +11,7 @@ export async function getStaticPaths() {
     const projects = await getCollection(collectionName);
     for (const project of projects) {
       paths.push({
-        params: { lang, slug: project.slug },
+        params: { lang, slug: project.id },
         props: { project },
       });
     }
