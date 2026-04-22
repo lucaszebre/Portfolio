@@ -1,0 +1,42 @@
+---
+import { useTranslations, getLocaleString } from "@/i18n/utils";
+import type { Lang } from "@/i18n/utils";
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  tags: string[];
+  slug: string;
+  lang?: Lang;
+}
+
+const { title, description, pubDate, tags, slug, lang = "en" } = Astro.props;
+const localeStr = getLocaleString(lang);
+---
+
+<a
+  href={`/${lang}/blog/${slug}`}
+  class="group block p-6 bg-surface rounded-xl border border-surface-light hover:border-accent/30 transition-colors"
+>
+  <time class="text-xs text-muted mb-2 block">
+    {pubDate.toLocaleDateString(localeStr, {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })}
+  </time>
+  <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-accent transition-colors">
+    {title}
+  </h3>
+  <p class="text-sm text-muted mb-3 line-clamp-2">{description}</p>
+  <div class="flex flex-wrap gap-1.5">
+    {
+      tags.map((tag) => (
+        <span class="text-xs px-2 py-0.5 bg-surface-light text-accent rounded">
+          {tag}
+        </span>
+      ))
+    }
+  </div>
+</a>

@@ -1,0 +1,79 @@
+{
+  "site": {
+    "title": "Lucas Zebre — Développeur Full-Stack",
+    "description": "Lucas Zebre — Portfolio développeur full-stack"
+  },
+  "nav": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "blog": "Blog"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "description": "Développeur full-stack créant des expériences web avec des technologies modernes.\nJe construis des choses qui vivent sur internet.",
+    "viewWork": "Voir mes projets",
+    "readBlog": "Lire mon blog",
+    "downloadCv": "Télécharger CV",
+    "videoAlt": "Clip de skateboard"
+  },
+  "featured": {
+    "title": "Projet en vedette",
+    "viewAll": "Voir tout"
+  },
+  "latestPosts": {
+    "title": "Derniers articles",
+    "viewAll": "Voir tout"
+  },
+  "skills": {
+    "title": "Stack technique"
+  },
+  "passions": {
+    "title": "Passions",
+    "intro": "Il y a plus chez moi que juste du code. Voici quelques-unes des choses qui me passionnent en dehors du travail.",
+    "skating": {
+      "title": "Skateboard",
+      "text": "Le skate fait partie de ma vie depuis des années. Il m'a appris la persévérance, la créativité et comment se relever après une chute — des leçons qui s'appliquent directement au code."
+    },
+    "learning": {
+      "title": "Toujours en exploration",
+      "text": "Que ce soit plonger dans un nouveau framework, explorer une nouvelle ville ou apprendre une compétence au hasard — je suis toujours curieux. Je crois que les meilleurs développeurs sont ceux qui ne s'arrêtent jamais d'apprendre."
+    }
+  },
+  "contact": {
+    "title": "Me contacter",
+    "subtitle": "Vous avez un projet en tête ou voulez juste dire bonjour ? Envoyez-moi un message.",
+    "name": "Nom",
+    "email": "E-mail",
+    "message": "Message",
+    "namePlaceholder": "Votre nom",
+    "emailPlaceholder": "votre@email.com",
+    "messagePlaceholder": "Votre message...",
+    "send": "Envoyer le message",
+    "sending": "Envoi en cours...",
+    "success": "Message envoyé ! Je vous répondrai bientôt.",
+    "error": "Une erreur est survenue. Veuillez réessayer."
+  },
+  "footer": {
+    "rights": "Tous droits réservés."
+  },
+  "projectsPage": {
+    "title": "Projets",
+    "description": "Une collection de ce que j'ai construit, des applications full-stack aux défis frontend."
+  },
+  "blogPage": {
+    "title": "Blog",
+    "description": "Réflexions sur le développement web, mes projets et ce que j'apprends au fil du temps.",
+    "noPosts": "Pas encore d'articles. Revenez bientôt !"
+  },
+  "blogPost": {
+    "back": "Retour au blog",
+    "updated": "Mis à jour :"
+  },
+  "projectPage": {
+    "back": "Retour aux projets",
+    "liveDemo": "Démo en ligne",
+    "sourceCode": "Code source",
+    "frontend": "Frontend",
+    "backend": "Backend"
+  }
+}

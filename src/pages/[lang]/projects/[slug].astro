@@ -1,0 +1,38 @@
+---
+import ProjectPage from "@/layouts/ProjectPage.astro";
+import { getCollection, render } from "astro:content";
+import { getCollectionName } from "@/i18n/utils";
+import type { Lang } from "@/i18n/utils";
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const lang of ["en", "fr"] as Lang[]) {
+    const collectionName = getCollectionName("projects", lang) as "projects" | "projects-fr";
+    const projects = await getCollection(collectionName);
+    for (const project of projects) {
+      paths.push({
+        params: { lang, slug: project.slug },
+        props: { project },
+      });
+    }
+  }
+  return paths;
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<ProjectPage
+  title={project.data.title}
+  description={project.data.description}
+  tags={project.data.tags}
+  demoUrl={project.data.demoUrl}
+  codeUrl={project.data.codeUrl}
+  frontendCodeUrl={project.data.frontendCodeUrl}
+  backendCodeUrl={project.data.backendCodeUrl}
+  lang={lang}
+>
+  <Content />
+</ProjectPage>
