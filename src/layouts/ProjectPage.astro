@@ -1,0 +1,112 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { useTranslations } from "@/i18n/utils";
+import type { Lang } from "@/i18n/utils";
+
+interface Props {
+  title: string;
+  description: string;
+  tags: string[];
+  demoUrl?: string;
+  codeUrl?: string;
+  frontendCodeUrl?: string;
+  backendCodeUrl?: string;
+  lang?: Lang;
+}
+
+const {
+  title,
+  description,
+  tags,
+  demoUrl,
+  codeUrl,
+  frontendCodeUrl,
+  backendCodeUrl,
+  lang = "en",
+} = Astro.props;
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={`${title} — Lucas Zebre`} description={description} lang={lang}>
+  <article class="py-16 md:py-24">
+    <header class="mb-12">
+      <a
+        href={`/${lang}/projects`}
+        class="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-6 text-sm"
+      >
+        &larr; {t("projectPage.back")}
+      </a>
+      <h1 class="text-3xl md:text-5xl font-bold text-white mb-4">{title}</h1>
+      <p class="text-lg text-muted mb-6">{description}</p>
+      <div class="flex flex-wrap gap-2 mb-6">
+        {
+          tags.map((tag) => (
+            <span class="px-3 py-1 text-xs font-medium bg-surface-light text-accent rounded-full border border-surface-light">
+              {tag}
+            </span>
+          ))
+        }
+      </div>
+      <div class="flex flex-wrap gap-3">
+        {
+          demoUrl && (
+            <a
+              href={demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-dark font-semibold rounded-lg hover:bg-accent-hover transition-colors"
+            >
+              {t("projectPage.liveDemo")}
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+              </svg>
+            </a>
+          )
+        }
+        {
+          codeUrl && (
+            <a
+              href={codeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-5 py-2.5 border border-accent text-accent rounded-lg hover:bg-accent hover:text-dark transition-colors"
+            >
+              {t("projectPage.sourceCode")}
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          )
+        }
+        {
+          frontendCodeUrl && (
+            <a
+              href={frontendCodeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-5 py-2.5 border border-accent text-accent rounded-lg hover:bg-accent hover:text-dark transition-colors"
+            >
+              {t("projectPage.frontend")}
+            </a>
+          )
+        }
+        {
+          backendCodeUrl && (
+            <a
+              href={backendCodeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-5 py-2.5 border border-accent text-accent rounded-lg hover:bg-accent hover:text-dark transition-colors"
+            >
+              {t("projectPage.backend")}
+            </a>
+          )
+        }
+      </div>
+    </header>
+    <div class="prose">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

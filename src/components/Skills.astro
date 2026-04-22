@@ -1,0 +1,25 @@
+---
+import { skills } from "@/data/site";
+import { useTranslations } from "@/i18n/utils";
+import type { Lang } from "@/i18n/utils";
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = "en" } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="py-16">
+  <h2 class="text-2xl font-bold text-white mb-8 text-center">{t("skills.title")}</h2>
+  <div class="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+    {
+      skills.map((skill) => (
+        <span class="px-4 py-2 text-sm font-medium bg-surface text-accent rounded-lg border border-surface-light hover:border-accent transition-colors">
+          {skill}
+        </span>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,79 @@
+{
+  "site": {
+    "title": "Lucas Zebre — Full-Stack Developer",
+    "description": "Lucas Zebre — Full-stack developer portfolio"
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "blog": "Blog"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "description": "Full-stack developer crafting web experiences with modern technologies.\nI build things that live on the internet.",
+    "viewWork": "View my work",
+    "readBlog": "Read my blog",
+    "downloadCv": "Download CV",
+    "videoAlt": "Skateboarding clip"
+  },
+  "featured": {
+    "title": "Featured Project",
+    "viewAll": "View all"
+  },
+  "latestPosts": {
+    "title": "Latest Posts",
+    "viewAll": "View all"
+  },
+  "skills": {
+    "title": "Tech Stack"
+  },
+  "passions": {
+    "title": "Passions",
+    "intro": "There's more to me than just code. Here are some of the things that drive me outside of work.",
+    "skating": {
+      "title": "Skateboarding",
+      "text": "Skating has been a part of my life for years. It taught me persistence, creativity, and how to get back up after a fall — lessons that carry straight into writing code."
+    },
+    "learning": {
+      "title": "Always Exploring",
+      "text": "Whether it's diving into a new framework, exploring a new city, or picking up a random skill — I'm always curious. I believe the best developers are the ones who never stop learning."
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Have a project in mind or just want to say hello? Drop me a message.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "your@email.com",
+    "messagePlaceholder": "Your message...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent! I'll get back to you soon.",
+    "error": "Something went wrong. Please try again."
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "projectsPage": {
+    "title": "Projects",
+    "description": "A collection of things I've built, from full-stack apps to frontend challenges."
+  },
+  "blogPage": {
+    "title": "Blog",
+    "description": "Thoughts on web development, projects, and things I learn along the way.",
+    "noPosts": "No posts yet. Check back soon!"
+  },
+  "blogPost": {
+    "back": "Back to blog",
+    "updated": "Updated:"
+  },
+  "projectPage": {
+    "back": "Back to projects",
+    "liveDemo": "Live Demo",
+    "sourceCode": "Source Code",
+    "frontend": "Frontend",
+    "backend": "Backend"
+  }
+}
