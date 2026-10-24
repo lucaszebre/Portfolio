@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio
 
-## Getting Started
+Lucas Zebre's personal portfolio: projects, a small blog and a contact form, in English and French. Built with Astro and Tailwind CSS.
 
-First, run the development server:
+## What it does
+
+- Home page with a hero, featured project, latest blog posts, tech stack, passions and contact form
+- Project pages generated from Markdown in `src/content/projects` (EN) and `src/content/projects-fr` (FR)
+- Blog generated from Markdown in `src/content/blog` and `src/content/blog-fr`
+- English and French routes (`/en/...`, `/fr/...`) via Astro i18n, with UI strings in `src/i18n/*.json`
+- Contact form that posts to a server endpoint (`src/pages/api/contact.ts`) which sends the message with Resend
+- Downloadable CV in English and French (`public/assets`)
+
+## Stack
+
+- [Astro](https://astro.build) 6 with `@astrojs/mdx`
+- Tailwind CSS 3 (via PostCSS)
+- `@astrojs/vercel` adapter (pages are prerendered; only `/api/contact` runs as a function)
+- [Resend](https://resend.com) for contact form email
+- TypeScript, checked with `@astrojs/check`
+
+## Run locally
+
+Requires Node.js 22.12 or newer (`.node-version` pins 22).
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm ci
+npm run dev        # http://localhost:4321
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Other scripts:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run check      # astro check (type and template checks)
+npm run build      # production build (Vercel output)
+npm run preview    # preview the build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Environment variables
 
-## Learn More
+Copy `.env.example` to `.env` and fill in:
 
-To learn more about Next.js, take a look at the following resources:
+- `RESEND_API_KEY`: needed only for the contact form. Without it, the site runs normally and `POST /api/contact` returns `500 {"error":"Server not configured"}`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+src/
+  components/   Header, Hero, Skills, Passions, ContactForm, cards, Footer
+  content/      Markdown for projects and blog posts (EN and FR)
+  data/site.ts  Social links, CV links, skills list
+  i18n/         UI strings and language helpers
+  layouts/      Base, project and blog post layouts
+  pages/        [lang] routes and the /api/contact endpoint
+public/assets/  Images, fonts, video and CV PDFs
+```
 
-## Deploy on Vercel
+## Adding content
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- New project: add a Markdown file to `src/content/projects/` and its French counterpart to `src/content/projects-fr/` with the same file name. The frontmatter fields are defined in `src/content.config.ts`.
+- New blog post: same pattern in `src/content/blog/` and `src/content/blog-fr/`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Deployment
+
+The `main` branch builds with the Vercel adapter. The `gh-pages` branch holds an older (2024) Vite build of the previous version of this site and is not generated from this code.
