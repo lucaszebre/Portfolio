@@ -15,7 +15,7 @@ Lucas Zebre's personal portfolio: projects, a small blog and a contact form, in 
 
 - [Astro](https://astro.build) 6 with `@astrojs/mdx`
 - Tailwind CSS 3 (via PostCSS)
-- `@astrojs/vercel` adapter (pages are prerendered; only `/api/contact` runs as a function)
+- `@astrojs/cloudflare` adapter, deployed as a Cloudflare Worker (pages are prerendered; only `/api/contact` runs on the server)
 - [Resend](https://resend.com) for contact form email
 - TypeScript, checked with `@astrojs/check`
 
@@ -32,8 +32,9 @@ Other scripts:
 
 ```bash
 npm run check      # astro check (type and template checks)
-npm run build      # production build (Vercel output)
-npm run preview    # preview the build
+npm run build      # production build (Cloudflare Worker output)
+npm run preview    # build and serve locally with wrangler
+npm run deploy     # build and deploy with wrangler
 ```
 
 ### Environment variables
@@ -62,4 +63,4 @@ public/assets/  Images, fonts, video and CV PDFs
 
 ## Deployment
 
-The `main` branch builds with the Vercel adapter. The `gh-pages` branch holds an older (2024) Vite build of the previous version of this site and is not generated from this code.
+The site runs as a Cloudflare Worker at https://portfolio.yakirisk.workers.dev and is deployed from `main` with `npm run deploy`. The contact form needs the `RESEND_API_KEY` secret: `npx wrangler secret put RESEND_API_KEY`. The `gh-pages` branch holds an older (2024) Vite build of the previous version of this site and is not generated from this code.

@@ -1,10 +1,11 @@
 import type { APIRoute } from "astro";
+import { RESEND_API_KEY } from "astro:env/server";
 import { Resend } from "resend";
 
 export const prerender = false;
 
 export const POST: APIRoute = async ({ request }) => {
-  const resendApiKey = import.meta.env.RESEND_API_KEY;
+  const resendApiKey = RESEND_API_KEY;
 
   if (!resendApiKey) {
     return new Response(JSON.stringify({ error: "Server not configured" }), {
